@@ -1030,3 +1030,103 @@
     margin-top:8px;
   }
 }
+
+/* ===========================
+   STEP 3 — READABILITY PASS
+   Remove this entire block to revert.
+   =========================== */
+
+/* Core service descriptions */
+.service-row p{
+  font-size:13px;
+  line-height:1.65;
+}
+
+/* Additional solution cards */
+.solution-card p{
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* Pricing supporting copy */
+.build-price-card p,
+.pricing-choice-copy p{
+  font-size:13px;
+  line-height:1.65;
+}
+
+.price-plan>p{
+  min-height:0;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.price-plan li{
+  font-size:11px;
+  line-height:1.55;
+}
+
+.pricing-note p{
+  font-size:11px;
+  line-height:1.6;
+}
+
+/* Process */
+.process-grid p{
+  font-size:12px;
+  line-height:1.65;
+}
+
+/* About / trust copy */
+.about-trust-list p,
+.why-list p{
+  font-size:12px;
+  line-height:1.65;
+}
+
+/* FAQ answers */
+.faq-item p{
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* Contact form helper text */
+.form-note{
+  font-size:10px!important;
+}
+
+/* Footer */
+.footer-brand-block p{
+  font-size:12px;
+}
+
+.footer-brand-block>span{
+  font-size:9px;
+}
+
+.footer-column a{
+  font-size:11px;
+}
+
+.site-footer .footer-bottom{
+  font-size:9px;
+}
+
+@media(max-width:820px){
+  .service-row p,
+  .solution-card p,
+  .build-price-card p,
+  .pricing-choice-copy p,
+  .price-plan>p,
+  .process-grid p,
+  .about-trust-list p,
+  .why-list p,
+  .faq-item p{
+    font-size:13px;
+  }
+
+  .price-plan li{
+    font-size:12px;
+  }
+}
+
