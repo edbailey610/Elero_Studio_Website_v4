@@ -1,0 +1,5 @@
+Add this inside your existing <urlset> in sitemap.xml:
+
+  <url>
+    <loc>https://elerostudio.com/about.html</loc>
+  </url>
