@@ -100,6 +100,7 @@
 
     .topbar-inner {
       width: min(1180px, calc(100% - 32px));
+
       min-height: 76px;
 
       margin: 0 auto;
@@ -178,7 +179,9 @@
 
       padding: 9px 13px;
 
-      border: 1px solid rgba(255,255,255,.12);
+      border:
+        1px solid
+        rgba(255,255,255,.12);
 
       border-radius: 999px;
 
@@ -209,16 +212,13 @@
       padding: 58px 0 90px;
     }
 
-    .intro {
-      display: grid;
 
-      grid-template-columns:
-        minmax(0,1.2fr)
-        minmax(280px,.8fr);
+    /* =====================================
+       ELERO EXPLANATION
+       ===================================== */
 
-      align-items: end;
-
-      gap: 40px;
+    .demo-intro {
+      max-width: 850px;
 
       margin-bottom: 35px;
     }
@@ -248,36 +248,138 @@
       background: var(--accent);
     }
 
-    .intro h1 {
+    .demo-intro h1 {
+      max-width: 780px;
+
       margin: 0;
 
       font-family:
         "Manrope",
         sans-serif;
 
-      font-size: clamp(42px,6vw,72px);
+      font-size: clamp(42px,6vw,70px);
 
-      line-height: .98;
+      line-height: 1;
 
       letter-spacing: -.055em;
     }
 
-    .intro h1 span {
+    .demo-intro h1 span {
       color: var(--accent);
     }
 
-    .intro-copy {
+    .demo-intro > p {
+      max-width: 710px;
+
+      margin: 22px 0 0;
+
       color: var(--muted);
 
-      font-size: 15px;
+      font-size: 17px;
 
       line-height: 1.65;
     }
 
-    .intro-copy strong {
+    .demo-intro > p strong {
+      color: var(--ink);
+    }
+
+
+    /* =====================================
+       HOW TO VIEW DEMO
+       ===================================== */
+
+    .demo-explainer {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 10px;
+
+      max-width: 850px;
+
+      margin-top: 28px;
+    }
+
+    .explainer-card {
+      padding: 17px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 15px;
+
+      background: rgba(255,255,255,.7);
+    }
+
+    .explainer-card span {
       display: block;
 
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+
+      color: var(--accent);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .11em;
+    }
+
+    .explainer-card strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 13px;
+    }
+
+    .explainer-card p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.5;
+    }
+
+
+    /* =====================================
+       CUSTOMER VIEW DIVIDER
+       ===================================== */
+
+    .customer-view-header {
+      margin: 42px 0 18px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 18px;
+    }
+
+    .customer-view-header::before,
+    .customer-view-header::after {
+      content: "";
+
+      height: 1px;
+
+      flex: 1;
+
+      background: var(--line);
+    }
+
+    .customer-view-copy {
+      flex-shrink: 0;
+
+      text-align: center;
+    }
+
+    .customer-view-copy strong {
+      display: block;
 
       color: var(--ink);
 
@@ -285,8 +387,25 @@
         "Manrope",
         sans-serif;
 
-      font-size: 18px;
+      font-size: 11px;
+
+      letter-spacing: .12em;
     }
+
+    .customer-view-copy span {
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+    }
+
+
+    /* =====================================
+       DEMO NOTICE
+       ===================================== */
 
     .demo-note {
       margin-bottom: 20px;
@@ -302,6 +421,8 @@
       color: #08768b;
 
       font-size: 13px;
+
+      line-height: 1.5;
     }
 
 
@@ -312,13 +433,50 @@
     .booking-app {
       overflow: hidden;
 
-      border: 1px solid rgba(9,12,17,.08);
+      border:
+        1px solid
+        rgba(9,12,17,.08);
 
       border-radius: 28px;
 
       background: white;
 
       box-shadow: var(--shadow);
+    }
+
+
+    /* =====================================
+       EXAMPLE BADGE
+       ===================================== */
+
+    .example-strip {
+      padding: 10px 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      background: #edfafd;
+
+      color: #08768b;
+
+      border-bottom: 1px solid #c7ebf1;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .08em;
+    }
+
+    .example-strip i {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
     }
 
 
@@ -393,6 +551,30 @@
       font-size: 10px;
     }
 
+    .fictional-badge {
+      display: inline-flex;
+      align-items: center;
+
+      margin-left: 7px;
+
+      padding: 3px 6px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.16);
+
+      border-radius: 999px;
+
+      color: #9ba5ae;
+
+      font-size: 7px;
+      font-weight: 700;
+
+      letter-spacing: .07em;
+
+      vertical-align: middle;
+    }
+
     .venue-status {
       display: flex;
       align-items: center;
@@ -429,7 +611,9 @@
     .booking-main {
       padding: 34px;
 
-      border-right: 1px solid var(--line);
+      border-right:
+        1px solid
+        var(--line);
     }
 
     .booking-summary {
@@ -440,7 +624,7 @@
 
 
     /* =====================================
-       TOP HEADING
+       HEADING
        ===================================== */
 
     .booking-heading {
@@ -490,7 +674,9 @@
     .booking-section {
       padding: 24px 0;
 
-      border-top: 1px solid #edf0f2;
+      border-top:
+        1px solid
+        #edf0f2;
     }
 
     .booking-section:first-of-type {
@@ -546,7 +732,9 @@
 
       padding: 12px 13px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 11px;
 
@@ -573,7 +761,7 @@
 
 
     /* =====================================
-       BOOKING TYPE
+       BOOKING TYPES
        ===================================== */
 
     .type-buttons {
@@ -590,7 +778,9 @@
 
       padding: 0 12px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 11px;
 
@@ -601,25 +791,26 @@
       font-size: 11px;
       font-weight: 700;
 
-      transition:
-        border-color .2s ease,
-        background .2s ease,
-        color .2s ease,
-        transform .2s var(--ease);
+      transition: .2s var(--ease);
     }
 
     .type-button:hover {
-      transform: translateY(-1px);
+      transform:
+        translateY(-1px);
 
-      border-color: #9bdce8;
+      border-color:
+        #9bdce8;
     }
 
     .type-button.selected {
-      border-color: var(--accent);
+      border-color:
+        var(--accent);
 
-      background: var(--accent-soft);
+      background:
+        var(--accent-soft);
 
-      color: var(--accent);
+      color:
+        var(--accent);
     }
 
 
@@ -637,13 +828,14 @@
     }
 
     .date-button {
-      position: relative;
-
       min-height: 82px;
 
-      padding: 10px 5px;
+      padding:
+        10px 5px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 13px;
 
@@ -653,24 +845,23 @@
 
       text-align: center;
 
-      transition:
-        border-color .2s ease,
-        background .2s ease,
-        color .2s ease,
-        transform .2s var(--ease),
-        box-shadow .2s ease;
+      transition: .2s var(--ease);
     }
 
     .date-button:hover {
-      border-color: var(--accent);
+      border-color:
+        var(--accent);
 
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
     }
 
     .date-button.selected {
-      border-color: var(--accent);
+      border-color:
+        var(--accent);
 
-      background: var(--accent);
+      background:
+        var(--accent);
 
       color: white;
 
@@ -693,7 +884,8 @@
     }
 
     .date-button.selected small {
-      color: rgba(255,255,255,.72);
+      color:
+        rgba(255,255,255,.72);
     }
 
     .date-button strong {
@@ -716,7 +908,7 @@
 
 
     /* =====================================
-       TIME AREA
+       TIMES
        ===================================== */
 
     .availability {
@@ -730,30 +922,14 @@
         repeat(4,1fr);
 
       gap: 9px;
-
-      animation: timesIn .3s var(--ease);
-    }
-
-    @keyframes timesIn {
-
-      from {
-        opacity: 0;
-
-        transform: translateY(4px);
-      }
-
-      to {
-        opacity: 1;
-
-        transform: translateY(0);
-      }
-
     }
 
     .time-button {
       min-height: 50px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 11px;
 
@@ -764,23 +940,23 @@
       font-size: 12px;
       font-weight: 700;
 
-      transition:
-        border-color .2s ease,
-        background .2s ease,
-        color .2s ease,
-        transform .2s var(--ease);
+      transition: .2s var(--ease);
     }
 
     .time-button:hover {
-      border-color: var(--accent);
+      border-color:
+        var(--accent);
 
-      transform: translateY(-1px);
+      transform:
+        translateY(-1px);
     }
 
     .time-button.selected {
-      border-color: var(--accent);
+      border-color:
+        var(--accent);
 
-      background: var(--accent);
+      background:
+        var(--accent);
 
       color: white;
     }
@@ -798,7 +974,8 @@
       opacity: 0;
 
       transition:
-        grid-template-rows .55s var(--ease),
+        grid-template-rows
+        .55s var(--ease),
         opacity .35s ease;
     }
 
@@ -815,7 +992,9 @@
     .details-content {
       padding-top: 24px;
 
-      border-top: 1px solid #edf0f2;
+      border-top:
+        1px solid
+        #edf0f2;
     }
 
     .details-title {
@@ -902,7 +1081,9 @@
 
       padding: 0 19px;
 
-      border: 1px solid transparent;
+      border:
+        1px solid
+        transparent;
 
       border-radius: 12px;
 
@@ -928,17 +1109,20 @@
     .button-dark:hover {
       background: #171d25;
 
-      transform: translateY(-1px);
+      transform:
+        translateY(-1px);
     }
 
     .button-accent {
-      background: var(--accent);
+      background:
+        var(--accent);
 
       color: white;
     }
 
     .button-accent:hover {
-      background: var(--accent-dark);
+      background:
+        var(--accent-dark);
     }
 
 
@@ -951,7 +1135,8 @@
 
       margin-bottom: 7px;
 
-      color: var(--accent);
+      color:
+        var(--accent);
 
       font-size: 9px;
       font-weight: 800;
@@ -994,7 +1179,9 @@
     .summary-top {
       padding: 18px;
 
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
     }
 
     .summary-top small {
@@ -1030,7 +1217,9 @@
 
       padding: 11px 0;
 
-      border-bottom: 1px solid rgba(255,255,255,.07);
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.07);
 
       font-size: 11px;
     }
@@ -1052,7 +1241,9 @@
 
       padding: 15px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 13px;
 
@@ -1067,7 +1258,7 @@
 
 
     /* =====================================
-       REVIEW MODAL
+       MODAL
        ===================================== */
 
     .modal-overlay {
@@ -1083,9 +1274,11 @@
 
       padding: 20px;
 
-      background: rgba(4,8,13,.58);
+      background:
+        rgba(4,8,13,.58);
 
-      backdrop-filter: blur(10px);
+      backdrop-filter:
+        blur(10px);
 
       opacity: 0;
 
@@ -1103,7 +1296,8 @@
     }
 
     .review-modal {
-      width: min(500px,100%);
+      width:
+        min(500px,100%);
 
       padding: 28px;
 
@@ -1111,15 +1305,24 @@
 
       background: white;
 
-      box-shadow: 0 30px 100px rgba(0,0,0,.25);
+      box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.25);
 
-      transform: translateY(15px) scale(.98);
+      transform:
+        translateY(15px)
+        scale(.98);
 
-      transition: transform .35s var(--ease);
+      transition:
+        transform .35s
+        var(--ease);
     }
 
-    .modal-overlay.show .review-modal {
-      transform: translateY(0) scale(1);
+    .modal-overlay.show
+    .review-modal {
+      transform:
+        translateY(0)
+        scale(1);
     }
 
     .review-modal small {
@@ -1127,7 +1330,8 @@
 
       margin-bottom: 6px;
 
-      color: var(--accent);
+      color:
+        var(--accent);
 
       font-size: 9px;
       font-weight: 800;
@@ -1160,7 +1364,9 @@
 
       margin-bottom: 20px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 14px;
     }
@@ -1173,7 +1379,9 @@
 
       padding: 13px 15px;
 
-      border-bottom: 1px solid #edf0f2;
+      border-bottom:
+        1px solid
+        #edf0f2;
 
       font-size: 11px;
     }
@@ -1183,7 +1391,8 @@
     }
 
     .review-row span {
-      color: var(--muted);
+      color:
+        var(--muted);
     }
 
     .review-row strong {
@@ -1202,7 +1411,9 @@
     .secondary-button {
       min-height: 48px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 12px;
 
@@ -1228,11 +1439,13 @@
       text-align: center;
     }
 
-    .review-modal.success .review-content {
+    .review-modal.success
+    .review-content {
       display: none;
     }
 
-    .review-modal.success .success-modal {
+    .review-modal.success
+    .success-modal {
       display: block;
     }
 
@@ -1247,32 +1460,19 @@
 
       border-radius: 50%;
 
-      background: var(--green-soft);
+      background:
+        var(--green-soft);
 
-      color: var(--green);
+      color:
+        var(--green);
 
       font-size: 29px;
       font-weight: 800;
-
-      animation: successPop .45s var(--ease);
-    }
-
-    @keyframes successPop {
-
-      from {
-        transform: scale(.6);
-        opacity: 0;
-      }
-
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-
     }
 
     .success-modal small {
-      color: var(--green);
+      color:
+        var(--green);
     }
 
     .success-modal h3 {
@@ -1280,11 +1480,13 @@
     }
 
     .success-modal p {
-      margin: 0 auto 18px;
-
       max-width: 390px;
 
-      color: var(--muted);
+      margin:
+        0 auto 18px;
+
+      color:
+        var(--muted);
 
       line-height: 1.55;
     }
@@ -1294,7 +1496,9 @@
 
       padding: 11px 15px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
       border-radius: 11px;
 
@@ -1310,7 +1514,7 @@
 
 
     /* =====================================
-       CTA
+       ELERO CTA
        ===================================== */
 
     .site-cta {
@@ -1386,10 +1590,6 @@
 
     @media(max-width:900px) {
 
-      .intro {
-        grid-template-columns: 1fr;
-      }
-
       .booking-layout {
         grid-template-columns: 1fr;
       }
@@ -1397,7 +1597,13 @@
       .booking-main {
         border-right: 0;
 
-        border-bottom: 1px solid var(--line);
+        border-bottom:
+          1px solid
+          var(--line);
+      }
+
+      .demo-explainer {
+        grid-template-columns: 1fr;
       }
 
     }
@@ -1405,17 +1611,50 @@
     @media(max-width:650px) {
 
       .page {
-        width: min(100% - 20px,1180px);
+        width:
+          min(
+            100% - 20px,
+            1180px
+          );
 
         padding-top: 38px;
       }
 
-      .intro h1 {
+      .demo-intro h1 {
         font-size: 42px;
       }
 
+      .demo-intro > p {
+        font-size: 15px;
+      }
+
+      .customer-view-header {
+        margin-top: 32px;
+      }
+
+      .customer-view-header::before,
+      .customer-view-header::after {
+        display: none;
+      }
+
+      .customer-view-copy {
+        width: 100%;
+
+        padding: 12px;
+
+        border:
+          1px solid
+          var(--line);
+
+        border-radius: 12px;
+
+        background:
+          rgba(255,255,255,.6);
+      }
+
       .venue-header {
-        padding: 0 18px;
+        padding:
+          0 18px;
       }
 
       .venue-status {
@@ -1432,7 +1671,8 @@
       }
 
       .type-buttons {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
 
       .dates {
@@ -1511,11 +1751,12 @@
 
       </a>
 
+
       <div class="demo-pill">
 
         <i></i>
 
-        INTERACTIVE DEMO
+        INTERACTIVE EXAMPLE
 
       </div>
 
@@ -1528,55 +1769,137 @@
 
 
     <!-- =====================================
-         INTRO
+         WHAT THIS DEMO IS
          ===================================== -->
 
-    <section class="intro">
+    <section class="demo-intro">
 
-      <div>
+      <div class="eyebrow">
 
-        <div class="eyebrow">
+        <i></i>
 
-          <i></i>
-
-          BOOKING SYSTEM DEMO
-
-        </div>
-
-        <h1>
-
-          Booking should feel
-
-          <span>
-            this easy.
-          </span>
-
-        </h1>
+        BOOKING SYSTEM DEMO
 
       </div>
 
-      <div class="intro-copy">
+
+      <h1>
+
+        See how your customers
+
+        <span>
+          could book with you.
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        This is an example of a booking system
 
         <strong>
-          Make a test reservation.
+          Elero could build into your business website.
         </strong>
 
-        See how a smooth booking experience could work
-        directly through a business website — without sending
-        customers somewhere else.
+        Below, you’ll pretend to be a customer of a fictional
+        restaurant and make a booking to see how the experience works.
+
+      </p>
+
+
+      <!-- WHO IS WHO -->
+
+      <div class="demo-explainer">
+
+
+        <div class="explainer-card">
+
+          <span>
+            ELERO STUDIO
+          </span>
+
+          <strong>
+            We build the system.
+          </strong>
+
+          <p>
+            The booking experience can be designed around
+            how your own business operates.
+          </p>
+
+        </div>
+
+
+        <div class="explainer-card">
+
+          <span>
+            EXAMPLE BUSINESS
+          </span>
+
+          <strong>
+            Foundry Kitchen
+          </strong>
+
+          <p>
+            A fictional restaurant used purely to demonstrate
+            what a client booking system could look like.
+          </p>
+
+        </div>
+
+
+        <div class="explainer-card">
+
+          <span>
+            YOUR ROLE IN THE DEMO
+          </span>
+
+          <strong>
+            Pretend you're the customer.
+          </strong>
+
+          <p>
+            Make a fake reservation to experience what
+            your own customers could use.
+          </p>
+
+        </div>
 
       </div>
 
     </section>
 
 
+    <!-- =====================================
+         CUSTOMER EXPERIENCE DIVIDER
+         ===================================== -->
+
+    <div class="customer-view-header">
+
+      <div class="customer-view-copy">
+
+        <strong>
+          ↓ EXAMPLE CUSTOMER EXPERIENCE ↓
+        </strong>
+
+        <span>
+          Imagine the section below built into your own website
+        </span>
+
+      </div>
+
+    </div>
+
+
     <div class="demo-note">
 
       <strong>
-        Demo mode:
+        Demo only:
       </strong>
 
-      No real reservation is created and nothing entered here
+      Foundry Kitchen is a fictional example business.
+      No real reservation is created and nothing entered below
       is submitted or stored.
 
     </div>
@@ -1587,6 +1910,17 @@
          ===================================== -->
 
     <section class="booking-app">
+
+
+      <!-- VERY OBVIOUS DEMO STRIP -->
+
+      <div class="example-strip">
+
+        <i></i>
+
+        FICTIONAL BUSINESS · CUSTOMER BOOKING EXAMPLE
+
+      </div>
 
 
       <!-- VENUE HEADER -->
@@ -1602,11 +1936,17 @@
           <div>
 
             <strong>
+
               Foundry Kitchen
+
+              <span class="fictional-badge">
+                EXAMPLE
+              </span>
+
             </strong>
 
             <span>
-              Modern British dining · Cardiff
+              Fictional restaurant · Cardiff
             </span>
 
           </div>
@@ -1629,7 +1969,7 @@
 
 
         <!-- =================================
-             MAIN
+             CUSTOMER BOOKING
              ================================= -->
 
         <div class="booking-main">
@@ -1638,23 +1978,22 @@
           <div class="booking-heading">
 
             <small>
-              BOOK A TABLE
+              CUSTOMER VIEW
             </small>
 
             <h2>
-              Find your table.
+              Book a table.
             </h2>
 
             <p>
-              Choose what suits you. Available times update instantly.
+              Try this as if you were a customer visiting the
+              restaurant’s website.
             </p>
 
           </div>
 
 
-          <!-- =================================
-               GUESTS + TYPE
-               ================================= -->
+          <!-- BOOKING TYPE -->
 
           <section class="booking-section">
 
@@ -1751,9 +2090,7 @@
           </section>
 
 
-          <!-- =================================
-               DATE
-               ================================= -->
+          <!-- DATE -->
 
           <section class="booking-section">
 
@@ -1777,9 +2114,7 @@
           </section>
 
 
-          <!-- =================================
-               TIME
-               ================================= -->
+          <!-- TIMES -->
 
           <section class="booking-section">
 
@@ -1795,10 +2130,7 @@
 
             </div>
 
-            <div
-              class="availability"
-              id="availability"
-            >
+            <div class="availability">
 
               <div
                 class="time-grid"
@@ -1810,9 +2142,7 @@
           </section>
 
 
-          <!-- =================================
-               DETAILS - PROGRESSIVE REVEAL
-               ================================= -->
+          <!-- CUSTOMER DETAILS -->
 
           <div
             class="details-wrapper"
@@ -1826,7 +2156,7 @@
                 <div class="details-title">
 
                   <small>
-                    ALMOST THERE
+                    CUSTOMER DETAILS
                   </small>
 
                   <h3>
@@ -1834,7 +2164,7 @@
                   </h3>
 
                   <p>
-                    We just need a few details to confirm the reservation.
+                    A real customer would enter their details here.
                   </p>
 
                 </div>
@@ -1932,7 +2262,7 @@
                     type="button"
                   >
 
-                    Review booking
+                    Review example booking
 
                     <span>
                       →
@@ -1958,7 +2288,7 @@
         <aside class="booking-summary">
 
           <span class="summary-label">
-            YOUR BOOKING
+            CUSTOMER BOOKING
           </span>
 
           <h3>
@@ -1966,7 +2296,8 @@
           </h3>
 
           <p class="summary-description">
-            Your reservation updates automatically as you make your selections.
+            This is what the fictional customer's reservation
+            currently looks like.
           </p>
 
 
@@ -1975,7 +2306,7 @@
             <div class="summary-top">
 
               <small>
-                RESTAURANT
+                EXAMPLE BUSINESS
               </small>
 
               <strong>
@@ -2046,9 +2377,13 @@
 
           <div class="summary-hint">
 
-            A live version could automatically check capacity,
-            stop overbooking, send confirmations and give the
-            business a private dashboard to manage reservations.
+            <strong>
+              On a real client website:
+            </strong>
+
+            this could check genuine availability, prevent
+            overbooking, send confirmation emails and feed
+            every reservation into a private business dashboard.
 
           </div>
 
@@ -2060,7 +2395,7 @@
 
 
     <!-- =====================================
-         CTA
+         ELERO CTA
          ===================================== -->
 
     <section class="site-cta">
@@ -2068,19 +2403,21 @@
       <div>
 
         <small>
-          BUILT AROUND YOUR BUSINESS
+          THIS IS WHAT ELERO BUILDS
         </small>
 
         <h2>
-          Imagine this working on your website.
+          Now imagine it built around your business.
         </h2>
 
         <p>
-          Customers book themselves. Your availability updates automatically.
-          Your business keeps control of the bookings.
+          Different services, availability rules, opening hours,
+          branding and management tools — all tailored to how
+          your own customers need to book.
         </p>
 
       </div>
+
 
       <a
         class="button"
@@ -2115,12 +2452,10 @@
     >
 
 
-      <!-- REVIEW -->
-
       <div class="review-content">
 
         <small>
-          REVIEW YOUR BOOKING
+          EXAMPLE CUSTOMER CONFIRMATION
         </small>
 
         <h3>
@@ -2128,7 +2463,8 @@
         </h3>
 
         <p>
-          Check the reservation before confirming.
+          This is the final review a customer could see
+          before confirming their booking.
         </p>
 
 
@@ -2138,7 +2474,7 @@
           <div class="review-row">
 
             <span>
-              Restaurant
+              Business
             </span>
 
             <strong>
@@ -2243,7 +2579,7 @@
             id="confirmButton"
             type="button"
           >
-            Confirm booking
+            Confirm example booking
           </button>
 
         </div>
@@ -2260,22 +2596,22 @@
         </div>
 
         <small>
-          BOOKING CONFIRMED
+          DEMO BOOKING CONFIRMED
         </small>
 
         <h3>
-          You're booked.
+          That's the customer journey.
         </h3>
 
         <p id="successText">
-          Your reservation has been confirmed.
+          The example booking has been completed.
         </p>
 
         <div
           class="reference"
           id="bookingReference"
         >
-          ELR-00000
+          DEMO-00000
         </div>
 
       </div>
@@ -2287,28 +2623,14 @@
 
   <script>
 
-    /* =====================================
-       STATE
-       ===================================== */
-
     const state = {
-
       guests: 2,
-
       type: "Dinner",
-
       date: null,
-
       dateLabel: "",
-
       time: null
-
     };
 
-
-    /* =====================================
-       ELEMENTS
-       ===================================== */
 
     const guests =
       document.getElementById(
@@ -2437,7 +2759,7 @@
 
 
     /* =====================================
-       CREATE DATES
+       DATES
        ===================================== */
 
     function createDates() {
@@ -2466,8 +2788,7 @@
           date.toLocaleDateString(
             "en-GB",
             {
-              weekday:
-                "short"
+              weekday: "short"
             }
           );
 
@@ -2480,8 +2801,7 @@
           date.toLocaleDateString(
             "en-GB",
             {
-              month:
-                "short"
+              month: "short"
             }
           );
 
@@ -2490,14 +2810,9 @@
           date.toLocaleDateString(
             "en-GB",
             {
-              weekday:
-                "long",
-
-              day:
-                "numeric",
-
-              month:
-                "long"
+              weekday: "long",
+              day: "numeric",
+              month: "long"
             }
           );
 
@@ -2608,13 +2923,6 @@
       }
 
 
-      /*
-        Automatically select tomorrow.
-
-        This means useful booking times
-        are visible immediately.
-      */
-
       const firstButton =
         dateOptions
           .querySelector(
@@ -2643,39 +2951,29 @@
         "";
 
 
-      let times;
-
-
-      if (
+      const times =
         state.type ===
         "Lunch"
-      ) {
 
-        times = [
-          "12:00",
-          "12:30",
-          "13:00",
-          "13:30",
-          "14:00",
-          "14:30"
-        ];
+          ? [
+              "12:00",
+              "12:30",
+              "13:00",
+              "13:30",
+              "14:00",
+              "14:30"
+            ]
 
-      }
-
-      else {
-
-        times = [
-          "17:30",
-          "18:00",
-          "18:30",
-          "19:00",
-          "19:30",
-          "20:00",
-          "20:30",
-          "21:00"
-        ];
-
-      }
+          : [
+              "17:30",
+              "18:00",
+              "18:30",
+              "19:00",
+              "19:30",
+              "20:00",
+              "20:30",
+              "21:00"
+            ];
 
 
       times.forEach(
@@ -2690,10 +2988,8 @@
           button.type =
             "button";
 
-
           button.className =
             "time-button";
-
 
           button.textContent =
             time;
@@ -2732,12 +3028,6 @@
                 time;
 
 
-              /*
-                Instead of changing screen,
-                we simply reveal the details
-                underneath.
-              */
-
               detailsWrapper
                 .classList
                 .add(
@@ -2759,7 +3049,7 @@
 
 
     /* =====================================
-       REVIEW BOOKING
+       REVIEW
        ===================================== */
 
     document
@@ -2814,20 +3104,7 @@
           ) {
 
             alert(
-              "Add your name, email and phone number first."
-            );
-
-            return;
-
-          }
-
-
-          if (
-            !state.time
-          ) {
-
-            alert(
-              "Choose a booking time first."
+              "Add a name, email and phone number to continue the demo."
             );
 
             return;
@@ -2901,7 +3178,7 @@
 
 
     /* =====================================
-       CLOSE REVIEW
+       EDIT
        ===================================== */
 
     document
@@ -2934,17 +3211,8 @@
         "click",
         () => {
 
-          const first =
-            document
-              .getElementById(
-                "firstName"
-              )
-              .value
-              .trim();
-
-
           const reference =
-            `ELR-${Math.floor(
+            `DEMO-${Math.floor(
               10000 +
               Math.random() *
               90000
@@ -2964,7 +3232,7 @@
               "successText"
             )
             .textContent =
-            `${first}, your table for ${state.guests} at ${state.time} on ${state.dateLabel} is confirmed.`;
+            `You've just experienced how a customer could book ${state.guests} places for ${state.type.toLowerCase()} at ${state.time} through a website built by Elero.`;
 
 
           reviewModal
@@ -2978,7 +3246,7 @@
 
 
     /* =====================================
-       CLICK OUTSIDE MODAL
+       CLOSE MODAL
        ===================================== */
 
     modalOverlay.addEventListener(
