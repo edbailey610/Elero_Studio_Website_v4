@@ -1,0 +1,2433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="robots"
+    content="noindex,nofollow"
+  >
+
+  <title>Payment Integration Demo | Elero Studio</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --ink: #090c11;
+      --muted: #69727c;
+      --line: #dfe4e8;
+      --accent: #0b9ab7;
+      --accent-soft: #edfafd;
+      --green: #16834f;
+      --green-soft: #ecfdf3;
+      --shadow: 0 24px 70px rgba(12, 18, 28, .10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 10% 8%,
+          rgba(79, 230, 255, .12),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 88% 12%,
+          rgba(76, 113, 255, .09),
+          transparent 25%
+        ),
+        var(--bg);
+
+      color: var(--ink);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ================================
+       ELERO HEADER
+       ================================ */
+
+    .topbar {
+      background: #090c11;
+      color: white;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+    }
+
+    .topbar-inner {
+      width:
+        min(
+          1180px,
+          calc(100% - 32px)
+        );
+
+      min-height: 76px;
+
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #4fe6ff,
+          #4b8dff
+        );
+
+      color: #051014;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-weight: 800;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+
+      line-height: 1;
+    }
+
+    .brand-copy strong {
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 14px;
+
+      letter-spacing: .16em;
+    }
+
+    .brand-copy small {
+      margin-top: 5px;
+
+      color: #9da7b2;
+
+      font-size: 9px;
+
+      letter-spacing: .23em;
+    }
+
+    .demo-pill {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 9px 13px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 999px;
+
+      color: #dce4eb;
+
+      font-size: 12px;
+    }
+
+    .demo-pill i {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #4fe6ff;
+
+      box-shadow:
+        0 0 18px
+        #4fe6ff;
+    }
+
+    /* ================================
+       PAGE
+       ================================ */
+
+    .page {
+      width:
+        min(
+          1180px,
+          calc(100% - 32px)
+        );
+
+      margin: 0 auto;
+
+      padding:
+        58px 0 90px;
+    }
+
+    .intro {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(280px, .8fr);
+
+      align-items: end;
+
+      gap: 38px;
+
+      margin-bottom: 38px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 9px;
+
+      margin-bottom: 15px;
+
+      color: var(--accent);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+    }
+
+    .eyebrow i {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+    }
+
+    .intro h1 {
+      margin: 0;
+
+      max-width: 800px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          42px,
+          6vw,
+          72px
+        );
+
+      line-height: .98;
+
+      letter-spacing: -.055em;
+    }
+
+    .intro h1 span {
+      color: var(--accent);
+    }
+
+    .intro-side {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.65;
+    }
+
+    .intro-side strong {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--ink);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 18px;
+    }
+
+    .demo-notice {
+      margin-bottom: 20px;
+
+      padding: 14px 18px;
+
+      border:
+        1px solid
+        #bce7ef;
+
+      border-radius: 14px;
+
+      background: #f0fbfd;
+
+      color: #08768b;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+    }
+
+    /* ================================
+       DASHBOARD
+       ================================ */
+
+    .dashboard {
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(11,18,28,.08);
+
+      border-radius: 28px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-nav {
+      min-height: 76px;
+
+      padding:
+        0 28px;
+
+      background: #090c11;
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .business-brand {
+      display: flex;
+      align-items: center;
+
+      gap: 11px;
+    }
+
+    .business-avatar {
+      width: 40px;
+      height: 40px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0b9ab7,
+          #2673d9
+        );
+
+      color: white;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-weight: 800;
+    }
+
+    .business-brand div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .business-brand strong {
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 14px;
+    }
+
+    .business-brand small {
+      margin-top: 3px;
+
+      color: #939da7;
+
+      font-size: 9px;
+
+      letter-spacing: .13em;
+    }
+
+    .payments-online {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+
+      color: #aeb7c0;
+
+      font-size: 11px;
+    }
+
+    .payments-online i {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #35d477;
+
+      box-shadow:
+        0 0 12px
+        rgba(53,212,119,.7);
+    }
+
+    .dashboard-body {
+      padding: 34px;
+    }
+
+    .dashboard-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 26px;
+
+      margin-bottom: 30px;
+    }
+
+    .dashboard-heading small {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+    }
+
+    .dashboard-heading h2 {
+      margin:
+        0 0 6px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          29px,
+          4vw,
+          39px
+        );
+
+      letter-spacing: -.04em;
+    }
+
+    .dashboard-heading p {
+      margin: 0;
+
+      color: var(--muted);
+    }
+
+    /* ================================
+       BUTTONS
+       ================================ */
+
+    .button {
+      min-height: 47px;
+
+      padding:
+        0 19px;
+
+      border:
+        1px solid
+        transparent;
+
+      border-radius: 12px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      font-weight: 700;
+
+      transition: .18s ease;
+    }
+
+    .button-accent {
+      background: var(--accent);
+
+      color: white;
+    }
+
+    .button-accent:hover {
+      transform:
+        translateY(-2px);
+
+      filter:
+        brightness(.94);
+    }
+
+    .button-dark {
+      background: #090c11;
+
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: #171d25;
+
+      transform:
+        translateY(-1px);
+    }
+
+    /* ================================
+       STATS
+       ================================ */
+
+    .stats-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.4fr 1fr 1fr;
+
+      gap: 14px;
+
+      margin-bottom: 28px;
+    }
+
+    .stat-card {
+      min-height: 154px;
+
+      padding: 22px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 18px;
+
+      background: var(--surface-soft);
+    }
+
+    .stat-card.primary {
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #090d13,
+          #151d28
+        );
+
+      color: white;
+    }
+
+    .stat-card.primary::after {
+      content: "";
+
+      position: absolute;
+
+      width: 190px;
+      height: 190px;
+
+      top: -105px;
+      right: -80px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(11,154,183,.18);
+    }
+
+    .stat-card small {
+      display: block;
+
+      margin-bottom: 21px;
+
+      color: #77818b;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .1em;
+    }
+
+    .stat-card.primary small {
+      color: #8e9aa5;
+    }
+
+    .stat-card strong {
+      display: block;
+
+      position: relative;
+
+      z-index: 1;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          45px
+        );
+
+      letter-spacing: -.045em;
+    }
+
+    .stat-card span {
+      display: block;
+
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .stat-card.primary span {
+      color: #8d99a5;
+    }
+
+    /* ================================
+       ACTIVITY
+       ================================ */
+
+    .activity-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.5fr)
+        minmax(260px,.5fr);
+
+      gap: 16px;
+    }
+
+    .transactions {
+      overflow: hidden;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 18px;
+    }
+
+    .transactions-head {
+      padding:
+        19px 20px;
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .transactions-head h3 {
+      margin: 0;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 17px;
+    }
+
+    .transactions-head span {
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .transaction-list {
+      min-height: 190px;
+    }
+
+    .empty {
+      min-height: 190px;
+
+      padding: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      color: #8a939c;
+
+      font-size: 13px;
+
+      line-height: 1.55;
+    }
+
+    .transaction {
+      padding:
+        17px 20px;
+
+      border-bottom:
+        1px solid
+        #edf0f2;
+
+      display: grid;
+
+      grid-template-columns:
+        44px 1fr auto;
+
+      align-items: center;
+
+      gap: 14px;
+
+      animation:
+        transactionIn
+        .45s ease;
+    }
+
+    .transaction:last-child {
+      border-bottom: 0;
+    }
+
+    @keyframes transactionIn {
+
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+
+    }
+
+    .transaction-icon {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: var(--green-soft);
+
+      color: var(--green);
+
+      font-weight: 800;
+    }
+
+    .transaction-copy strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-size: 13px;
+    }
+
+    .transaction-copy span {
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .transaction-amount {
+      text-align: right;
+    }
+
+    .transaction-amount strong {
+      display: block;
+
+      color: var(--green);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 15px;
+    }
+
+    .transaction-amount small {
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--green);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .08em;
+    }
+
+    /* ================================
+       HOW IT COULD WORK
+       ================================ */
+
+    .system-card {
+      padding: 21px;
+
+      border-radius: 18px;
+
+      background:
+        #090d13;
+
+      color: white;
+    }
+
+    .system-card > small {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #6edff1;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+    }
+
+    .system-card h3 {
+      margin:
+        0 0 18px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 18px;
+
+      letter-spacing: -.025em;
+    }
+
+    .system-item {
+      padding:
+        13px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .system-tick {
+      width: 24px;
+      height: 24px;
+
+      flex-shrink: 0;
+
+      border-radius: 8px;
+
+      display: grid;
+      place-items: center;
+
+      background:
+        rgba(53,212,119,.12);
+
+      color: #51dc88;
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .system-item span {
+      color: #b4bdc6;
+
+      font-size: 12px;
+
+      line-height: 1.4;
+    }
+
+    /* ================================
+       PAYMENT OVERLAY
+       ================================ */
+
+    .payment-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 100;
+
+      padding: 20px;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        rgba(4,8,13,.57);
+
+      backdrop-filter:
+        blur(10px);
+    }
+
+    .payment-overlay.is-active {
+      display: flex;
+    }
+
+    .payment-modal {
+      width:
+        min(
+          450px,
+          100%
+        );
+
+      padding: 33px;
+
+      border-radius: 24px;
+
+      background: white;
+
+      text-align: center;
+
+      box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.25);
+
+      animation:
+        modalIn
+        .3s ease;
+    }
+
+    @keyframes modalIn {
+
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(8px)
+          scale(.97);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+      }
+
+    }
+
+    .payment-spinner {
+      width: 58px;
+      height: 58px;
+
+      margin:
+        0 auto 20px;
+
+      border:
+        5px solid
+        #e5e9ed;
+
+      border-top-color:
+        var(--accent);
+
+      border-radius: 50%;
+
+      animation:
+        spin .75s
+        linear
+        infinite;
+    }
+
+    @keyframes spin {
+
+      to {
+        transform:
+          rotate(360deg);
+      }
+
+    }
+
+    .payment-modal small {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+    }
+
+    .payment-modal h3 {
+      margin:
+        0 0 8px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 27px;
+
+      letter-spacing: -.035em;
+    }
+
+    .payment-modal p {
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.55;
+    }
+
+    /* ================================
+       PAID NOTIFICATION
+       ================================ */
+
+    .payment-toast {
+      position: fixed;
+
+      top: 22px;
+      right: 22px;
+
+      z-index: 200;
+
+      width:
+        min(
+          390px,
+          calc(100% - 32px)
+        );
+
+      padding: 18px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.10);
+
+      border-radius: 18px;
+
+      background: #090d13;
+
+      color: white;
+
+      box-shadow:
+        0 24px 70px
+        rgba(0,0,0,.30);
+
+      display: flex;
+      align-items: flex-start;
+
+      gap: 14px;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform:
+        translateY(-22px);
+
+      transition:
+        opacity .35s ease,
+        transform .35s ease;
+    }
+
+    .payment-toast.is-visible {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    .toast-icon {
+      width: 42px;
+      height: 42px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: #173e29;
+
+      color: #55de8b;
+
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .toast-copy {
+      flex: 1;
+    }
+
+    .toast-copy small {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #88949f;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .1em;
+    }
+
+    .toast-copy strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 16px;
+    }
+
+    .toast-copy span {
+      color: #adb7c0;
+
+      font-size: 11px;
+    }
+
+    /* ================================
+       PAYMENT SUCCESS STRIP
+       ================================ */
+
+    .success-strip {
+      display: none;
+
+      margin-top: 20px;
+
+      padding: 18px 20px;
+
+      border:
+        1px solid
+        #b8e7c8;
+
+      border-radius: 16px;
+
+      background: var(--green-soft);
+    }
+
+    .success-strip.is-visible {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      animation:
+        transactionIn
+        .4s ease;
+    }
+
+    .success-strip small {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: var(--green);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .11em;
+    }
+
+    .success-strip strong {
+      display: block;
+
+      color: #155c36;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+    }
+
+    .success-strip p {
+      margin:
+        4px 0 0;
+
+      color: #397555;
+
+      font-size: 12px;
+    }
+
+    /* ================================
+       CTA
+       ================================ */
+
+    .site-cta {
+      margin-top: 38px;
+
+      padding: 32px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #090d13,
+          #151f2b
+        );
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .site-cta small {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #7ee8f9;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+    }
+
+    .site-cta h2 {
+      margin:
+        0 0 7px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 28px;
+
+      letter-spacing: -.035em;
+    }
+
+    .site-cta p {
+      max-width: 680px;
+
+      margin: 0;
+
+      color: #aab4be;
+
+      line-height: 1.55;
+    }
+
+    .site-cta .button {
+      flex-shrink: 0;
+
+      background: white;
+
+      color: #090c11;
+    }
+
+    /* ================================
+       MOBILE
+       ================================ */
+
+    @media(max-width:900px) {
+
+      .intro {
+        grid-template-columns:
+          1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .stat-card.primary {
+        grid-column:
+          1 / -1;
+      }
+
+      .activity-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+    @media(max-width:650px) {
+
+      .topbar-inner {
+        min-height: 68px;
+      }
+
+      .demo-pill {
+        font-size: 10px;
+      }
+
+      .page {
+        width:
+          min(
+            100% - 20px,
+            1180px
+          );
+
+        padding-top: 38px;
+      }
+
+      .intro h1 {
+        font-size: 42px;
+      }
+
+      .dashboard-nav {
+        padding:
+          0 18px;
+      }
+
+      .payments-online {
+        display: none;
+      }
+
+      .dashboard-body {
+        padding: 22px;
+      }
+
+      .dashboard-heading {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .dashboard-heading .button {
+        width: 100%;
+      }
+
+      .stats-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+      .stat-card.primary {
+        grid-column: auto;
+      }
+
+      .transaction {
+        grid-template-columns:
+          40px 1fr auto;
+
+        padding:
+          15px 14px;
+      }
+
+      .transaction-copy span {
+        font-size: 10px;
+      }
+
+      .success-strip.is-visible {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .success-strip .button {
+        width: 100%;
+      }
+
+      .site-cta {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .site-cta .button {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="topbar-inner">
+
+      <a
+        class="brand"
+        href="index.html"
+      >
+
+        <span class="brand-mark">
+          E
+        </span>
+
+        <span class="brand-copy">
+
+          <strong>
+            ELERO
+          </strong>
+
+          <small>
+            STUDIO
+          </small>
+
+        </span>
+
+      </a>
+
+      <div class="demo-pill">
+
+        <i></i>
+
+        INTERACTIVE DEMO
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="page">
+
+    <section class="intro">
+
+      <div>
+
+        <div class="eyebrow">
+
+          <i></i>
+
+          PAYMENT INTEGRATION DEMO
+
+        </div>
+
+        <h1>
+
+          See what getting
+
+          <span>
+            paid online
+          </span>
+
+          could feel like.
+
+        </h1>
+
+      </div>
+
+      <div class="intro-side">
+
+        <strong>
+          You're the business owner.
+        </strong>
+
+        Press the button below and simulate a
+        customer paying through your website.
+        Watch the payment arrive in your dashboard
+        in real time.
+
+      </div>
+
+    </section>
+
+    <div class="demo-notice">
+
+      <strong>
+        Demo mode:
+      </strong>
+
+      Everything below is simulated.
+      No real payment is processed and
+      no financial information is used.
+
+    </div>
+
+    <section class="dashboard">
+
+      <!-- DASHBOARD HEADER -->
+
+      <div class="dashboard-nav">
+
+        <div class="business-brand">
+
+          <span class="business-avatar">
+            Y
+          </span>
+
+          <div>
+
+            <strong>
+              Your Business
+            </strong>
+
+            <small>
+              PAYMENT DASHBOARD
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="payments-online">
+
+          <i></i>
+
+          Online payments active
+
+        </div>
+
+      </div>
+
+      <!-- DASHBOARD BODY -->
+
+      <div class="dashboard-body">
+
+        <div class="dashboard-heading">
+
+          <div>
+
+            <small>
+              BUSINESS OVERVIEW
+            </small>
+
+            <h2>
+              Good evening.
+            </h2>
+
+            <p>
+              Here's what's happened
+              with your online payments today.
+            </p>
+
+          </div>
+
+          <button
+            class="
+              button
+              button-accent
+            "
+            id="simulatePayment"
+            type="button"
+          >
+
+            Simulate customer payment
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+          <article class="stat-card primary">
+
+            <small>
+              TODAY'S REVENUE
+            </small>
+
+            <strong id="todayRevenue">
+              £0.00
+            </strong>
+
+            <span>
+              Received through your website
+            </span>
+
+          </article>
+
+          <article class="stat-card">
+
+            <small>
+              PAYMENTS
+            </small>
+
+            <strong id="paymentCount">
+              0
+            </strong>
+
+            <span>
+              Successful today
+            </span>
+
+          </article>
+
+          <article class="stat-card">
+
+            <small>
+              PAYMENT SUCCESS
+            </small>
+
+            <strong id="successRate">
+              —
+            </strong>
+
+            <span>
+              Successful transactions
+            </span>
+
+          </article>
+
+        </div>
+
+        <!-- MAIN ACTIVITY -->
+
+        <div class="activity-grid">
+
+          <section class="transactions">
+
+            <div class="transactions-head">
+
+              <h3>
+                Recent payments
+              </h3>
+
+              <span>
+                Today
+              </span>
+
+            </div>
+
+            <div
+              class="transaction-list"
+              id="transactionList"
+            >
+
+              <div
+                class="empty"
+                id="emptyTransactions"
+              >
+
+                No payments yet.
+
+                <br>
+
+                Simulate a customer payment
+                to see the dashboard come to life.
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <aside class="system-card">
+
+            <small>
+              YOUR WEBSITE COULD
+            </small>
+
+            <h3>
+              Handle more of the process.
+            </h3>
+
+            <div class="system-item">
+
+              <span class="system-tick">
+                ✓
+              </span>
+
+              <span>
+                Take secure customer payments
+              </span>
+
+            </div>
+
+            <div class="system-item">
+
+              <span class="system-tick">
+                ✓
+              </span>
+
+              <span>
+                Record successful transactions
+              </span>
+
+            </div>
+
+            <div class="system-item">
+
+              <span class="system-tick">
+                ✓
+              </span>
+
+              <span>
+                Send automatic confirmations
+              </span>
+
+            </div>
+
+            <div class="system-item">
+
+              <span class="system-tick">
+                ✓
+              </span>
+
+              <span>
+                Connect payments to bookings
+              </span>
+
+            </div>
+
+            <div class="system-item">
+
+              <span class="system-tick">
+                ✓
+              </span>
+
+              <span>
+                Connect payments to invoices
+              </span>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+        <!-- AFTER FIRST PAYMENT -->
+
+        <div
+          class="success-strip"
+          id="successStrip"
+        >
+
+          <div>
+
+            <small>
+              PAYMENT RECEIVED
+            </small>
+
+            <strong>
+              Nice, wasn't it?
+            </strong>
+
+            <p>
+              Try another customer and
+              watch today's revenue increase.
+            </p>
+
+          </div>
+
+          <button
+            class="
+              button
+              button-dark
+            "
+            id="anotherPayment"
+            type="button"
+          >
+            Simulate another payment
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="site-cta">
+
+      <div>
+
+        <small>
+          IMAGINE IF THAT WASN'T A DEMO
+        </small>
+
+        <h2>
+          Let your website take the payment.
+        </h2>
+
+        <p>
+          We can integrate secure online payments
+          for deposits, invoices, bookings,
+          services and online purchases —
+          built around how your business actually works.
+        </p>
+
+      </div>
+
+      <a
+        class="button"
+        href="index.html#contact"
+      >
+
+        Talk to Elero
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- PAYMENT PROCESSING SCREEN -->
+
+  <div
+    class="payment-overlay"
+    id="paymentOverlay"
+  >
+
+    <div class="payment-modal">
+
+      <div class="payment-spinner"></div>
+
+      <small id="paymentStageLabel">
+        CUSTOMER PAYMENT
+      </small>
+
+      <h3 id="paymentStageHeading">
+        Customer is paying…
+      </h3>
+
+      <p id="paymentStageText">
+        Securely processing a £250.00 website payment.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- PAYMENT RECEIVED NOTIFICATION -->
+
+  <div
+    class="payment-toast"
+    id="paymentToast"
+  >
+
+    <div class="toast-icon">
+      £
+    </div>
+
+    <div class="toast-copy">
+
+      <small>
+        YOUR BUSINESS
+      </small>
+
+      <strong id="toastAmount">
+        You've been paid £250.00
+      </strong>
+
+      <span id="toastDescription">
+        Customer payment · Successful
+      </span>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const state = {
+      totalRevenue: 0,
+      paymentCount: 0,
+      firstPayment: true
+    };
+
+    const customers = [
+      "Sarah Williams",
+      "James Morgan",
+      "Emma Lewis",
+      "Daniel Evans",
+      "Sophie Davies",
+      "Oliver Thomas",
+      "Charlotte Jones",
+      "Alex Roberts"
+    ];
+
+    const payments = [
+      {
+        description: "Website deposit",
+        amount: 250
+      },
+      {
+        description: "Customer invoice",
+        amount: 425
+      },
+      {
+        description: "Booking deposit",
+        amount: 75
+      },
+      {
+        description: "Service payment",
+        amount: 195
+      },
+      {
+        description: "Online order",
+        amount: 120
+      },
+      {
+        description: "Consultation",
+        amount: 150
+      },
+      {
+        description: "Invoice payment",
+        amount: 550
+      },
+      {
+        description: "Customer deposit",
+        amount: 300
+      }
+    ];
+
+    const overlay =
+      document.getElementById(
+        "paymentOverlay"
+      );
+
+    const toast =
+      document.getElementById(
+        "paymentToast"
+      );
+
+    const simulateButton =
+      document.getElementById(
+        "simulatePayment"
+      );
+
+    const anotherButton =
+      document.getElementById(
+        "anotherPayment"
+      );
+
+    simulateButton.addEventListener(
+      "click",
+      () => {
+
+        if (
+          state.firstPayment
+        ) {
+
+          state.firstPayment =
+            false;
+
+          simulatePayment({
+            description:
+              "Website deposit",
+
+            amount:
+              250
+          });
+
+        } else {
+
+          simulateRandomPayment();
+
+        }
+
+      }
+    );
+
+    anotherButton.addEventListener(
+      "click",
+      () => {
+
+        simulateRandomPayment();
+
+      }
+    );
+
+    function simulateRandomPayment() {
+
+      const payment =
+        payments[
+          Math.floor(
+            Math.random() *
+            payments.length
+          )
+        ];
+
+      simulatePayment(
+        payment
+      );
+
+    }
+
+    function simulatePayment(
+      payment
+    ) {
+
+      simulateButton.disabled =
+        true;
+
+      anotherButton.disabled =
+        true;
+
+      document
+        .getElementById(
+          "paymentStageLabel"
+        )
+        .textContent =
+        "CUSTOMER PAYMENT";
+
+      document
+        .getElementById(
+          "paymentStageHeading"
+        )
+        .textContent =
+        "Customer is paying…";
+
+      document
+        .getElementById(
+          "paymentStageText"
+        )
+        .textContent =
+        `Securely processing £${money(payment.amount)}.`;
+
+      overlay
+        .classList
+        .add(
+          "is-active"
+        );
+
+      setTimeout(
+        () => {
+
+          document
+            .getElementById(
+              "paymentStageLabel"
+            )
+            .textContent =
+            "PAYMENT AUTHORISED";
+
+          document
+            .getElementById(
+              "paymentStageHeading"
+            )
+            .textContent =
+            "Payment approved.";
+
+          document
+            .getElementById(
+              "paymentStageText"
+            )
+            .textContent =
+            "Updating your business dashboard…";
+
+        },
+        900
+      );
+
+      setTimeout(
+        () => {
+
+          overlay
+            .classList
+            .remove(
+              "is-active"
+            );
+
+          receivePayment(
+            payment
+          );
+
+          simulateButton.disabled =
+            false;
+
+          anotherButton.disabled =
+            false;
+
+        },
+        1750
+      );
+
+    }
+
+    function receivePayment(
+      payment
+    ) {
+
+      const previous =
+        state.totalRevenue;
+
+      state.totalRevenue +=
+        payment.amount;
+
+      state.paymentCount +=
+        1;
+
+      animateMoney(
+        previous,
+        state.totalRevenue
+      );
+
+      document
+        .getElementById(
+          "paymentCount"
+        )
+        .textContent =
+        state.paymentCount;
+
+      document
+        .getElementById(
+          "successRate"
+        )
+        .textContent =
+        "100%";
+
+      const customer =
+        customers[
+          Math.floor(
+            Math.random() *
+            customers.length
+          )
+        ];
+
+      addTransaction(
+        customer,
+        payment.description,
+        payment.amount
+      );
+
+      showNotification(
+        payment.description,
+        payment.amount
+      );
+
+      document
+        .getElementById(
+          "successStrip"
+        )
+        .classList
+        .add(
+          "is-visible"
+        );
+
+      simulateButton.innerHTML =
+        `
+          Simulate another customer
+          <span>→</span>
+        `;
+
+    }
+
+    function animateMoney(
+      from,
+      to
+    ) {
+
+      const element =
+        document.getElementById(
+          "todayRevenue"
+        );
+
+      const start =
+        performance.now();
+
+      const duration =
+        750;
+
+      function update(
+        time
+      ) {
+
+        const progress =
+          Math.min(
+            (
+              time -
+              start
+            ) /
+            duration,
+            1
+          );
+
+        const eased =
+          1 -
+          Math.pow(
+            1 - progress,
+            3
+          );
+
+        const value =
+          from +
+          (
+            to -
+            from
+          ) *
+          eased;
+
+        element.textContent =
+          `£${money(value)}`;
+
+        if (
+          progress <
+          1
+        ) {
+
+          requestAnimationFrame(
+            update
+          );
+
+        }
+
+      }
+
+      requestAnimationFrame(
+        update
+      );
+
+    }
+
+    function addTransaction(
+      customer,
+      description,
+      amount
+    ) {
+
+      const list =
+        document.getElementById(
+          "transactionList"
+        );
+
+      const empty =
+        document.getElementById(
+          "emptyTransactions"
+        );
+
+      if (empty) {
+        empty.remove();
+      }
+
+      const now =
+        new Date();
+
+      const time =
+        now.toLocaleTimeString(
+          "en-GB",
+          {
+            hour:
+              "2-digit",
+
+            minute:
+              "2-digit"
+          }
+        );
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+      row.className =
+        "transaction";
+
+      row.innerHTML =
+        `
+          <div class="transaction-icon">
+            ✓
+          </div>
+
+          <div class="transaction-copy">
+
+            <strong>
+              ${escapeHTML(description)}
+            </strong>
+
+            <span>
+              ${escapeHTML(customer)}
+              · ${time}
+            </span>
+
+          </div>
+
+          <div class="transaction-amount">
+
+            <strong>
+              +£${money(amount)}
+            </strong>
+
+            <small>
+              PAID
+            </small>
+
+          </div>
+        `;
+
+      list.prepend(
+        row
+      );
+
+    }
+
+    function showNotification(
+      description,
+      amount
+    ) {
+
+      document
+        .getElementById(
+          "toastAmount"
+        )
+        .textContent =
+        `You've been paid £${money(amount)}`;
+
+      document
+        .getElementById(
+          "toastDescription"
+        )
+        .textContent =
+        `${description} · Payment successful`;
+
+      toast
+        .classList
+        .add(
+          "is-visible"
+        );
+
+      setTimeout(
+        () => {
+
+          toast
+            .classList
+            .remove(
+              "is-visible"
+            );
+
+        },
+        4200
+      );
+
+    }
+
+    function money(
+      value
+    ) {
+
+      return Number(
+        value
+      )
+        .toLocaleString(
+          "en-GB",
+          {
+            minimumFractionDigits:
+              2,
+
+            maximumFractionDigits:
+              2
+          }
+        );
+
+    }
+
+    function escapeHTML(
+      value
+    ) {
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+      div.textContent =
+        String(
+          value
+        );
+
+      return div.innerHTML;
+
+    }
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,4929 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="robots"
+    content="noindex,nofollow"
+  >
+
+  <title>Booking System Demo | Elero Studio</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+
+      --bg: #f4f6f8;
+
+      --surface: #ffffff;
+
+      --surface-soft: #f8fafc;
+
+      --ink: #0a0d12;
+
+      --muted: #68717d;
+
+      --line: #dde3e8;
+
+      --accent: #0b9ab7;
+
+      --accent-soft: #eefdff;
+
+      --accent-border: #6dd7e9;
+
+      --green: #15803d;
+
+      --shadow:
+        0 24px 70px
+        rgba(12, 18, 28, .10);
+
+      --radius: 24px;
+
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 10% 8%,
+          color-mix(
+            in srgb,
+            var(--accent) 14%,
+            transparent
+          ),
+          transparent 29%
+        ),
+        radial-gradient(
+          circle at 90% 18%,
+          rgba(21, 112, 239, .08),
+          transparent 25%
+        ),
+        var(--bg);
+
+      color: var(--ink);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+
+      font: inherit;
+
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+    .topbar {
+
+      background: #090c11;
+
+      color: white;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    }
+
+    .topbar-inner {
+
+      width:
+        min(
+          1180px,
+          calc(100% - 32px)
+        );
+
+      margin: 0 auto;
+
+      min-height: 76px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+    }
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+    .brand-mark {
+
+      width: 38px;
+
+      height: 38px;
+
+      border-radius: 11px;
+
+      display: grid;
+
+      place-items: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #4fe6ff,
+          #4b8dff
+        );
+
+      color: #051014;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-weight: 800;
+
+    }
+
+    .brand-copy {
+
+      display: flex;
+
+      flex-direction: column;
+
+      line-height: 1;
+
+    }
+
+    .brand-copy strong {
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 14px;
+
+      letter-spacing: .16em;
+
+    }
+
+    .brand-copy small {
+
+      margin-top: 5px;
+
+      font-size: 9px;
+
+      letter-spacing: .23em;
+
+      color: #9da7b2;
+
+    }
+
+    .demo-pill {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 9px 13px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 999px;
+
+      font-size: 12px;
+
+      color: #dce4eb;
+
+    }
+
+    .demo-pill i {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #4fe6ff;
+
+      box-shadow:
+        0 0 18px
+        #4fe6ff;
+
+    }
+
+    .page {
+
+      width:
+        min(
+          1180px,
+          calc(100% - 32px)
+        );
+
+      margin: 0 auto;
+
+      padding:
+        64px 0 90px;
+
+    }
+
+    /* ========================================
+       INTRO
+       ======================================== */
+
+    .intro {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(280px, .85fr);
+
+      align-items: end;
+
+      gap: 36px;
+
+      margin-bottom: 36px;
+
+    }
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      margin-bottom: 15px;
+
+      color: var(--accent);
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: .13em;
+
+    }
+
+    .eyebrow i {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+
+    }
+
+    .intro h1 {
+
+      margin: 0;
+
+      max-width: 780px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          40px,
+          6vw,
+          72px
+        );
+
+      line-height: .98;
+
+      letter-spacing: -.055em;
+
+    }
+
+    .intro h1 span {
+
+      color: var(--accent);
+
+    }
+
+    .intro-side {
+
+      color: var(--muted);
+
+      line-height: 1.65;
+
+      font-size: 15px;
+
+    }
+
+    .intro-side strong {
+
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--ink);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 18px;
+
+    }
+
+    /* ========================================
+       CUSTOMISER
+       ======================================== */
+
+    .customiser {
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(11,18,28,.08);
+
+      border-radius: 28px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 30px;
+
+    }
+
+    .customiser-top {
+
+      padding: 34px 36px 26px;
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      gap: 30px;
+
+      align-items: flex-start;
+
+    }
+
+    .customiser-top small {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--accent);
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+    }
+
+    .customiser-top h2 {
+
+      margin: 0 0 8px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          26px,
+          4vw,
+          38px
+        );
+
+      letter-spacing: -.04em;
+
+    }
+
+    .customiser-top p {
+
+      max-width: 660px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.55;
+
+    }
+
+    .play-badge {
+
+      padding: 9px 13px;
+
+      border-radius: 999px;
+
+      background: #f0fbfd;
+
+      border:
+        1px solid
+        #c6edf4;
+
+      color: #08748b;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      white-space: nowrap;
+
+    }
+
+    .customiser-body {
+
+      padding: 32px 36px 36px;
+
+    }
+
+    .config-section {
+
+      margin-bottom: 30px;
+
+    }
+
+    .config-label {
+
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: #59636d;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      letter-spacing: .1em;
+
+      text-transform: uppercase;
+
+    }
+
+    .business-name-input {
+
+      width: 100%;
+
+      max-width: 540px;
+
+      padding: 15px 16px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 13px;
+
+      outline: none;
+
+      color: var(--ink);
+
+      font-size: 16px;
+
+    }
+
+    .business-name-input:focus {
+
+      border-color:
+        var(--accent);
+
+      box-shadow:
+        0 0 0 4px
+        color-mix(
+          in srgb,
+          var(--accent) 14%,
+          transparent
+        );
+
+    }
+
+    .business-types {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 12px;
+
+    }
+
+    .business-type {
+
+      min-height: 118px;
+
+      padding: 18px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 16px;
+
+      background: white;
+
+      text-align: left;
+
+      transition: .18s ease;
+
+    }
+
+    .business-type:hover {
+
+      transform:
+        translateY(-2px);
+
+      border-color:
+        var(--accent-border);
+
+    }
+
+    .business-type.is-selected {
+
+      background:
+        var(--accent-soft);
+
+      border-color:
+        var(--accent);
+
+      box-shadow:
+        0 0 0 3px
+        color-mix(
+          in srgb,
+          var(--accent) 12%,
+          transparent
+        );
+
+    }
+
+    .business-icon {
+
+      width: 36px;
+
+      height: 36px;
+
+      margin-bottom: 14px;
+
+      border-radius: 10px;
+
+      display: grid;
+
+      place-items: center;
+
+      background: #f2f5f7;
+
+      font-size: 17px;
+
+    }
+
+    .business-type.is-selected
+    .business-icon {
+
+      background: white;
+
+    }
+
+    .business-type strong {
+
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 14px;
+
+    }
+
+    .business-type small {
+
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.4;
+
+    }
+
+    .colour-options {
+
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+    }
+
+    .colour-button {
+
+      width: 48px;
+
+      height: 48px;
+
+      border-radius: 50%;
+
+      border:
+        4px solid white;
+
+      box-shadow:
+        0 0 0 1px
+        #d8dee4;
+
+      transition: .18s ease;
+
+    }
+
+    .colour-button:hover {
+
+      transform:
+        scale(1.08);
+
+    }
+
+    .colour-button.is-selected {
+
+      box-shadow:
+        0 0 0 3px
+        var(--ink);
+
+    }
+
+    .colour-cyan {
+      background: #0b9ab7;
+    }
+
+    .colour-blue {
+      background: #2563eb;
+    }
+
+    .colour-green {
+      background: #16835b;
+    }
+
+    .colour-purple {
+      background: #7c3aed;
+    }
+
+    .colour-coral {
+      background: #e05b52;
+    }
+
+    .build-row {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+      padding-top: 6px;
+
+    }
+
+    .build-note {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.5;
+
+    }
+
+    .button {
+
+      min-height: 46px;
+
+      border:
+        1px solid
+        transparent;
+
+      border-radius: 12px;
+
+      padding: 0 18px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      font-weight: 700;
+
+      transition: .18s ease;
+
+    }
+
+    .button-primary {
+
+      background: #0a0e14;
+
+      color: white;
+
+    }
+
+    .button-primary:hover {
+
+      transform:
+        translateY(-1px);
+
+      background: #161c24;
+
+    }
+
+    .button-accent {
+
+      background:
+        var(--accent);
+
+      color: white;
+
+      min-width: 190px;
+
+    }
+
+    .button-accent:hover {
+
+      transform:
+        translateY(-2px);
+
+      filter:
+        brightness(.94);
+
+    }
+
+    .button-secondary {
+
+      border-color:
+        var(--line);
+
+      background: white;
+
+      color: #333c45;
+
+    }
+
+    .button-secondary:hover {
+
+      background: #f7f9fa;
+
+    }
+
+    /* ========================================
+       BUILD ANIMATION
+       ======================================== */
+
+    .build-screen {
+
+      display: none;
+
+      padding: 70px 30px;
+
+      text-align: center;
+
+    }
+
+    .build-screen.is-active {
+      display: block;
+    }
+
+    .builder-ring {
+
+      width: 62px;
+
+      height: 62px;
+
+      margin:
+        0 auto 22px;
+
+      border:
+        5px solid
+        #e7ebee;
+
+      border-top-color:
+        var(--accent);
+
+      border-radius: 50%;
+
+      animation:
+        spin .8s
+        linear
+        infinite;
+
+    }
+
+    @keyframes spin {
+
+      to {
+        transform:
+          rotate(360deg);
+      }
+
+    }
+
+    .build-screen small {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color:
+        var(--accent);
+
+      font-weight: 800;
+
+      letter-spacing: .13em;
+
+      font-size: 10px;
+
+    }
+
+    .build-screen h3 {
+
+      margin: 0 0 9px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 30px;
+
+      letter-spacing: -.035em;
+
+    }
+
+    .build-screen p {
+
+      margin: 0;
+
+      color: var(--muted);
+
+    }
+
+    /* ========================================
+       DEMO
+       ======================================== */
+
+    .demo-area {
+
+      display: none;
+
+    }
+
+    .demo-area.is-active {
+
+      display: block;
+
+      animation:
+        revealDemo
+        .55s ease;
+
+    }
+
+    @keyframes revealDemo {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(14px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+    .demo-toolbar {
+
+      margin-bottom: 14px;
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+      gap: 15px;
+
+    }
+
+    .demo-toolbar span {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+    }
+
+    .customise-again {
+
+      border: 0;
+
+      background: transparent;
+
+      color: var(--accent);
+
+      font-weight: 700;
+
+      font-size: 12px;
+
+    }
+
+    .customise-again:hover {
+
+      text-decoration:
+        underline;
+
+    }
+
+    .demo-notice {
+
+      margin-bottom: 20px;
+
+      padding: 14px 18px;
+
+      border:
+        1px solid
+        color-mix(
+          in srgb,
+          var(--accent) 30%,
+          white
+        );
+
+      border-radius: 14px;
+
+      background:
+        color-mix(
+          in srgb,
+          var(--accent) 7%,
+          white
+        );
+
+      color:
+        color-mix(
+          in srgb,
+          var(--accent) 75%,
+          black
+        );
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+    }
+
+    .booking-shell {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        360px;
+
+      min-height: 650px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(11,18,28,.08);
+
+      border-radius: 28px;
+
+      background:
+        var(--surface);
+
+      box-shadow:
+        var(--shadow);
+
+    }
+
+    .booking-main {
+
+      padding: 36px;
+
+    }
+
+    .booking-summary {
+
+      padding: 34px;
+
+      background: #090d13;
+
+      color: white;
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+    .booking-summary::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+
+      height: 260px;
+
+      border-radius: 50%;
+
+      background:
+        color-mix(
+          in srgb,
+          var(--accent) 28%,
+          transparent
+        );
+
+      filter: blur(18px);
+
+      top: -100px;
+
+      right: -110px;
+
+    }
+
+    .venue-heading {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+      padding-bottom: 26px;
+
+      margin-bottom: 28px;
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+    }
+
+    .venue-heading small {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      color:
+        var(--accent);
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+    }
+
+    .venue-heading h2 {
+
+      margin: 0 0 5px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 25px;
+
+      letter-spacing: -.025em;
+
+    }
+
+    .venue-heading p {
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+    }
+
+    .availability {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 8px 11px;
+
+      border:
+        1px solid
+        #b7ebc7;
+
+      border-radius: 999px;
+
+      background: #effdf4;
+
+      color: var(--green);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      white-space: nowrap;
+
+    }
+
+    .availability i {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #22c55e;
+
+    }
+
+    /* ========================================
+       STEPS
+       ======================================== */
+
+    .stepper {
+
+      display: flex;
+
+      align-items: center;
+
+      margin-bottom: 34px;
+
+    }
+
+    .step {
+
+      flex: 1;
+
+      position: relative;
+
+      text-align: center;
+
+    }
+
+    .step:not(:last-child)::after {
+
+      content: "";
+
+      position: absolute;
+
+      top: 15px;
+
+      left:
+        calc(50% + 20px);
+
+      right:
+        calc(-50% + 20px);
+
+      height: 2px;
+
+      background: #e5e9ed;
+
+      z-index: 0;
+
+    }
+
+    .step.is-complete:not(:last-child)::after {
+
+      background:
+        var(--accent);
+
+    }
+
+    .step-circle {
+
+      width: 32px;
+
+      height: 32px;
+
+      margin:
+        0 auto 8px;
+
+      border:
+        1px solid
+        #d9e0e6;
+
+      border-radius: 50%;
+
+      background: white;
+
+      color: #929aa3;
+
+      display: grid;
+
+      place-items: center;
+
+      position: relative;
+
+      z-index: 1;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+    }
+
+    .step.is-active
+    .step-circle {
+
+      border-color:
+        var(--accent-border);
+
+      background:
+        var(--accent-soft);
+
+      color:
+        var(--accent);
+
+    }
+
+    .step.is-complete
+    .step-circle {
+
+      border-color:
+        var(--accent);
+
+      background:
+        var(--accent);
+
+      color: white;
+
+    }
+
+    .step span:last-child {
+
+      color: #8a929a;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+    }
+
+    .step.is-active
+    span:last-child,
+
+    .step.is-complete
+    span:last-child {
+
+      color:
+        var(--ink);
+
+    }
+
+    /* ========================================
+       PANELS
+       ======================================== */
+
+    .panel {
+      display: none;
+    }
+
+    .panel.is-active {
+
+      display: block;
+
+      animation:
+        fadeIn
+        .22s ease;
+
+    }
+
+    @keyframes fadeIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(6px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+    .panel-heading {
+
+      margin-bottom: 24px;
+
+    }
+
+    .panel-heading small {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      color:
+        var(--accent);
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .12em;
+
+    }
+
+    .panel-heading h3 {
+
+      margin: 0 0 8px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 27px;
+
+      letter-spacing: -.03em;
+
+    }
+
+    .panel-heading p {
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.55;
+
+    }
+
+    .field-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 14px;
+
+    }
+
+    label {
+      display: block;
+    }
+
+    .field-label {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      color: #39424c;
+
+    }
+
+    input,
+    select,
+    textarea {
+
+      width: 100%;
+
+      outline: none;
+
+      border:
+        1px solid
+        #dce2e7;
+
+      border-radius: 12px;
+
+      background: white;
+
+      color:
+        var(--ink);
+
+      padding:
+        13px 14px;
+
+      transition: .18s ease;
+
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+
+      border-color:
+        var(--accent);
+
+      box-shadow:
+        0 0 0 4px
+        color-mix(
+          in srgb,
+          var(--accent) 12%,
+          transparent
+        );
+
+    }
+
+    textarea {
+
+      resize: vertical;
+
+      min-height: 105px;
+
+    }
+
+    .date-strip {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap: 10px;
+
+      margin-bottom: 28px;
+
+    }
+
+    .date-button {
+
+      padding: 13px 8px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 14px;
+
+      background: white;
+
+      color:
+        var(--ink);
+
+      transition: .18s ease;
+
+    }
+
+    .date-button:hover {
+
+      border-color:
+        var(--accent-border);
+
+      transform:
+        translateY(-1px);
+
+    }
+
+    .date-button.is-selected {
+
+      border-color:
+        var(--accent);
+
+      background:
+        var(--accent-soft);
+
+      box-shadow:
+        0 0 0 3px
+        color-mix(
+          in srgb,
+          var(--accent) 10%,
+          transparent
+        );
+
+    }
+
+    .date-button small {
+
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #7e8790;
+
+      font-size: 10px;
+
+      text-transform:
+        uppercase;
+
+    }
+
+    .date-button strong {
+
+      display: block;
+
+      font-size: 17px;
+
+    }
+
+    .section-label {
+
+      margin-bottom: 12px;
+
+      color: #66707a;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      letter-spacing: .1em;
+
+      text-transform:
+        uppercase;
+
+    }
+
+    .time-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 10px;
+
+    }
+
+    .time-button {
+
+      padding: 12px 8px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 12px;
+
+      background: white;
+
+      color: #27313a;
+
+      font-weight: 700;
+
+      transition: .18s ease;
+
+    }
+
+    .time-button:hover:not(:disabled) {
+
+      border-color:
+        var(--accent-border);
+
+      transform:
+        translateY(-1px);
+
+    }
+
+    .time-button.is-selected {
+
+      border-color:
+        var(--accent);
+
+      background:
+        var(--accent);
+
+      color: white;
+
+    }
+
+    .time-button:disabled {
+
+      background: #f4f5f6;
+
+      color: #b5bbc1;
+
+      cursor: not-allowed;
+
+      text-decoration:
+        line-through;
+
+    }
+
+    .button-row {
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      gap: 12px;
+
+      margin-top: 30px;
+
+    }
+
+    .button-primary:disabled {
+
+      background: #bac0c6;
+
+      cursor: not-allowed;
+
+      transform: none;
+
+    }
+
+    /* ========================================
+       SUMMARY
+       ======================================== */
+
+    .summary-label {
+
+      position: relative;
+
+      z-index: 1;
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color:
+        color-mix(
+          in srgb,
+          var(--accent) 65%,
+          white
+        );
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+    }
+
+    .booking-summary h3 {
+
+      position: relative;
+
+      z-index: 1;
+
+      margin: 0 0 8px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 28px;
+
+      letter-spacing: -.04em;
+
+    }
+
+    .booking-summary > p {
+
+      position: relative;
+
+      z-index: 1;
+
+      margin: 0;
+
+      color: #aab3bc;
+
+      line-height: 1.55;
+
+      font-size: 13px;
+
+    }
+
+    .summary-card {
+
+      position: relative;
+
+      z-index: 1;
+
+      margin-top: 28px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(255,255,255,.11);
+
+      border-radius: 17px;
+
+      background:
+        rgba(255,255,255,.055);
+
+      backdrop-filter:
+        blur(12px);
+
+    }
+
+    .summary-row {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+      padding:
+        16px 17px;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    }
+
+    .summary-row:last-child {
+      border-bottom: 0;
+    }
+
+    .summary-row small {
+
+      color: #8e99a4;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .09em;
+
+    }
+
+    .summary-row strong {
+
+      max-width: 180px;
+
+      text-align: right;
+
+      font-size: 13px;
+
+      line-height: 1.4;
+
+    }
+
+    .powered-by {
+
+      position: relative;
+
+      z-index: 1;
+
+      margin-top: 28px;
+
+      padding-top: 23px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    }
+
+    .powered-by small {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #77818b;
+
+      font-size: 9px;
+
+      letter-spacing: .13em;
+
+    }
+
+    .powered-by strong {
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 13px;
+
+      letter-spacing: .08em;
+
+    }
+
+    /* ========================================
+       SUCCESS
+       ======================================== */
+
+    .confirmation {
+
+      text-align: center;
+
+      padding:
+        36px 10px 18px;
+
+    }
+
+    .confirmation-icon {
+
+      width: 72px;
+
+      height: 72px;
+
+      margin:
+        0 auto 21px;
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      background:
+        var(--accent-soft);
+
+      color:
+        var(--accent);
+
+      font-size: 29px;
+
+      font-weight: 800;
+
+      border:
+        1px solid
+        var(--accent-border);
+
+    }
+
+    .confirmation h3 {
+
+      margin: 0 0 10px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 32px;
+
+      letter-spacing: -.035em;
+
+    }
+
+    .confirmation p {
+
+      max-width: 500px;
+
+      margin:
+        0 auto 22px;
+
+      color:
+        var(--muted);
+
+      line-height: 1.6;
+
+    }
+
+    .reference {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding:
+        10px 14px;
+
+      margin-bottom: 26px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 999px;
+
+      background: #f8fafb;
+
+      font-size: 12px;
+
+    }
+
+    /* ========================================
+       CTA
+       ======================================== */
+
+    .site-cta {
+
+      margin-top: 40px;
+
+      padding: 32px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0a0d12,
+          #121b27
+        );
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 28px;
+
+    }
+
+    .site-cta small {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #7ee8f9;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .13em;
+
+    }
+
+    .site-cta h2 {
+
+      margin: 0 0 7px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 27px;
+
+      letter-spacing: -.03em;
+
+    }
+
+    .site-cta p {
+
+      margin: 0;
+
+      max-width: 660px;
+
+      color: #aeb7c0;
+
+      line-height: 1.55;
+
+    }
+
+    .site-cta .button {
+
+      flex-shrink: 0;
+
+      background: white;
+
+      color: #0a0d12;
+
+    }
+
+    /* ========================================
+       MOBILE
+       ======================================== */
+
+    @media(max-width:900px) {
+
+      .intro {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .business-types {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+      .booking-shell {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .booking-summary {
+
+        order: -1;
+
+      }
+
+      .summary-card {
+
+        display: grid;
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
+    }
+
+    @media(max-width:650px) {
+
+      .topbar-inner {
+        min-height: 68px;
+      }
+
+      .demo-pill {
+        font-size: 10px;
+      }
+
+      .page {
+
+        width:
+          min(
+            100% - 20px,
+            1180px
+          );
+
+        padding-top: 38px;
+
+      }
+
+      .intro h1 {
+        font-size: 42px;
+      }
+
+      .customiser-top {
+
+        padding: 25px 22px;
+
+        flex-direction: column;
+
+      }
+
+      .customiser-body {
+        padding: 25px 22px;
+      }
+
+      .business-types {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+      .business-type {
+
+        min-height: 110px;
+
+        padding: 14px;
+
+      }
+
+      .build-row {
+
+        align-items:
+          stretch;
+
+        flex-direction:
+          column;
+
+      }
+
+      .build-row .button {
+        width: 100%;
+      }
+
+      .booking-main,
+      .booking-summary {
+
+        padding: 23px;
+
+      }
+
+      .booking-shell {
+        border-radius: 20px;
+      }
+
+      .venue-heading {
+        flex-direction: column;
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .date-strip {
+
+        grid-template-columns:
+          repeat(3,1fr);
+
+      }
+
+      .date-button:nth-child(n+4) {
+        display: none;
+      }
+
+      .time-grid {
+
+        grid-template-columns:
+          repeat(3,1fr);
+
+      }
+
+      .step span:last-child {
+        font-size: 9px;
+      }
+
+      .summary-card {
+        grid-template-columns: 1fr;
+      }
+
+      .site-cta {
+
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
+      }
+
+      .site-cta .button {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="topbar-inner">
+
+      <a
+        class="brand"
+        href="index.html"
+      >
+
+        <span class="brand-mark">
+          E
+        </span>
+
+        <span class="brand-copy">
+
+          <strong>
+            ELERO
+          </strong>
+
+          <small>
+            STUDIO
+          </small>
+
+        </span>
+
+      </a>
+
+      <div class="demo-pill">
+
+        <i></i>
+
+        INTERACTIVE DEMO
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="page">
+
+    <section class="intro">
+
+      <div>
+
+        <div class="eyebrow">
+
+          <i></i>
+
+          LIVE BOOKING SYSTEM DEMO
+
+        </div>
+
+        <h1>
+
+          Don't just look at it.
+
+          <span>
+            Make it yours.
+          </span>
+
+        </h1>
+
+      </div>
+
+      <div class="intro-side">
+
+        <strong>
+          Build your own demo.
+        </strong>
+
+        Choose a business, give it a name
+        and pick a colour. We'll turn it into
+        a personalised booking experience
+        you can actually use.
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         CUSTOMISER
+         ===================================== -->
+
+    <section
+      class="customiser"
+      id="customiser"
+    >
+
+      <div
+        id="customiserContent"
+      >
+
+        <div class="customiser-top">
+
+          <div>
+
+            <small>
+              01 / MAKE IT YOURS
+            </small>
+
+            <h2>
+              Build your booking demo.
+            </h2>
+
+            <p>
+              A few quick choices and we'll
+              show you what a booking system
+              could feel like for your business.
+            </p>
+
+          </div>
+
+          <span class="play-badge">
+            Takes about 20 seconds
+          </span>
+
+        </div>
+
+        <div class="customiser-body">
+
+          <div class="config-section">
+
+            <span class="config-label">
+              What should we call your business?
+            </span>
+
+            <input
+              class="business-name-input"
+              id="businessName"
+              type="text"
+              maxlength="40"
+              placeholder="e.g. Bailey & Co"
+              value=""
+            >
+
+          </div>
+
+          <div class="config-section">
+
+            <span class="config-label">
+              What kind of business is it?
+            </span>
+
+            <div class="business-types">
+
+              <button
+                class="business-type is-selected"
+                type="button"
+                data-type="restaurant"
+              >
+
+                <span class="business-icon">
+                  🍴
+                </span>
+
+                <strong>
+                  Restaurant
+                </strong>
+
+                <small>
+                  Tables, guests and dining times
+                </small>
+
+              </button>
+
+              <button
+                class="business-type"
+                type="button"
+                data-type="barber"
+              >
+
+                <span class="business-icon">
+                  ✂
+                </span>
+
+                <strong>
+                  Barber
+                </strong>
+
+                <small>
+                  Services and appointments
+                </small>
+
+              </button>
+
+              <button
+                class="business-type"
+                type="button"
+                data-type="beauty"
+              >
+
+                <span class="business-icon">
+                  ✦
+                </span>
+
+                <strong>
+                  Beauty
+                </strong>
+
+                <small>
+                  Treatments and availability
+                </small>
+
+              </button>
+
+              <button
+                class="business-type"
+                type="button"
+                data-type="consultant"
+              >
+
+                <span class="business-icon">
+                  ↗
+                </span>
+
+                <strong>
+                  Consultant
+                </strong>
+
+                <small>
+                  Calls and consultations
+                </small>
+
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="config-section">
+
+            <span class="config-label">
+              Pick a brand colour
+            </span>
+
+            <div class="colour-options">
+
+              <button
+                class="
+                  colour-button
+                  colour-cyan
+                  is-selected
+                "
+                type="button"
+                data-colour="#0b9ab7"
+                aria-label="Cyan"
+              ></button>
+
+              <button
+                class="
+                  colour-button
+                  colour-blue
+                "
+                type="button"
+                data-colour="#2563eb"
+                aria-label="Blue"
+              ></button>
+
+              <button
+                class="
+                  colour-button
+                  colour-green
+                "
+                type="button"
+                data-colour="#16835b"
+                aria-label="Green"
+              ></button>
+
+              <button
+                class="
+                  colour-button
+                  colour-purple
+                "
+                type="button"
+                data-colour="#7c3aed"
+                aria-label="Purple"
+              ></button>
+
+              <button
+                class="
+                  colour-button
+                  colour-coral
+                "
+                type="button"
+                data-colour="#e05b52"
+                aria-label="Coral"
+              ></button>
+
+            </div>
+
+          </div>
+
+          <div class="build-row">
+
+            <div class="build-note">
+
+              This is just for fun —
+              nothing you enter here is saved.
+
+            </div>
+
+            <button
+              class="
+                button
+                button-accent
+              "
+              id="buildDemo"
+              type="button"
+            >
+
+              Build my demo
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="build-screen"
+        id="buildScreen"
+      >
+
+        <div class="builder-ring"></div>
+
+        <small>
+          ELERO DEMO BUILDER
+        </small>
+
+        <h3>
+          Building your experience…
+        </h3>
+
+        <p id="buildMessage">
+          Setting up your booking system.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         DEMO AREA
+         ===================================== -->
+
+    <section
+      class="demo-area"
+      id="demoArea"
+    >
+
+      <div class="demo-toolbar">
+
+        <span>
+          Your personalised demo is ready.
+        </span>
+
+        <button
+          class="customise-again"
+          id="customiseAgain"
+          type="button"
+        >
+          ✎ Customise again
+        </button>
+
+      </div>
+
+      <div class="demo-notice">
+
+        <strong>
+          Demo mode:
+        </strong>
+
+        This booking system is fully interactive,
+        but no real reservation or personal
+        information is submitted or stored.
+
+      </div>
+
+      <section class="booking-shell">
+
+        <div class="booking-main">
+
+          <div class="venue-heading">
+
+            <div>
+
+              <small id="businessCategory">
+                DEMO RESTAURANT
+              </small>
+
+              <h2 id="demoBusinessName">
+                Foundry Kitchen
+              </h2>
+
+              <p id="businessSubtitle">
+                Modern dining · Cardiff
+              </p>
+
+            </div>
+
+            <div class="availability">
+
+              <i></i>
+
+              <span id="availabilityText">
+                Taking bookings
+              </span>
+
+            </div>
+
+          </div>
+
+          <div
+            class="stepper"
+            id="stepper"
+          >
+
+            <div
+              class="step is-active"
+              data-step="1"
+            >
+
+              <span class="step-circle">
+                01
+              </span>
+
+              <span>
+                Booking
+              </span>
+
+            </div>
+
+            <div
+              class="step"
+              data-step="2"
+            >
+
+              <span class="step-circle">
+                02
+              </span>
+
+              <span>
+                Time
+              </span>
+
+            </div>
+
+            <div
+              class="step"
+              data-step="3"
+            >
+
+              <span class="step-circle">
+                03
+              </span>
+
+              <span>
+                Details
+              </span>
+
+            </div>
+
+            <div
+              class="step"
+              data-step="4"
+            >
+
+              <span class="step-circle">
+                04
+              </span>
+
+              <span>
+                Confirm
+              </span>
+
+            </div>
+
+          </div>
+
+          <!-- STEP 1 -->
+
+          <section
+            class="panel is-active"
+            data-panel="1"
+          >
+
+            <div class="panel-heading">
+
+              <small>
+                STEP 01
+              </small>
+
+              <h3 id="stepOneHeading">
+                Tell us about your booking.
+              </h3>
+
+              <p id="stepOneDescription">
+                Choose your party size
+                and booking type.
+              </p>
+
+            </div>
+
+            <div class="field-grid">
+
+              <label>
+
+                <span
+                  class="field-label"
+                  id="quantityLabel"
+                >
+                  Number of guests
+                </span>
+
+                <select id="quantitySelect">
+                </select>
+
+              </label>
+
+              <label>
+
+                <span
+                  class="field-label"
+                  id="serviceLabel"
+                >
+                  Booking type
+                </span>
+
+                <select id="serviceSelect">
+                </select>
+
+              </label>
+
+            </div>
+
+            <div class="button-row">
+
+              <span></span>
+
+              <button
+                class="
+                  button
+                  button-primary
+                "
+                id="step1Next"
+                type="button"
+              >
+
+                Choose a date
+
+                <span>
+                  →
+                </span>
+
+              </button>
+
+            </div>
+
+          </section>
+
+          <!-- STEP 2 -->
+
+          <section
+            class="panel"
+            data-panel="2"
+          >
+
+            <div class="panel-heading">
+
+              <small>
+                STEP 02
+              </small>
+
+              <h3>
+                Choose a date and time.
+              </h3>
+
+              <p>
+                Available times update instantly,
+                just like they would in a real system.
+              </p>
+
+            </div>
+
+            <div
+              class="date-strip"
+              id="dateStrip"
+            ></div>
+
+            <div class="section-label">
+              Available times
+            </div>
+
+            <div
+              class="time-grid"
+              id="timeGrid"
+            ></div>
+
+            <div class="button-row">
+
+              <button
+                class="
+                  button
+                  button-secondary
+                "
+                id="step2Back"
+                type="button"
+              >
+                ← Back
+              </button>
+
+              <button
+                class="
+                  button
+                  button-primary
+                "
+                id="step2Next"
+                type="button"
+                disabled
+              >
+
+                Continue
+
+                <span>
+                  →
+                </span>
+
+              </button>
+
+            </div>
+
+          </section>
+
+          <!-- STEP 3 -->
+
+          <section
+            class="panel"
+            data-panel="3"
+          >
+
+            <div class="panel-heading">
+
+              <small>
+                STEP 03
+              </small>
+
+              <h3>
+                Your details.
+              </h3>
+
+              <p>
+                In a real system these could
+                be sent directly to the business
+                and stored securely.
+              </p>
+
+            </div>
+
+            <div class="field-grid">
+
+              <label>
+
+                <span class="field-label">
+                  First name
+                </span>
+
+                <input
+                  id="firstName"
+                  type="text"
+                  placeholder="Edward"
+                  autocomplete="off"
+                >
+
+              </label>
+
+              <label>
+
+                <span class="field-label">
+                  Last name
+                </span>
+
+                <input
+                  id="lastName"
+                  type="text"
+                  placeholder="Bailey"
+                  autocomplete="off"
+                >
+
+              </label>
+
+              <label>
+
+                <span class="field-label">
+                  Email
+                </span>
+
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  autocomplete="off"
+                >
+
+              </label>
+
+              <label>
+
+                <span class="field-label">
+                  Phone
+                </span>
+
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="07..."
+                  autocomplete="off"
+                >
+
+              </label>
+
+            </div>
+
+            <label
+              style="
+                margin-top:14px;
+              "
+            >
+
+              <span class="field-label">
+                Special requests
+              </span>
+
+              <textarea
+                id="requests"
+                placeholder="Anything the business should know..."
+              ></textarea>
+
+            </label>
+
+            <div class="button-row">
+
+              <button
+                class="
+                  button
+                  button-secondary
+                "
+                id="step3Back"
+                type="button"
+              >
+                ← Back
+              </button>
+
+              <button
+                class="
+                  button
+                  button-primary
+                "
+                id="step3Next"
+                type="button"
+              >
+
+                Review booking
+
+                <span>
+                  →
+                </span>
+
+              </button>
+
+            </div>
+
+          </section>
+
+          <!-- STEP 4 -->
+
+          <section
+            class="panel"
+            data-panel="4"
+          >
+
+            <div class="panel-heading">
+
+              <small>
+                STEP 04
+              </small>
+
+              <h3>
+                Ready to book.
+              </h3>
+
+              <p>
+                Check the details before completing
+                this demonstration booking.
+              </p>
+
+            </div>
+
+            <div
+              style="
+                border:
+                  1px solid
+                  var(--line);
+
+                border-radius:
+                  16px;
+
+                overflow:
+                  hidden;
+              "
+            >
+
+              <div class="summary-row">
+
+                <small id="reviewQuantityLabel">
+                  BOOKING
+                </small>
+
+                <strong id="reviewQuantity">
+                  —
+                </strong>
+
+              </div>
+
+              <div class="summary-row">
+
+                <small>
+                  DATE
+                </small>
+
+                <strong id="reviewDate">
+                  —
+                </strong>
+
+              </div>
+
+              <div class="summary-row">
+
+                <small>
+                  TIME
+                </small>
+
+                <strong id="reviewTime">
+                  —
+                </strong>
+
+              </div>
+
+              <div class="summary-row">
+
+                <small>
+                  NAME
+                </small>
+
+                <strong id="reviewName">
+                  —
+                </strong>
+
+              </div>
+
+              <div class="summary-row">
+
+                <small>
+                  EMAIL
+                </small>
+
+                <strong id="reviewEmail">
+                  —
+                </strong>
+
+              </div>
+
+            </div>
+
+            <div class="button-row">
+
+              <button
+                class="
+                  button
+                  button-secondary
+                "
+                id="step4Back"
+                type="button"
+              >
+                ← Back
+              </button>
+
+              <button
+                class="
+                  button
+                  button-accent
+                "
+                id="confirmBooking"
+                type="button"
+              >
+
+                Complete demo booking
+
+                <span>
+                  ✓
+                </span>
+
+              </button>
+
+            </div>
+
+          </section>
+
+          <!-- SUCCESS -->
+
+          <section
+            class="panel"
+            data-panel="5"
+          >
+
+            <div class="confirmation">
+
+              <div class="confirmation-icon">
+                ✓
+              </div>
+
+              <h3 id="confirmationHeading">
+                Booking confirmed.
+              </h3>
+
+              <p>
+
+                That's the complete customer journey.
+
+                In a live system, the customer
+                and business could now receive
+                automatic confirmations and the
+                booking would appear in the
+                business dashboard.
+
+              </p>
+
+              <div class="reference">
+
+                Demo reference:
+
+                <strong id="bookingReference">
+                  ELR-00000
+                </strong>
+
+              </div>
+
+              <div>
+
+                <button
+                  class="
+                    button
+                    button-primary
+                  "
+                  id="startAgain"
+                  type="button"
+                >
+                  Try another booking
+                </button>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+        <!-- LIVE SUMMARY -->
+
+        <aside class="booking-summary">
+
+          <span class="summary-label">
+            LIVE BOOKING SUMMARY
+          </span>
+
+          <h3>
+            Your booking
+          </h3>
+
+          <p>
+            Watch this update as you
+            move through the demo.
+          </p>
+
+          <div class="summary-card">
+
+            <div class="summary-row">
+
+              <small id="summaryQuantityLabel">
+                PARTY
+              </small>
+
+              <strong id="summaryQuantity">
+                —
+              </strong>
+
+            </div>
+
+            <div class="summary-row">
+
+              <small>
+                SERVICE
+              </small>
+
+              <strong id="summaryService">
+                —
+              </strong>
+
+            </div>
+
+            <div class="summary-row">
+
+              <small>
+                DATE
+              </small>
+
+              <strong id="summaryDate">
+                Not selected
+              </strong>
+
+            </div>
+
+            <div class="summary-row">
+
+              <small>
+                TIME
+              </small>
+
+              <strong id="summaryTime">
+                Not selected
+              </strong>
+
+            </div>
+
+            <div class="summary-row">
+
+              <small>
+                CUSTOMER
+              </small>
+
+              <strong id="summaryCustomer">
+                Not added
+              </strong>
+
+            </div>
+
+          </div>
+
+          <div class="powered-by">
+
+            <small>
+              DEMO SYSTEM BUILT BY
+            </small>
+
+            <strong>
+              ELERO STUDIO
+            </strong>
+
+          </div>
+
+        </aside>
+
+      </section>
+
+      <section class="site-cta">
+
+        <div>
+
+          <small>
+            NOW IMAGINE THE REAL VERSION
+          </small>
+
+          <h2>
+            Built around your actual business.
+          </h2>
+
+          <p>
+
+            Your real system can connect
+            availability, staff, capacity,
+            confirmations, payments,
+            customer information and your
+            own admin dashboard.
+
+          </p>
+
+        </div>
+
+        <a
+          class="button"
+          href="index.html#contact"
+        >
+
+          Talk to Elero
+
+          <span>
+            ↗
+          </span>
+
+        </a>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <script>
+
+    /* ========================================
+       BUSINESS CONFIGURATION
+       ======================================== */
+
+    const businessConfigs = {
+
+      restaurant: {
+
+        fallbackName:
+          "Foundry Kitchen",
+
+        category:
+          "DEMO RESTAURANT",
+
+        subtitle:
+          "Modern dining · Cardiff",
+
+        availability:
+          "Taking bookings",
+
+        quantityLabel:
+          "Number of guests",
+
+        quantitySummary:
+          "PARTY",
+
+        quantities: [
+          ["1", "1 guest"],
+          ["2", "2 guests"],
+          ["3", "3 guests"],
+          ["4", "4 guests"],
+          ["5", "5 guests"],
+          ["6", "6 guests"],
+          ["7", "7 guests"],
+          ["8", "8 guests"]
+        ],
+
+        services: [
+          "Dinner",
+          "Lunch",
+          "Sunday lunch",
+          "Celebration"
+        ],
+
+        stepHeading:
+          "Tell us about your booking.",
+
+        stepDescription:
+          "Choose your party size and the type of reservation you need.",
+
+        success:
+          "Table booking confirmed."
+
+      },
+
+      barber: {
+
+        fallbackName:
+          "North & Co Barbers",
+
+        category:
+          "DEMO BARBERSHOP",
+
+        subtitle:
+          "Cuts · Styling · Grooming",
+
+        availability:
+          "Appointments available",
+
+        quantityLabel:
+          "Who is the appointment for?",
+
+        quantitySummary:
+          "APPOINTMENT",
+
+        quantities: [
+          ["1", "1 person"]
+        ],
+
+        services: [
+          "Haircut",
+          "Skin fade",
+          "Hair & beard",
+          "Beard trim"
+        ],
+
+        stepHeading:
+          "Choose your service.",
+
+        stepDescription:
+          "Pick the treatment you'd like before choosing an available appointment.",
+
+        success:
+          "Appointment confirmed."
+
+      },
+
+      beauty: {
+
+        fallbackName:
+          "Aura Beauty Studio",
+
+        category:
+          "DEMO BEAUTY STUDIO",
+
+        subtitle:
+          "Beauty · Skin · Treatments",
+
+        availability:
+          "Appointments available",
+
+        quantityLabel:
+          "Number of people",
+
+        quantitySummary:
+          "BOOKING",
+
+        quantities: [
+          ["1", "1 person"],
+          ["2", "2 people"]
+        ],
+
+        services: [
+          "Facial",
+          "Brows",
+          "Manicure",
+          "Massage"
+        ],
+
+        stepHeading:
+          "Choose your treatment.",
+
+        stepDescription:
+          "Select a treatment and we'll show the available appointments.",
+
+        success:
+          "Treatment booked."
+
+      },
+
+      consultant: {
+
+        fallbackName:
+          "Morgan Advisory",
+
+        category:
+          "DEMO CONSULTANCY",
+
+        subtitle:
+          "Advice · Strategy · Consultation",
+
+        availability:
+          "Consultations available",
+
+        quantityLabel:
+          "Attendees",
+
+        quantitySummary:
+          "ATTENDEES",
+
+        quantities: [
+          ["1", "1 attendee"],
+          ["2", "2 attendees"],
+          ["3", "3 attendees"],
+          ["4", "4 attendees"]
+        ],
+
+        services: [
+          "30-minute consultation",
+          "60-minute consultation",
+          "Discovery call",
+          "Strategy session"
+        ],
+
+        stepHeading:
+          "Book your consultation.",
+
+        stepDescription:
+          "Choose the meeting you need and then find a convenient time.",
+
+        success:
+          "Consultation booked."
+
+      }
+
+    };
+
+    /* ========================================
+       STATE
+       ======================================== */
+
+    const state = {
+
+      businessType:
+        "restaurant",
+
+      businessName:
+        "",
+
+      colour:
+        "#0b9ab7",
+
+      quantity:
+        "2",
+
+      service:
+        "Dinner",
+
+      date:
+        "",
+
+      dateLabel:
+        "",
+
+      time:
+        "",
+
+      firstName:
+        "",
+
+      lastName:
+        "",
+
+      email:
+        "",
+
+      phone:
+        ""
+
+    };
+
+    /* ========================================
+       CUSTOMISER
+       ======================================== */
+
+    const customiser =
+      document.getElementById(
+        "customiser"
+      );
+
+    const customiserContent =
+      document.getElementById(
+        "customiserContent"
+      );
+
+    const buildScreen =
+      document.getElementById(
+        "buildScreen"
+      );
+
+    const demoArea =
+      document.getElementById(
+        "demoArea"
+      );
+
+    const businessNameInput =
+      document.getElementById(
+        "businessName"
+      );
+
+    document
+      .querySelectorAll(
+        ".business-type"
+      )
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".business-type"
+                )
+                .forEach(
+                  item =>
+                    item
+                      .classList
+                      .remove(
+                        "is-selected"
+                      )
+                );
+
+              button
+                .classList
+                .add(
+                  "is-selected"
+                );
+
+              state.businessType =
+                button.dataset.type;
+
+            }
+          );
+
+        }
+      );
+
+    document
+      .querySelectorAll(
+        ".colour-button"
+      )
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".colour-button"
+                )
+                .forEach(
+                  item =>
+                    item
+                      .classList
+                      .remove(
+                        "is-selected"
+                      )
+                );
+
+              button
+                .classList
+                .add(
+                  "is-selected"
+                );
+
+              state.colour =
+                button.dataset.colour;
+
+              applyAccent(
+                state.colour
+              );
+
+            }
+          );
+
+        }
+      );
+
+    function hexToRgb(
+      hex
+    ) {
+
+      const clean =
+        hex.replace(
+          "#",
+          ""
+        );
+
+      const number =
+        parseInt(
+          clean,
+          16
+        );
+
+      return {
+
+        r:
+          (
+            number >> 16
+          ) & 255,
+
+        g:
+          (
+            number >> 8
+          ) & 255,
+
+        b:
+          number & 255
+
+      };
+
+    }
+
+    function applyAccent(
+      hex
+    ) {
+
+      const rgb =
+        hexToRgb(
+          hex
+        );
+
+      document
+        .documentElement
+        .style
+        .setProperty(
+          "--accent",
+          hex
+        );
+
+      document
+        .documentElement
+        .style
+        .setProperty(
+          "--accent-soft",
+          `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, .08)`
+        );
+
+      document
+        .documentElement
+        .style
+        .setProperty(
+          "--accent-border",
+          `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, .45)`
+        );
+
+    }
+
+    document
+      .getElementById(
+        "buildDemo"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          const config =
+            businessConfigs[
+              state.businessType
+            ];
+
+          state.businessName =
+            businessNameInput
+              .value
+              .trim() ||
+            config.fallbackName;
+
+          customiserContent
+            .style
+            .display =
+            "none";
+
+          buildScreen
+            .classList
+            .add(
+              "is-active"
+            );
+
+          document
+            .getElementById(
+              "buildMessage"
+            )
+            .textContent =
+            `Creating a booking experience for ${state.businessName}.`;
+
+          setTimeout(
+            () => {
+
+              configureDemo();
+
+              customiser
+                .style
+                .display =
+                "none";
+
+              demoArea
+                .classList
+                .add(
+                  "is-active"
+                );
+
+              demoArea
+                .scrollIntoView({
+                  behavior:
+                    "smooth",
+
+                  block:
+                    "start"
+                });
+
+            },
+            1100
+          );
+
+        }
+      );
+
+    document
+      .getElementById(
+        "customiseAgain"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          demoArea
+            .classList
+            .remove(
+              "is-active"
+            );
+
+          customiser
+            .style
+            .display =
+            "block";
+
+          buildScreen
+            .classList
+            .remove(
+              "is-active"
+            );
+
+          customiserContent
+            .style
+            .display =
+            "block";
+
+          customiser
+            .scrollIntoView({
+              behavior:
+                "smooth"
+            });
+
+        }
+      );
+
+    /* ========================================
+       APPLY BUSINESS CHOICES
+       ======================================== */
+
+    function configureDemo() {
+
+      const config =
+        businessConfigs[
+          state.businessType
+        ];
+
+      document
+        .getElementById(
+          "demoBusinessName"
+        )
+        .textContent =
+        state.businessName;
+
+      document
+        .getElementById(
+          "businessCategory"
+        )
+        .textContent =
+        config.category;
+
+      document
+        .getElementById(
+          "businessSubtitle"
+        )
+        .textContent =
+        config.subtitle;
+
+      document
+        .getElementById(
+          "availabilityText"
+        )
+        .textContent =
+        config.availability;
+
+      document
+        .getElementById(
+          "quantityLabel"
+        )
+        .textContent =
+        config.quantityLabel;
+
+      document
+        .getElementById(
+          "summaryQuantityLabel"
+        )
+        .textContent =
+        config.quantitySummary;
+
+      document
+        .getElementById(
+          "reviewQuantityLabel"
+        )
+        .textContent =
+        config.quantitySummary;
+
+      document
+        .getElementById(
+          "stepOneHeading"
+        )
+        .textContent =
+        config.stepHeading;
+
+      document
+        .getElementById(
+          "stepOneDescription"
+        )
+        .textContent =
+        config.stepDescription;
+
+      document
+        .getElementById(
+          "confirmationHeading"
+        )
+        .textContent =
+        config.success;
+
+      populateBookingOptions();
+
+      resetBooking();
+
+    }
+
+    function populateBookingOptions() {
+
+      const config =
+        businessConfigs[
+          state.businessType
+        ];
+
+      const quantitySelect =
+        document
+          .getElementById(
+            "quantitySelect"
+          );
+
+      const serviceSelect =
+        document
+          .getElementById(
+            "serviceSelect"
+          );
+
+      quantitySelect.innerHTML =
+        "";
+
+      config.quantities.forEach(
+        item => {
+
+          const option =
+            document
+              .createElement(
+                "option"
+              );
+
+          option.value =
+            item[0];
+
+          option.textContent =
+            item[1];
+
+          quantitySelect
+            .appendChild(
+              option
+            );
+
+        }
+      );
+
+      serviceSelect.innerHTML =
+        "";
+
+      config.services.forEach(
+        service => {
+
+          const option =
+            document
+              .createElement(
+                "option"
+              );
+
+          option.value =
+            service;
+
+          option.textContent =
+            service;
+
+          serviceSelect
+            .appendChild(
+              option
+            );
+
+        }
+      );
+
+      state.quantity =
+        config.quantities[0][0];
+
+      state.service =
+        config.services[0];
+
+      if (
+        state.businessType ===
+        "restaurant"
+      ) {
+
+        quantitySelect.value =
+          "2";
+
+        state.quantity =
+          "2";
+
+      }
+
+    }
+
+    /* ========================================
+       BOOKING ENGINE
+       ======================================== */
+
+    const panels =
+      document
+        .querySelectorAll(
+          "[data-panel]"
+        );
+
+    const steps =
+      document
+        .querySelectorAll(
+          "[data-step]"
+        );
+
+    const quantitySelect =
+      document
+        .getElementById(
+          "quantitySelect"
+        );
+
+    const serviceSelect =
+      document
+        .getElementById(
+          "serviceSelect"
+        );
+
+    const dateStrip =
+      document
+        .getElementById(
+          "dateStrip"
+        );
+
+    const timeGrid =
+      document
+        .getElementById(
+          "timeGrid"
+        );
+
+    const step2Next =
+      document
+        .getElementById(
+          "step2Next"
+        );
+
+    function goToStep(
+      step
+    ) {
+
+      panels.forEach(
+        panel => {
+
+          panel
+            .classList
+            .toggle(
+              "is-active",
+              Number(
+                panel.dataset.panel
+              ) ===
+              step
+            );
+
+        }
+      );
+
+      steps.forEach(
+        stepElement => {
+
+          const number =
+            Number(
+              stepElement
+                .dataset
+                .step
+            );
+
+          stepElement
+            .classList
+            .toggle(
+              "is-active",
+              number === step
+            );
+
+          stepElement
+            .classList
+            .toggle(
+              "is-complete",
+              number < step
+            );
+
+        }
+      );
+
+    }
+
+    function quantityText() {
+
+      const selected =
+        quantitySelect
+          .options[
+            quantitySelect
+              .selectedIndex
+          ];
+
+      return selected
+        ? selected.textContent
+        : "";
+
+    }
+
+    function updateSummary() {
+
+      document
+        .getElementById(
+          "summaryQuantity"
+        )
+        .textContent =
+        quantityText();
+
+      document
+        .getElementById(
+          "summaryService"
+        )
+        .textContent =
+        state.service;
+
+      document
+        .getElementById(
+          "summaryDate"
+        )
+        .textContent =
+        state.dateLabel ||
+        "Not selected";
+
+      document
+        .getElementById(
+          "summaryTime"
+        )
+        .textContent =
+        state.time ||
+        "Not selected";
+
+      const customer =
+        [
+          state.firstName,
+          state.lastName
+        ]
+          .filter(Boolean)
+          .join(" ");
+
+      document
+        .getElementById(
+          "summaryCustomer"
+        )
+        .textContent =
+        customer ||
+        "Not added";
+
+    }
+
+    function createDates() {
+
+      dateStrip.innerHTML =
+        "";
+
+      const today =
+        new Date();
+
+      for (
+        let i = 1;
+        i <= 5;
+        i++
+      ) {
+
+        const date =
+          new Date(
+            today
+          );
+
+        date.setDate(
+          today.getDate() +
+          i
+        );
+
+        const iso =
+          [
+            date.getFullYear(),
+
+            String(
+              date.getMonth() +
+              1
+            ).padStart(
+              2,
+              "0"
+            ),
+
+            String(
+              date.getDate()
+            ).padStart(
+              2,
+              "0"
+            )
+
+          ].join("-");
+
+        const day =
+          date
+            .toLocaleDateString(
+              "en-GB",
+              {
+                weekday:
+                  "short"
+              }
+            );
+
+        const formatted =
+          date
+            .toLocaleDateString(
+              "en-GB",
+              {
+                day:
+                  "numeric",
+
+                month:
+                  "short"
+              }
+            );
+
+        const longFormatted =
+          date
+            .toLocaleDateString(
+              "en-GB",
+              {
+                weekday:
+                  "short",
+
+                day:
+                  "numeric",
+
+                month:
+                  "short"
+              }
+            );
+
+        const button =
+          document
+            .createElement(
+              "button"
+            );
+
+        button.type =
+          "button";
+
+        button.className =
+          "date-button";
+
+        button.innerHTML =
+          `
+            <small>
+              ${day}
+            </small>
+
+            <strong>
+              ${formatted}
+            </strong>
+          `;
+
+        button
+          .addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".date-button"
+                )
+                .forEach(
+                  item =>
+                    item
+                      .classList
+                      .remove(
+                        "is-selected"
+                      )
+                );
+
+              button
+                .classList
+                .add(
+                  "is-selected"
+                );
+
+              state.date =
+                iso;
+
+              state.dateLabel =
+                longFormatted;
+
+              state.time =
+                "";
+
+              renderTimes();
+
+              updateSummary();
+
+            }
+          );
+
+        dateStrip
+          .appendChild(
+            button
+          );
+
+      }
+
+    }
+
+    const times = [
+
+      "09:00",
+      "09:30",
+      "10:00",
+      "10:30",
+
+      "11:00",
+      "11:30",
+      "12:00",
+      "12:30",
+
+      "13:00",
+      "13:30",
+      "14:00",
+      "14:30",
+
+      "15:00",
+      "15:30",
+      "16:00",
+      "16:30",
+
+      "17:00",
+      "17:30",
+      "18:00",
+      "18:30",
+
+      "19:00",
+      "19:30",
+      "20:00",
+      "20:30"
+
+    ];
+
+    function relevantTimes() {
+
+      if (
+        state.businessType ===
+        "restaurant"
+      ) {
+
+        return times.filter(
+          time =>
+            time >=
+              "12:00" &&
+            time <=
+              "20:30"
+        );
+
+      }
+
+      if (
+        state.businessType ===
+        "consultant"
+      ) {
+
+        return times.filter(
+          time =>
+            time >=
+              "09:00" &&
+            time <=
+              "16:30"
+        );
+
+      }
+
+      return times.filter(
+        time =>
+          time >=
+            "09:00" &&
+          time <=
+            "18:00"
+      );
+
+    }
+
+    function renderTimes() {
+
+      timeGrid.innerHTML =
+        "";
+
+      step2Next.disabled =
+        true;
+
+      const visibleTimes =
+        relevantTimes();
+
+      visibleTimes.forEach(
+        (
+          time,
+          index
+        ) => {
+
+          const button =
+            document
+              .createElement(
+                "button"
+              );
+
+          button.type =
+            "button";
+
+          button.className =
+            "time-button";
+
+          button.textContent =
+            time;
+
+          const dateNumber =
+            state.date
+              .replaceAll(
+                "-",
+                ""
+              )
+              .split("")
+              .reduce(
+                (
+                  total,
+                  number
+                ) =>
+                  total +
+                  Number(number),
+                0
+              );
+
+          const unavailable =
+            (
+              dateNumber +
+              index +
+              Number(
+                state.quantity
+              )
+            ) %
+            6 ===
+            0;
+
+          if (
+            unavailable
+          ) {
+            button.disabled =
+              true;
+          }
+
+          button
+            .addEventListener(
+              "click",
+              () => {
+
+                if (
+                  button.disabled
+                ) {
+                  return;
+                }
+
+                document
+                  .querySelectorAll(
+                    ".time-button"
+                  )
+                  .forEach(
+                    item =>
+                      item
+                        .classList
+                        .remove(
+                          "is-selected"
+                        )
+                  );
+
+                button
+                  .classList
+                  .add(
+                    "is-selected"
+                  );
+
+                state.time =
+                  time;
+
+                step2Next.disabled =
+                  false;
+
+                updateSummary();
+
+              }
+            );
+
+          timeGrid
+            .appendChild(
+              button
+            );
+
+        }
+      );
+
+    }
+
+    quantitySelect
+      .addEventListener(
+        "change",
+        () => {
+
+          state.quantity =
+            quantitySelect.value;
+
+          if (
+            state.date
+          ) {
+
+            state.time =
+              "";
+
+            renderTimes();
+
+          }
+
+          updateSummary();
+
+        }
+      );
+
+    serviceSelect
+      .addEventListener(
+        "change",
+        () => {
+
+          state.service =
+            serviceSelect.value;
+
+          updateSummary();
+
+        }
+      );
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+
+    document
+      .getElementById(
+        "step1Next"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          state.quantity =
+            quantitySelect.value;
+
+          state.service =
+            serviceSelect.value;
+
+          createDates();
+
+          updateSummary();
+
+          goToStep(2);
+
+        }
+      );
+
+    document
+      .getElementById(
+        "step2Back"
+      )
+      .addEventListener(
+        "click",
+        () =>
+          goToStep(1)
+      );
+
+    step2Next
+      .addEventListener(
+        "click",
+        () =>
+          goToStep(3)
+      );
+
+    document
+      .getElementById(
+        "step3Back"
+      )
+      .addEventListener(
+        "click",
+        () =>
+          goToStep(2)
+      );
+
+    document
+      .getElementById(
+        "step3Next"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          const firstName =
+            document
+              .getElementById(
+                "firstName"
+              )
+              .value
+              .trim();
+
+          const lastName =
+            document
+              .getElementById(
+                "lastName"
+              )
+              .value
+              .trim();
+
+          const email =
+            document
+              .getElementById(
+                "email"
+              )
+              .value
+              .trim();
+
+          const phone =
+            document
+              .getElementById(
+                "phone"
+              )
+              .value
+              .trim();
+
+          if (
+            !firstName ||
+            !lastName ||
+            !email ||
+            !phone
+          ) {
+
+            alert(
+              "Please fill in your name, email and phone to continue the demo."
+            );
+
+            return;
+
+          }
+
+          state.firstName =
+            firstName;
+
+          state.lastName =
+            lastName;
+
+          state.email =
+            email;
+
+          state.phone =
+            phone;
+
+          updateSummary();
+
+          document
+            .getElementById(
+              "reviewQuantity"
+            )
+            .textContent =
+            `${quantityText()} · ${state.service}`;
+
+          document
+            .getElementById(
+              "reviewDate"
+            )
+            .textContent =
+            state.dateLabel;
+
+          document
+            .getElementById(
+              "reviewTime"
+            )
+            .textContent =
+            state.time;
+
+          document
+            .getElementById(
+              "reviewName"
+            )
+            .textContent =
+            `${state.firstName} ${state.lastName}`;
+
+          document
+            .getElementById(
+              "reviewEmail"
+            )
+            .textContent =
+            state.email;
+
+          goToStep(4);
+
+        }
+      );
+
+    document
+      .getElementById(
+        "step4Back"
+      )
+      .addEventListener(
+        "click",
+        () =>
+          goToStep(3)
+      );
+
+    document
+      .getElementById(
+        "confirmBooking"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          const reference =
+            "ELR-" +
+            Math.floor(
+              10000 +
+              Math.random() *
+              90000
+            );
+
+          document
+            .getElementById(
+              "bookingReference"
+            )
+            .textContent =
+            reference;
+
+          goToStep(5);
+
+        }
+      );
+
+    /* ========================================
+       RESET
+       ======================================== */
+
+    function resetBooking() {
+
+      state.date =
+        "";
+
+      state.dateLabel =
+        "";
+
+      state.time =
+        "";
+
+      state.firstName =
+        "";
+
+      state.lastName =
+        "";
+
+      state.email =
+        "";
+
+      state.phone =
+        "";
+
+      document
+        .getElementById(
+          "firstName"
+        )
+        .value =
+        "";
+
+      document
+        .getElementById(
+          "lastName"
+        )
+        .value =
+        "";
+
+      document
+        .getElementById(
+          "email"
+        )
+        .value =
+        "";
+
+      document
+        .getElementById(
+          "phone"
+        )
+        .value =
+        "";
+
+      document
+        .getElementById(
+          "requests"
+        )
+        .value =
+        "";
+
+      state.quantity =
+        quantitySelect.value;
+
+      state.service =
+        serviceSelect.value;
+
+      updateSummary();
+
+      goToStep(1);
+
+    }
+
+    document
+      .getElementById(
+        "startAgain"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          resetBooking();
+
+        }
+      );
+
+    applyAccent(
+      state.colour
+    );
+
+  </script>
+
+</body>
+
+</html>

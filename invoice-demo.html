@@ -1,0 +1,3726 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+
+  <title>Invoice Demo | Elero Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #f4f6f8;
+      --white: #ffffff;
+      --ink: #090c11;
+      --muted: #69727c;
+      --line: #dfe4e8;
+
+      --accent: #0b9ab7;
+      --accent-soft: #edfafd;
+
+      --green: #16834f;
+      --green-soft: #ecfdf3;
+
+      --shadow: 0 24px 70px rgba(12,18,28,.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 10% 8%,
+          rgba(79,230,255,.11),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 12%,
+          rgba(70,105,255,.07),
+          transparent 25%
+        ),
+        var(--bg);
+
+      color: var(--ink);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =================================
+       HEADER
+       ================================= */
+
+    .topbar {
+      background: #090c11;
+      color: white;
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 76px;
+
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #4fe6ff,
+          #4b8dff
+        );
+
+      color: #051014;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-weight: 800;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+
+      line-height: 1;
+    }
+
+    .brand-copy strong {
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 14px;
+      letter-spacing: .16em;
+    }
+
+    .brand-copy small {
+      margin-top: 5px;
+
+      color: #9da7b2;
+
+      font-size: 9px;
+      letter-spacing: .23em;
+    }
+
+    .demo-pill {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 9px 13px;
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      border-radius: 999px;
+
+      color: #dce4eb;
+
+      font-size: 12px;
+    }
+
+    .demo-pill i {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #4fe6ff;
+    }
+
+    /* =================================
+       PAGE
+       ================================= */
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+
+      margin: 0 auto;
+
+      padding: 58px 0 90px;
+    }
+
+    .intro {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.2fr)
+        minmax(280px,.8fr);
+
+      align-items: end;
+
+      gap: 40px;
+
+      margin-bottom: 35px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
+
+      margin-bottom: 15px;
+
+      color: var(--accent);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+    }
+
+    .eyebrow i {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+    }
+
+    .intro h1 {
+      margin: 0;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: clamp(42px,6vw,72px);
+
+      line-height: .98;
+
+      letter-spacing: -.055em;
+    }
+
+    .intro h1 span {
+      color: var(--accent);
+    }
+
+    .intro-copy {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.65;
+    }
+
+    .intro-copy strong {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--ink);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 18px;
+    }
+
+    .demo-note {
+      margin-bottom: 20px;
+
+      padding: 14px 18px;
+
+      border: 1px solid #bce7ef;
+
+      border-radius: 14px;
+
+      background: #f0fbfd;
+
+      color: #08768b;
+
+      font-size: 13px;
+    }
+
+    /* =================================
+       APP
+       ================================= */
+
+    .app {
+      overflow: hidden;
+
+      border: 1px solid rgba(9,12,17,.08);
+
+      border-radius: 28px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+    }
+
+    .app.hidden {
+      display: none;
+    }
+
+    .app-header {
+      min-height: 74px;
+
+      padding: 0 28px;
+
+      background: #090c11;
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .business-brand {
+      display: flex;
+      align-items: center;
+
+      gap: 11px;
+    }
+
+    .business-avatar {
+      width: 40px;
+      height: 40px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--accent),
+          #2563eb
+        );
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-weight: 800;
+    }
+
+    .business-brand strong {
+      display: block;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 14px;
+    }
+
+    .business-brand small {
+      display: block;
+
+      margin-top: 3px;
+
+      color: #939da7;
+
+      font-size: 9px;
+
+      letter-spacing: .12em;
+    }
+
+    .draft {
+      color: #9ea8b1;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .1em;
+    }
+
+    .app-body {
+      padding: 32px;
+    }
+
+    /* =================================
+       HEADING
+       ================================= */
+
+    .builder-heading {
+      margin-bottom: 27px;
+    }
+
+    .builder-heading small {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+    }
+
+    .builder-heading h2 {
+      margin: 0 0 6px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: clamp(28px,4vw,38px);
+
+      letter-spacing: -.04em;
+    }
+
+    .builder-heading p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    /* =================================
+       DETAILS
+       ================================= */
+
+    .details {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 13px;
+
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+    }
+
+    .field-label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #59636d;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    input,
+    select {
+      width: 100%;
+
+      min-height: 44px;
+
+      padding: 11px 12px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 11px;
+
+      outline: none;
+
+      background: white;
+
+      color: var(--ink);
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--accent);
+
+      box-shadow:
+        0 0 0 4px
+        rgba(11,154,183,.10);
+    }
+
+    /* =================================
+       SERVICE PANEL
+       ================================= */
+
+    .service-panel {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+
+      border-radius: 18px;
+    }
+
+    .service-head {
+      padding: 18px 20px;
+
+      border-bottom: 1px solid var(--line);
+
+      background: #f8fafb;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .service-head strong {
+      display: block;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 15px;
+    }
+
+    .service-head span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .business-type {
+      width: 220px;
+      flex-shrink: 0;
+    }
+
+    .service-list {
+      padding: 0 20px;
+    }
+
+    /* =================================
+       EVERY ITEM USES THIS EXACT ROW
+       ================================= */
+
+    .service-row {
+      min-height: 74px;
+
+      display: grid;
+
+      grid-template-columns:
+        48px
+        minmax(180px,1fr)
+        165px;
+
+      align-items: center;
+
+      gap: 15px;
+
+      border-bottom: 1px solid #edf0f2;
+    }
+
+    .service-row:last-child {
+      border-bottom: 0;
+    }
+
+    .service-check {
+      width: 21px;
+      height: 21px;
+
+      min-height: 0;
+
+      accent-color: var(--accent);
+    }
+
+    .service-name strong {
+      display: block;
+
+      color: var(--ink);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      line-height: 1.3;
+    }
+
+    .service-name span {
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .price-wrap {
+      position: relative;
+    }
+
+    .price-wrap::before {
+      content: "£";
+
+      position: absolute;
+
+      left: 14px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #5f6973;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .price-input {
+      padding-left: 32px;
+
+      text-align: right;
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* =================================
+       CUSTOM ITEM CREATOR
+       ================================= */
+
+    .custom-builder {
+      display: none;
+
+      padding: 14px 20px;
+
+      border-top: 1px solid #edf0f2;
+
+      background: #f8fafb;
+    }
+
+    .custom-builder.show {
+      display: grid;
+
+      grid-template-columns:
+        minmax(180px,1fr)
+        165px
+        auto;
+
+      gap: 10px;
+    }
+
+    .custom-builder input {
+      background: white;
+    }
+
+    .add-item-button {
+      min-height: 44px;
+
+      padding: 0 17px;
+
+      border: 0;
+
+      border-radius: 10px;
+
+      background: #090c11;
+
+      color: white;
+
+      font-weight: 700;
+
+      white-space: nowrap;
+    }
+
+    .add-item-button:hover {
+      background: #171d25;
+    }
+
+    .custom-trigger {
+      margin: 15px 20px 18px;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #53606a;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .custom-trigger:hover {
+      color: var(--accent);
+    }
+
+    .custom-trigger.hidden {
+      display: none;
+    }
+
+    /* =================================
+       TOTAL
+       ================================= */
+
+    .total-area {
+      display: grid;
+
+      grid-template-columns:
+        1fr 320px;
+
+      gap: 20px;
+
+      align-items: end;
+
+      margin-top: 22px;
+    }
+
+    .vat-box {
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .vat-box input {
+      width: 18px;
+      height: 18px;
+
+      min-height: 0;
+
+      accent-color: var(--accent);
+    }
+
+    .totals {
+      padding: 19px;
+
+      border-radius: 15px;
+
+      background: #090c11;
+
+      color: white;
+    }
+
+    .total-row {
+      padding: 5px 0;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: #9da7b1;
+
+      font-size: 12px;
+    }
+
+    .total-row strong {
+      color: white;
+    }
+
+    .grand-total {
+      margin-top: 10px;
+
+      padding-top: 14px;
+
+      border-top: 1px solid rgba(255,255,255,.10);
+
+      align-items: center;
+    }
+
+    .grand-total span {
+      color: white;
+
+      font-weight: 700;
+    }
+
+    .grand-total strong {
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 28px;
+
+      letter-spacing: -.04em;
+    }
+
+    /* =================================
+       BUTTON
+       ================================= */
+
+    .actions {
+      margin-top: 23px;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .button {
+      min-height: 47px;
+
+      padding: 0 19px;
+
+      border: 1px solid transparent;
+
+      border-radius: 12px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      font-weight: 700;
+
+      transition: .18s ease;
+    }
+
+    .button-dark {
+      background: #090c11;
+
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: #171d25;
+
+      transform: translateY(-2px);
+    }
+
+    .button-light {
+      border-color: var(--line);
+
+      background: white;
+    }
+
+    .button-light:hover {
+      background: #f6f8f9;
+    }
+
+    .button-accent {
+      background: var(--accent);
+
+      color: white;
+    }
+
+    /* =================================
+       CUSTOMER PREVIEW
+       ================================= */
+
+    .preview {
+      display: none;
+    }
+
+    .preview.show {
+      display: block;
+
+      animation: appear .35s ease;
+    }
+
+    @keyframes appear {
+
+      from {
+        opacity: 0;
+
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+
+    }
+
+    .preview-top {
+      margin-bottom: 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .preview-top span {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .invoice-shell {
+      padding: 40px 20px;
+
+      border: 1px solid rgba(9,12,17,.08);
+
+      border-radius: 28px;
+
+      background: #eef1f3;
+
+      box-shadow: var(--shadow);
+    }
+
+    .customer-invoice {
+      width: min(760px,100%);
+
+      margin: 0 auto;
+
+      padding: 42px;
+
+      border-radius: 18px;
+
+      background: white;
+
+      box-shadow: 0 18px 50px rgba(9,12,17,.07);
+    }
+
+    .invoice-head {
+      padding-bottom: 27px;
+
+      border-bottom: 1px solid var(--line);
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 25px;
+    }
+
+    .invoice-business {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .invoice-logo {
+      width: 46px;
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background: var(--accent);
+
+      color: white;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-weight: 800;
+    }
+
+    .invoice-business strong {
+      display: block;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 16px;
+    }
+
+    .invoice-business span {
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .invoice-number {
+      text-align: right;
+    }
+
+    .invoice-number small {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: var(--muted);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .1em;
+    }
+
+    .invoice-number strong {
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 17px;
+    }
+
+    .invoice-meta {
+      padding: 27px 0;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 30px;
+    }
+
+    .invoice-meta small {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--muted);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .1em;
+    }
+
+    .invoice-meta strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-size: 13px;
+    }
+
+    .invoice-meta span {
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .preview-items {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+
+      border-radius: 13px;
+    }
+
+    .preview-item-head,
+    .preview-item {
+      padding: 13px 15px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 140px;
+
+      gap: 20px;
+    }
+
+    .preview-item-head {
+      background: #f7f9fa;
+
+      color: #7b858e;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .08em;
+    }
+
+    .preview-item-head span:last-child {
+      text-align: right;
+    }
+
+    .preview-item {
+      border-top: 1px solid #edf0f2;
+
+      font-size: 13px;
+    }
+
+    .preview-item strong:last-child {
+      text-align: right;
+    }
+
+    .preview-totals {
+      width: min(320px,100%);
+
+      margin: 23px 0 0 auto;
+    }
+
+    .preview-total-row {
+      padding: 6px 0;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .preview-grand {
+      margin-top: 8px;
+
+      padding-top: 14px;
+
+      border-top: 1px solid var(--line);
+
+      align-items: center;
+
+      color: var(--ink);
+
+      font-weight: 700;
+    }
+
+    .preview-grand strong {
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 28px;
+    }
+
+    .invoice-send {
+      margin-top: 30px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid var(--line);
+
+      text-align: center;
+    }
+
+    .invoice-send p {
+      margin: 0 0 14px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    /* =================================
+       PAYMENT OVERLAY
+       ================================= */
+
+    .overlay {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 100;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background: rgba(4,8,13,.58);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      width: min(440px,100%);
+
+      padding: 34px;
+
+      border-radius: 24px;
+
+      background: white;
+
+      text-align: center;
+
+      box-shadow: 0 30px 100px rgba(0,0,0,.27);
+    }
+
+    .loader {
+      width: 58px;
+      height: 58px;
+
+      margin: 0 auto 20px;
+
+      border: 5px solid #e6eaed;
+      border-top-color: var(--accent);
+
+      border-radius: 50%;
+
+      animation: spin .75s linear infinite;
+    }
+
+    @keyframes spin {
+
+      to {
+        transform: rotate(360deg);
+      }
+
+    }
+
+    .modal small {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+    }
+
+    .modal h3 {
+      margin: 0 0 8px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 27px;
+
+      letter-spacing: -.035em;
+    }
+
+    .modal p {
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.55;
+    }
+
+    /* =================================
+       PAID
+       ================================= */
+
+    .paid {
+      display: none;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(9,12,17,.08);
+
+      border-radius: 28px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+    }
+
+    .paid.show {
+      display: block;
+
+      animation: appear .4s ease;
+    }
+
+    .paid-inner {
+      padding: 70px 30px;
+
+      text-align: center;
+    }
+
+    .paid-icon {
+      width: 78px;
+      height: 78px;
+
+      margin: 0 auto 22px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--green-soft);
+
+      color: var(--green);
+
+      font-size: 31px;
+      font-weight: 800;
+    }
+
+    .paid-inner small {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+    }
+
+    .paid-inner h2 {
+      margin: 0 0 10px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: clamp(36px,6vw,58px);
+
+      letter-spacing: -.05em;
+    }
+
+    .paid-inner h2 span {
+      color: var(--green);
+    }
+
+    .paid-inner p {
+      max-width: 560px;
+
+      margin: 0 auto 27px;
+
+      color: var(--muted);
+
+      line-height: 1.6;
+    }
+
+    /* =================================
+       TOAST
+       ================================= */
+
+    .toast {
+      position: fixed;
+
+      top: 22px;
+      right: 22px;
+
+      z-index: 200;
+
+      width: min(400px,calc(100% - 32px));
+
+      padding: 18px;
+
+      border-radius: 18px;
+
+      background: #090d13;
+
+      color: white;
+
+      box-shadow: 0 24px 70px rgba(0,0,0,.30);
+
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform: translateY(-20px);
+
+      transition: .35s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    .toast-icon {
+      width: 42px;
+      height: 42px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: #173e29;
+
+      color: #55de8b;
+
+      font-weight: 800;
+    }
+
+    .toast small {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #8e99a4;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .1em;
+    }
+
+    .toast strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 16px;
+    }
+
+    .toast span {
+      color: #aeb7c0;
+
+      font-size: 11px;
+    }
+
+    /* =================================
+       CTA
+       ================================= */
+
+    .site-cta {
+      margin-top: 38px;
+
+      padding: 32px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #090d13,
+          #151f2b
+        );
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .site-cta small {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #7ee8f9;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+    }
+
+    .site-cta h2 {
+      margin: 0 0 7px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 28px;
+
+      letter-spacing: -.035em;
+    }
+
+    .site-cta p {
+      max-width: 680px;
+
+      margin: 0;
+
+      color: #aab4be;
+
+      line-height: 1.55;
+    }
+
+    .site-cta .button {
+      flex-shrink: 0;
+
+      background: white;
+
+      color: #090c11;
+    }
+
+    /* =================================
+       MOBILE
+       ================================= */
+
+    @media(max-width:900px) {
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .details {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:650px) {
+
+      .page {
+        width: min(100% - 20px,1180px);
+
+        padding-top: 38px;
+      }
+
+      .intro h1 {
+        font-size: 42px;
+      }
+
+      .draft {
+        display: none;
+      }
+
+      .app-body {
+        padding: 20px;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .service-head {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .business-type {
+        width: 100%;
+      }
+
+      .service-list {
+        padding: 0 14px;
+      }
+
+      .service-row {
+        grid-template-columns:
+          34px
+          minmax(0,1fr);
+
+        gap: 9px;
+
+        padding: 12px 0;
+      }
+
+      .service-row .price-wrap {
+        grid-column: 2;
+      }
+
+      .custom-builder.show {
+        grid-template-columns: 1fr;
+
+        margin: 0;
+      }
+
+      .total-area {
+        grid-template-columns: 1fr;
+      }
+
+      .actions .button {
+        width: 100%;
+      }
+
+      .preview-top {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .preview-top .button {
+        width: 100%;
+      }
+
+      .invoice-shell {
+        padding: 20px 10px;
+      }
+
+      .customer-invoice {
+        padding: 21px;
+      }
+
+      .invoice-head {
+        flex-direction: column;
+      }
+
+      .invoice-number {
+        text-align: left;
+      }
+
+      .invoice-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-item-head,
+      .preview-item {
+        grid-template-columns:
+          minmax(0,1fr)
+          100px;
+      }
+
+      .site-cta {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .site-cta .button {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="topbar">
+
+    <div class="topbar-inner">
+
+      <a
+        class="brand"
+        href="index.html"
+      >
+
+        <span class="brand-mark">
+          E
+        </span>
+
+        <span class="brand-copy">
+
+          <strong>
+            ELERO
+          </strong>
+
+          <small>
+            STUDIO
+          </small>
+
+        </span>
+
+      </a>
+
+      <div class="demo-pill">
+
+        <i></i>
+
+        INTERACTIVE DEMO
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="page">
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <div>
+
+        <div class="eyebrow">
+
+          <i></i>
+
+          INVOICE DEMO
+
+        </div>
+
+        <h1>
+
+          Create it.
+
+          Preview it.
+
+          <span>
+            Get paid.
+          </span>
+
+        </h1>
+
+      </div>
+
+      <div class="intro-copy">
+
+        <strong>
+          Try it as your own business.
+        </strong>
+
+        Choose what you want to charge for, set your
+        prices and preview the invoice exactly as your
+        customer would see it.
+
+      </div>
+
+    </section>
+
+    <div class="demo-note">
+
+      <strong>
+        Demo mode:
+      </strong>
+
+      No invoice is actually sent and no real payment is processed.
+
+    </div>
+
+    <!-- =====================================
+         BUSINESS VIEW
+         ===================================== -->
+
+    <section
+      class="app"
+      id="builder"
+    >
+
+      <div class="app-header">
+
+        <div class="business-brand">
+
+          <span
+            class="business-avatar"
+            id="businessAvatar"
+          >
+            Y
+          </span>
+
+          <div>
+
+            <strong id="headerBusinessName">
+              Your Business
+            </strong>
+
+            <small>
+              INVOICES
+            </small>
+
+          </div>
+
+        </div>
+
+        <span class="draft">
+          DRAFT
+        </span>
+
+      </div>
+
+      <div class="app-body">
+
+        <div class="builder-heading">
+
+          <small>
+            NEW INVOICE
+          </small>
+
+          <h2>
+            What are you charging for?
+          </h2>
+
+          <p>
+            Tick the items you want to include and change
+            the prices to match your business.
+          </p>
+
+        </div>
+
+        <!-- DETAILS -->
+
+        <div class="details">
+
+          <label>
+
+            <span class="field-label">
+              Your business
+            </span>
+
+            <input
+              id="businessName"
+              type="text"
+              value="Your Business"
+              maxlength="50"
+            >
+
+          </label>
+
+          <label>
+
+            <span class="field-label">
+              Customer
+            </span>
+
+            <input
+              id="customerName"
+              type="text"
+              value="John Smith"
+              maxlength="50"
+            >
+
+          </label>
+
+          <label>
+
+            <span class="field-label">
+              Customer email
+            </span>
+
+            <input
+              id="customerEmail"
+              type="email"
+              value="john@example.com"
+            >
+
+          </label>
+
+          <label>
+
+            <span class="field-label">
+              Payment terms
+            </span>
+
+            <select id="paymentTerms">
+
+              <option value="7">
+                7 days
+              </option>
+
+              <option
+                value="14"
+                selected
+              >
+                14 days
+              </option>
+
+              <option value="30">
+                30 days
+              </option>
+
+            </select>
+
+          </label>
+
+        </div>
+
+        <!-- SERVICES -->
+
+        <section class="service-panel">
+
+          <div class="service-head">
+
+            <div>
+
+              <strong>
+                Invoice items
+              </strong>
+
+              <span>
+                Select the services you want to include.
+              </span>
+
+            </div>
+
+            <select
+              class="business-type"
+              id="businessType"
+            >
+
+              <option value="trades">
+                Trades
+              </option>
+
+              <option value="accountancy">
+                Accountancy
+              </option>
+
+              <option value="consultancy">
+                Consultancy
+              </option>
+
+              <option value="beauty">
+                Beauty / Barber
+              </option>
+
+              <option value="hospitality">
+                Hospitality
+              </option>
+
+              <option value="general">
+                General services
+              </option>
+
+            </select>
+
+          </div>
+
+          <div
+            class="service-list"
+            id="serviceList"
+          ></div>
+
+          <!-- CUSTOM ITEMS ARE ADDED HERE -->
+
+          <div
+            class="service-list"
+            id="customItems"
+          ></div>
+
+          <!-- ADD CUSTOM ITEM -->
+
+          <div
+            class="custom-builder"
+            id="customBuilder"
+          >
+
+            <input
+              id="customName"
+              type="text"
+              placeholder="Item name"
+              maxlength="60"
+            >
+
+            <div class="price-wrap">
+
+              <input
+                class="price-input"
+                id="customPrice"
+                type="number"
+                min="0"
+                max="100000"
+                step="0.01"
+                value="100"
+              >
+
+            </div>
+
+            <button
+              class="add-item-button"
+              id="confirmCustom"
+              type="button"
+            >
+              Add item
+            </button>
+
+          </div>
+
+          <button
+            class="custom-trigger"
+            id="showCustom"
+            type="button"
+          >
+            + Add my own item
+          </button>
+
+        </section>
+
+        <!-- TOTALS -->
+
+        <div class="total-area">
+
+          <label class="vat-box">
+
+            <input
+              id="vatToggle"
+              type="checkbox"
+            >
+
+            Add 20% VAT
+
+          </label>
+
+          <div class="totals">
+
+            <div class="total-row">
+
+              <span>
+                Subtotal
+              </span>
+
+              <strong id="subtotal">
+                £0.00
+              </strong>
+
+            </div>
+
+            <div
+              class="total-row"
+              id="vatRow"
+            >
+
+              <span>
+                VAT
+              </span>
+
+              <strong id="vatTotal">
+                £0.00
+              </strong>
+
+            </div>
+
+            <div class="total-row grand-total">
+
+              <span>
+                Total due
+              </span>
+
+              <strong id="grandTotal">
+                £0.00
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="actions">
+
+          <button
+            class="button button-dark"
+            id="previewButton"
+            type="button"
+          >
+
+            Preview as customer
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         CUSTOMER PREVIEW
+         ===================================== -->
+
+    <section
+      class="preview"
+      id="preview"
+    >
+
+      <div class="preview-top">
+
+        <button
+          class="button button-light"
+          id="backButton"
+          type="button"
+        >
+          ← Back to edit
+        </button>
+
+        <span>
+          Customer view
+        </span>
+
+      </div>
+
+      <div class="invoice-shell">
+
+        <div class="customer-invoice">
+
+          <div class="invoice-head">
+
+            <div class="invoice-business">
+
+              <div
+                class="invoice-logo"
+                id="invoiceLogo"
+              >
+                Y
+              </div>
+
+              <div>
+
+                <strong id="invoiceBusiness">
+                  Your Business
+                </strong>
+
+                <span>
+                  Invoice
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="invoice-number">
+
+              <small>
+                INVOICE
+              </small>
+
+              <strong>
+                #INV-1048
+              </strong>
+
+            </div>
+
+          </div>
+
+          <div class="invoice-meta">
+
+            <div>
+
+              <small>
+                BILLED TO
+              </small>
+
+              <strong id="invoiceCustomer">
+                John Smith
+              </strong>
+
+              <span id="invoiceEmail">
+                john@example.com
+              </span>
+
+            </div>
+
+            <div>
+
+              <small>
+                PAYMENT DUE
+              </small>
+
+              <strong id="invoiceDue">
+                —
+              </strong>
+
+              <span id="invoiceTerms">
+                14 day payment terms
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="preview-items">
+
+            <div class="preview-item-head">
+
+              <span>
+                DESCRIPTION
+              </span>
+
+              <span>
+                AMOUNT
+              </span>
+
+            </div>
+
+            <div id="invoiceItems"></div>
+
+          </div>
+
+          <div class="preview-totals">
+
+            <div class="preview-total-row">
+
+              <span>
+                Subtotal
+              </span>
+
+              <strong id="invoiceSubtotal">
+                £0.00
+              </strong>
+
+            </div>
+
+            <div
+              class="preview-total-row"
+              id="invoiceVatRow"
+            >
+
+              <span>
+                VAT
+              </span>
+
+              <strong id="invoiceVat">
+                £0.00
+              </strong>
+
+            </div>
+
+            <div class="preview-total-row preview-grand">
+
+              <span>
+                Total due
+              </span>
+
+              <strong id="invoiceTotal">
+                £0.00
+              </strong>
+
+            </div>
+
+          </div>
+
+          <div class="invoice-send">
+
+            <p>
+              Ready to send this invoice to your customer?
+            </p>
+
+            <button
+              class="button button-accent"
+              id="sendInvoice"
+              type="button"
+            >
+
+              Send invoice
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         PAID SCREEN
+         ===================================== -->
+
+    <section
+      class="paid"
+      id="paid"
+    >
+
+      <div class="paid-inner">
+
+        <div class="paid-icon">
+          ✓
+        </div>
+
+        <small>
+          INVOICE PAID
+        </small>
+
+        <h2>
+
+          You've been paid
+
+          <span id="paidAmount">
+            £0.00
+          </span>
+
+        </h2>
+
+        <p id="paidText">
+          Your customer has paid the invoice in full.
+        </p>
+
+        <button
+          class="button button-dark"
+          id="againButton"
+          type="button"
+        >
+          Create another invoice
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="site-cta">
+
+      <div>
+
+        <small>
+          BUILT AROUND YOUR BUSINESS
+        </small>
+
+        <h2>
+          Imagine this doing the real work.
+        </h2>
+
+        <p>
+          Elero can build invoicing, payments and automation
+          around the way your business actually operates.
+        </p>
+
+      </div>
+
+      <a
+        class="button"
+        href="index.html#contact"
+      >
+
+        Talk to Elero
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- PROCESS OVERLAY -->
+
+  <div
+    class="overlay"
+    id="overlay"
+  >
+
+    <div class="modal">
+
+      <div class="loader"></div>
+
+      <small id="modalLabel">
+        SENDING
+      </small>
+
+      <h3 id="modalHeading">
+        Sending invoice…
+      </h3>
+
+      <p id="modalText">
+        Preparing your invoice.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- PAYMENT NOTIFICATION -->
+
+  <div
+    class="toast"
+    id="toast"
+  >
+
+    <div class="toast-icon">
+      £
+    </div>
+
+    <div>
+
+      <small id="toastBusiness">
+        YOUR BUSINESS
+      </small>
+
+      <strong id="toastAmount">
+        You've been paid
+      </strong>
+
+      <span id="toastCustomer">
+        Invoice paid
+      </span>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    /* =================================
+       SERVICES
+       ================================= */
+
+    const presets = {
+
+      trades: [
+        {
+          name: "Labour",
+          sub: "Labour and time",
+          price: 350,
+          checked: true
+        },
+        {
+          name: "Materials",
+          sub: "Parts and materials",
+          price: 220,
+          checked: true
+        },
+        {
+          name: "Call-out fee",
+          sub: "Site visit / call-out",
+          price: 75,
+          checked: false
+        },
+        {
+          name: "Installation",
+          sub: "Installation work",
+          price: 450,
+          checked: false
+        },
+        {
+          name: "Maintenance",
+          sub: "Service or maintenance",
+          price: 120,
+          checked: false
+        }
+      ],
+
+      accountancy: [
+        {
+          name: "Annual accounts",
+          sub: "Annual accounts preparation",
+          price: 750,
+          checked: true
+        },
+        {
+          name: "Self Assessment",
+          sub: "Personal tax return",
+          price: 250,
+          checked: true
+        },
+        {
+          name: "Bookkeeping",
+          sub: "Bookkeeping services",
+          price: 180,
+          checked: false
+        },
+        {
+          name: "Payroll",
+          sub: "Payroll processing",
+          price: 120,
+          checked: false
+        },
+        {
+          name: "VAT Return",
+          sub: "VAT return preparation",
+          price: 150,
+          checked: false
+        }
+      ],
+
+      consultancy: [
+        {
+          name: "Consultation",
+          sub: "Professional consultation",
+          price: 150,
+          checked: true
+        },
+        {
+          name: "Project work",
+          sub: "Agreed project services",
+          price: 850,
+          checked: true
+        },
+        {
+          name: "Monthly retainer",
+          sub: "Ongoing support",
+          price: 500,
+          checked: false
+        },
+        {
+          name: "Report",
+          sub: "Professional report",
+          price: 300,
+          checked: false
+        },
+        {
+          name: "Workshop",
+          sub: "Business workshop",
+          price: 450,
+          checked: false
+        }
+      ],
+
+      beauty: [
+        {
+          name: "Appointment",
+          sub: "Standard appointment",
+          price: 45,
+          checked: true
+        },
+        {
+          name: "Treatment",
+          sub: "Treatment service",
+          price: 70,
+          checked: true
+        },
+        {
+          name: "Premium treatment",
+          sub: "Premium service",
+          price: 110,
+          checked: false
+        },
+        {
+          name: "Product",
+          sub: "Retail product",
+          price: 25,
+          checked: false
+        },
+        {
+          name: "Package",
+          sub: "Treatment package",
+          price: 180,
+          checked: false
+        }
+      ],
+
+      hospitality: [
+        {
+          name: "Event deposit",
+          sub: "Booking deposit",
+          price: 250,
+          checked: true
+        },
+        {
+          name: "Venue hire",
+          sub: "Private venue hire",
+          price: 600,
+          checked: true
+        },
+        {
+          name: "Catering",
+          sub: "Food and catering",
+          price: 450,
+          checked: false
+        },
+        {
+          name: "Drinks package",
+          sub: "Drinks package",
+          price: 280,
+          checked: false
+        },
+        {
+          name: "Additional guests",
+          sub: "Additional guest charge",
+          price: 100,
+          checked: false
+        }
+      ],
+
+      general: [
+        {
+          name: "Service",
+          sub: "Professional service",
+          price: 300,
+          checked: true
+        },
+        {
+          name: "Deposit",
+          sub: "Customer deposit",
+          price: 150,
+          checked: true
+        },
+        {
+          name: "Materials",
+          sub: "Additional materials",
+          price: 75,
+          checked: false
+        },
+        {
+          name: "Delivery",
+          sub: "Delivery charge",
+          price: 30,
+          checked: false
+        },
+        {
+          name: "Additional work",
+          sub: "Additional agreed work",
+          price: 120,
+          checked: false
+        }
+      ]
+
+    };
+
+    /* =================================
+       ELEMENTS
+       ================================= */
+
+    const builder =
+      document.getElementById(
+        "builder"
+      );
+
+    const preview =
+      document.getElementById(
+        "preview"
+      );
+
+    const paid =
+      document.getElementById(
+        "paid"
+      );
+
+    const serviceList =
+      document.getElementById(
+        "serviceList"
+      );
+
+    const customItems =
+      document.getElementById(
+        "customItems"
+      );
+
+    const businessType =
+      document.getElementById(
+        "businessType"
+      );
+
+    const businessName =
+      document.getElementById(
+        "businessName"
+      );
+
+    const customerName =
+      document.getElementById(
+        "customerName"
+      );
+
+    const customerEmail =
+      document.getElementById(
+        "customerEmail"
+      );
+
+    const paymentTerms =
+      document.getElementById(
+        "paymentTerms"
+      );
+
+    const vatToggle =
+      document.getElementById(
+        "vatToggle"
+      );
+
+    const customBuilder =
+      document.getElementById(
+        "customBuilder"
+      );
+
+    const showCustom =
+      document.getElementById(
+        "showCustom"
+      );
+
+    const customName =
+      document.getElementById(
+        "customName"
+      );
+
+    const customPrice =
+      document.getElementById(
+        "customPrice"
+      );
+
+    const overlay =
+      document.getElementById(
+        "overlay"
+      );
+
+    const toast =
+      document.getElementById(
+        "toast"
+      );
+
+    let timers = [];
+
+    /* =================================
+       PRESET ITEMS
+       ================================= */
+
+    function renderServices() {
+
+      serviceList.innerHTML = "";
+
+      customItems.innerHTML = "";
+
+      closeCustomBuilder();
+
+      const items =
+        presets[
+          businessType.value
+        ];
+
+      items.forEach(
+        item => {
+
+          serviceList.appendChild(
+            createServiceRow(
+              item.name,
+              item.sub,
+              item.price,
+              item.checked,
+              false
+            )
+          );
+
+        }
+      );
+
+      calculate();
+
+    }
+
+    function createServiceRow(
+      name,
+      sub,
+      price,
+      checked,
+      custom
+    ) {
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+      row.className =
+        "service-row";
+
+      if (
+        custom
+      ) {
+
+        row.dataset.custom =
+          "true";
+
+      }
+
+      row.innerHTML =
+        `
+          <input
+            class="service-check"
+            type="checkbox"
+            ${checked ? "checked" : ""}
+          >
+
+          <div class="service-name">
+
+            <strong>
+              ${escapeHTML(name)}
+            </strong>
+
+            <span>
+              ${escapeHTML(sub)}
+            </span>
+
+          </div>
+
+          <div class="price-wrap">
+
+            <input
+              class="price-input"
+              type="number"
+              min="0"
+              max="100000"
+              step="0.01"
+              value="${Number(price)}"
+            >
+
+          </div>
+        `;
+
+      row
+        .querySelector(
+          ".service-check"
+        )
+        .addEventListener(
+          "change",
+          calculate
+        );
+
+      row
+        .querySelector(
+          ".price-input"
+        )
+        .addEventListener(
+          "input",
+          calculate
+        );
+
+      return row;
+
+    }
+
+    businessType.addEventListener(
+      "change",
+      renderServices
+    );
+
+    /* =================================
+       CUSTOM ITEM
+       ================================= */
+
+    showCustom.addEventListener(
+      "click",
+      () => {
+
+        customBuilder
+          .classList
+          .add(
+            "show"
+          );
+
+        showCustom
+          .classList
+          .add(
+            "hidden"
+          );
+
+        customName.value =
+          "";
+
+        customPrice.value =
+          "100";
+
+        customName.focus();
+
+      }
+    );
+
+    document
+      .getElementById(
+        "confirmCustom"
+      )
+      .addEventListener(
+        "click",
+        addCustomItem
+      );
+
+    customName.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key ===
+          "Enter"
+        ) {
+
+          addCustomItem();
+
+        }
+
+      }
+    );
+
+    function addCustomItem() {
+
+      const name =
+        customName
+          .value
+          .trim();
+
+      const price =
+        Math.max(
+          0,
+          Number(
+            customPrice.value
+          ) || 0
+        );
+
+      if (
+        !name
+      ) {
+
+        customName.focus();
+
+        return;
+
+      }
+
+      /*
+        Important:
+        custom item uses EXACTLY the same
+        createServiceRow() function as
+        every preset item.
+      */
+
+      const row =
+        createServiceRow(
+          name,
+          "Custom item",
+          price,
+          true,
+          true
+        );
+
+      customItems.appendChild(
+        row
+      );
+
+      closeCustomBuilder();
+
+      calculate();
+
+    }
+
+    function closeCustomBuilder() {
+
+      customBuilder
+        .classList
+        .remove(
+          "show"
+        );
+
+      showCustom
+        .classList
+        .remove(
+          "hidden"
+        );
+
+    }
+
+    /* =================================
+       TOTALS
+       ================================= */
+
+    function getItems() {
+
+      const rows =
+        [
+          ...serviceList
+            .querySelectorAll(
+              ".service-row"
+            ),
+
+          ...customItems
+            .querySelectorAll(
+              ".service-row"
+            )
+        ];
+
+      const selected = [];
+
+      rows.forEach(
+        row => {
+
+          const check =
+            row.querySelector(
+              ".service-check"
+            );
+
+          if (
+            !check.checked
+          ) {
+
+            return;
+
+          }
+
+          const name =
+            row
+              .querySelector(
+                ".service-name strong"
+              )
+              .textContent
+              .trim();
+
+          const price =
+            Math.max(
+              0,
+              Number(
+                row
+                  .querySelector(
+                    ".price-input"
+                  )
+                  .value
+              ) || 0
+            );
+
+          selected.push({
+            name,
+            price
+          });
+
+        }
+      );
+
+      return selected;
+
+    }
+
+    function calculate() {
+
+      const items =
+        getItems();
+
+      const subtotal =
+        items.reduce(
+          (
+            total,
+            item
+          ) =>
+            total +
+            item.price,
+          0
+        );
+
+      const vat =
+        vatToggle.checked
+          ? subtotal * .20
+          : 0;
+
+      const total =
+        subtotal +
+        vat;
+
+      document
+        .getElementById(
+          "subtotal"
+        )
+        .textContent =
+        `£${money(subtotal)}`;
+
+      document
+        .getElementById(
+          "vatTotal"
+        )
+        .textContent =
+        `£${money(vat)}`;
+
+      document
+        .getElementById(
+          "grandTotal"
+        )
+        .textContent =
+        `£${money(total)}`;
+
+      document
+        .getElementById(
+          "vatRow"
+        )
+        .style
+        .display =
+        vatToggle.checked
+          ? "flex"
+          : "none";
+
+      return {
+        items,
+        subtotal,
+        vat,
+        total
+      };
+
+    }
+
+    vatToggle.addEventListener(
+      "change",
+      calculate
+    );
+
+    /* =================================
+       BUSINESS NAME
+       ================================= */
+
+    businessName.addEventListener(
+      "input",
+      () => {
+
+        const name =
+          businessName
+            .value
+            .trim() ||
+          "Your Business";
+
+        document
+          .getElementById(
+            "headerBusinessName"
+          )
+          .textContent =
+          name;
+
+        document
+          .getElementById(
+            "businessAvatar"
+          )
+          .textContent =
+          name
+            .charAt(0)
+            .toUpperCase();
+
+      }
+    );
+
+    /* =================================
+       PREVIEW
+       ================================= */
+
+    document
+      .getElementById(
+        "previewButton"
+      )
+      .addEventListener(
+        "click",
+        showPreview
+      );
+
+    function showPreview() {
+
+      const totals =
+        calculate();
+
+      const business =
+        businessName
+          .value
+          .trim();
+
+      const customer =
+        customerName
+          .value
+          .trim();
+
+      const email =
+        customerEmail
+          .value
+          .trim();
+
+      if (
+        !business
+      ) {
+
+        alert(
+          "Enter your business name."
+        );
+
+        return;
+
+      }
+
+      if (
+        !customer ||
+        !email
+      ) {
+
+        alert(
+          "Enter the customer name and email."
+        );
+
+        return;
+
+      }
+
+      if (
+        totals.items.length ===
+        0
+      ) {
+
+        alert(
+          "Select at least one invoice item."
+        );
+
+        return;
+
+      }
+
+      if (
+        totals.total <=
+        0
+      ) {
+
+        alert(
+          "The invoice needs a value above £0."
+        );
+
+        return;
+
+      }
+
+      document
+        .getElementById(
+          "invoiceBusiness"
+        )
+        .textContent =
+        business;
+
+      document
+        .getElementById(
+          "invoiceLogo"
+        )
+        .textContent =
+        business
+          .charAt(0)
+          .toUpperCase();
+
+      document
+        .getElementById(
+          "invoiceCustomer"
+        )
+        .textContent =
+        customer;
+
+      document
+        .getElementById(
+          "invoiceEmail"
+        )
+        .textContent =
+        email;
+
+      const days =
+        Number(
+          paymentTerms.value
+        );
+
+      const due =
+        new Date();
+
+      due.setDate(
+        due.getDate() +
+        days
+      );
+
+      document
+        .getElementById(
+          "invoiceDue"
+        )
+        .textContent =
+        due.toLocaleDateString(
+          "en-GB",
+          {
+            day:
+              "numeric",
+
+            month:
+              "long",
+
+            year:
+              "numeric"
+          }
+        );
+
+      document
+        .getElementById(
+          "invoiceTerms"
+        )
+        .textContent =
+        `${days} day payment terms`;
+
+      const itemList =
+        document.getElementById(
+          "invoiceItems"
+        );
+
+      itemList.innerHTML =
+        "";
+
+      totals.items.forEach(
+        item => {
+
+          const row =
+            document.createElement(
+              "div"
+            );
+
+          row.className =
+            "preview-item";
+
+          row.innerHTML =
+            `
+              <strong>
+                ${escapeHTML(item.name)}
+              </strong>
+
+              <strong>
+                £${money(item.price)}
+              </strong>
+            `;
+
+          itemList.appendChild(
+            row
+          );
+
+        }
+      );
+
+      document
+        .getElementById(
+          "invoiceSubtotal"
+        )
+        .textContent =
+        `£${money(totals.subtotal)}`;
+
+      document
+        .getElementById(
+          "invoiceVat"
+        )
+        .textContent =
+        `£${money(totals.vat)}`;
+
+      document
+        .getElementById(
+          "invoiceTotal"
+        )
+        .textContent =
+        `£${money(totals.total)}`;
+
+      document
+        .getElementById(
+          "invoiceVatRow"
+        )
+        .style
+        .display =
+        totals.vat > 0
+          ? "flex"
+          : "none";
+
+      builder.classList.add(
+        "hidden"
+      );
+
+      paid.classList.remove(
+        "show"
+      );
+
+      preview.classList.add(
+        "show"
+      );
+
+      preview.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }
+
+    /* =================================
+       BACK
+       ================================= */
+
+    document
+      .getElementById(
+        "backButton"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          preview.classList.remove(
+            "show"
+          );
+
+          builder.classList.remove(
+            "hidden"
+          );
+
+          builder.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+    /* =================================
+       SEND JOURNEY
+       ================================= */
+
+    document
+      .getElementById(
+        "sendInvoice"
+      )
+      .addEventListener(
+        "click",
+        sendInvoice
+      );
+
+    function sendInvoice() {
+
+      clearTimers();
+
+      const totals =
+        calculate();
+
+      const customer =
+        customerName
+          .value
+          .trim();
+
+      const email =
+        customerEmail
+          .value
+          .trim();
+
+      showOverlay(
+        "SENDING INVOICE",
+        "Sending to customer…",
+        `Sending your £${money(totals.total)} invoice to ${email}.`
+      );
+
+      timers.push(
+        setTimeout(
+          () => {
+
+            showOverlay(
+              "INVOICE SENT",
+              "Delivered.",
+              `${customer} has received the invoice.`
+            );
+
+          },
+          1200
+        )
+      );
+
+      timers.push(
+        setTimeout(
+          () => {
+
+            showOverlay(
+              "CUSTOMER ACTIVITY",
+              "Invoice viewed.",
+              `${customer} has opened the invoice.`
+            );
+
+          },
+          2600
+        )
+      );
+
+      timers.push(
+        setTimeout(
+          () => {
+
+            showOverlay(
+              "PAYMENT",
+              `Paying £${money(totals.total)}…`,
+              "Customer payment is being processed."
+            );
+
+          },
+          4000
+        )
+      );
+
+      timers.push(
+        setTimeout(
+          () => {
+
+            showOverlay(
+              "PAYMENT APPROVED",
+              "Payment successful.",
+              "Updating the invoice automatically…"
+            );
+
+          },
+          5300
+        )
+      );
+
+      timers.push(
+        setTimeout(
+          () => {
+
+            overlay.classList.remove(
+              "show"
+            );
+
+            showPaid(
+              totals.total
+            );
+
+          },
+          6400
+        )
+      );
+
+    }
+
+    function showOverlay(
+      label,
+      heading,
+      text
+    ) {
+
+      document
+        .getElementById(
+          "modalLabel"
+        )
+        .textContent =
+        label;
+
+      document
+        .getElementById(
+          "modalHeading"
+        )
+        .textContent =
+        heading;
+
+      document
+        .getElementById(
+          "modalText"
+        )
+        .textContent =
+        text;
+
+      overlay.classList.add(
+        "show"
+      );
+
+    }
+
+    /* =================================
+       PAID
+       ================================= */
+
+    function showPaid(
+      amount
+    ) {
+
+      const business =
+        businessName
+          .value
+          .trim();
+
+      const customer =
+        customerName
+          .value
+          .trim();
+
+      preview.classList.remove(
+        "show"
+      );
+
+      builder.classList.add(
+        "hidden"
+      );
+
+      document
+        .getElementById(
+          "paidAmount"
+        )
+        .textContent =
+        `£${money(amount)}`;
+
+      document
+        .getElementById(
+          "paidText"
+        )
+        .textContent =
+        `${customer} has paid invoice #INV-1048 in full.`;
+
+      paid.classList.add(
+        "show"
+      );
+
+      document
+        .getElementById(
+          "toastBusiness"
+        )
+        .textContent =
+        business.toUpperCase();
+
+      document
+        .getElementById(
+          "toastAmount"
+        )
+        .textContent =
+        `You've been paid £${money(amount)}`;
+
+      document
+        .getElementById(
+          "toastCustomer"
+        )
+        .textContent =
+        `Invoice paid by ${customer}`;
+
+      toast.classList.add(
+        "show"
+      );
+
+      setTimeout(
+        () => {
+
+          toast.classList.remove(
+            "show"
+          );
+
+        },
+        4500
+      );
+
+      paid.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }
+
+    /* =================================
+       START ANOTHER
+       ================================= */
+
+    document
+      .getElementById(
+        "againButton"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          clearTimers();
+
+          paid.classList.remove(
+            "show"
+          );
+
+          preview.classList.remove(
+            "show"
+          );
+
+          builder.classList.remove(
+            "hidden"
+          );
+
+          builder.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+    /* =================================
+       HELPERS
+       ================================= */
+
+    function clearTimers() {
+
+      timers.forEach(
+        timer =>
+          clearTimeout(
+            timer
+          )
+      );
+
+      timers = [];
+
+    }
+
+    function money(
+      value
+    ) {
+
+      return Number(
+        value
+      ).toLocaleString(
+        "en-GB",
+        {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      );
+
+    }
+
+    function escapeHTML(
+      value
+    ) {
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+      div.textContent =
+        String(
+          value
+        );
+
+      return div.innerHTML;
+
+    }
+
+    /* =================================
+       START
+       ================================= */
+
+    renderServices();
+
+    calculate();
+
+  </script>
+
+</body>
+
+</html>

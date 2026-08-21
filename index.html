@@ -1,33 +1,18 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width,initial-scale=1"
-  >
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <meta
     name="description"
-    content="Elero Studio builds modern websites for businesses, with booking systems, payments, automation, SEO and digital solutions tailored to your needs."
+    content="Elero Studio builds modern websites for businesses, with booking systems, payments, invoicing, automation, SEO and digital solutions tailored to your needs."
   >
 
-  <title>
-    Elero Studio | Web Design, Development & Digital Solutions
-  </title>
+  <title>Elero Studio | Web Design, Development & Digital Solutions</title>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
@@ -44,15 +29,8 @@
     href="https://elerostudio.com/"
   >
 
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:site_name"
-    content="Elero Studio"
-  >
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Elero Studio">
 
   <meta
     property="og:title"
@@ -130,13 +108,45 @@
   }
   </script>
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .solution-card-link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .solution-card-link:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(79,230,255,.55);
+
+      box-shadow:
+        0 14px 32px
+        rgba(8,20,32,.08);
+    }
+
+    .solution-card-link:focus-visible {
+      outline:
+        3px solid
+        rgba(79,230,255,.55);
+
+      outline-offset: 3px;
+    }
+  </style>
+
 </head>
 
 <body>
+
+  <!-- HEADER -->
 
   <header
     class="site-header"
@@ -217,6 +227,8 @@
 
     </div>
 
+    <!-- MOBILE MENU -->
+
     <div
       class="mobile-menu"
       id="mobileMenu"
@@ -253,7 +265,12 @@
 
   </header>
 
+
   <main>
+
+    <!-- =====================================
+         HERO
+         ===================================== -->
 
     <section class="hero">
 
@@ -287,12 +304,9 @@
           </h1>
 
           <p>
-
-            We design and build modern websites
-            for businesses that want to look
-            sharper, win more trust and turn
-            more visitors into enquiries.
-
+            We design and build modern websites for businesses that want
+            to look sharper, win more trust and turn more visitors into
+            enquiries.
           </p>
 
           <div class="hero-actions">
@@ -355,6 +369,9 @@
 
         </div>
 
+
+        <!-- HERO VISUAL -->
+
         <div
           class="hero-visual reveal delay"
           id="hero3d"
@@ -373,9 +390,11 @@
               <div class="browser-top">
 
                 <div class="dots">
+
                   <i></i>
                   <i></i>
                   <i></i>
+
                 </div>
 
                 <div class="address">
@@ -393,9 +412,11 @@
                   </b>
 
                   <div>
+
                     <span></span>
                     <span></span>
                     <span></span>
+
                   </div>
 
                 </div>
@@ -405,19 +426,25 @@
                   <em></em>
 
                   <div class="mock-title">
+
                     <i></i>
                     <i></i>
+
                   </div>
 
                   <div class="mock-copy">
+
                     <i></i>
                     <i></i>
                     <i></i>
+
                   </div>
 
                   <div class="mock-buttons">
+
                     <i></i>
                     <i></i>
+
                   </div>
 
                 </div>
@@ -474,13 +501,17 @@
 
     </section>
 
+
+    <!-- =====================================
+         TRUST
+         ===================================== -->
+
     <section class="trust">
 
       <div class="container trust-inner">
 
         <p>
-          Built for businesses that have
-          outgrown their current website.
+          Built for businesses that have outgrown their current website.
         </p>
 
         <div>
@@ -511,6 +542,11 @@
 
     </section>
 
+
+    <!-- =====================================
+         SERVICES
+         ===================================== -->
+
     <section
       class="section services"
       id="services"
@@ -533,15 +569,15 @@
           </div>
 
           <p>
-
-            We can build the website itself,
-            then add the systems that make
-            it more useful to your customers
-            and easier for your business to run.
-
+            We can build the website itself, then add the systems that
+            make it more useful to your customers and easier for your
+            business to run.
           </p>
 
         </div>
+
+
+        <!-- CORE SERVICES -->
 
         <div class="service-list core-services">
 
@@ -558,9 +594,8 @@
               </h3>
 
               <p>
-                Modern, responsive websites
-                designed around your business,
-                your customers and your goals.
+                Modern, responsive websites designed around your
+                business, your customers and your goals.
               </p>
 
             </div>
@@ -570,6 +605,7 @@
             </b>
 
           </article>
+
 
           <article class="service-row reveal">
 
@@ -584,10 +620,8 @@
               </h3>
 
               <p>
-                Already online? We can modernise
-                the experience while retaining
-                the systems and content that
-                still work for you.
+                Already online? We can modernise the experience while
+                retaining the systems and content that still work for you.
               </p>
 
             </div>
@@ -597,6 +631,7 @@
             </b>
 
           </article>
+
 
           <article class="service-row reveal">
 
@@ -611,10 +646,8 @@
               </h3>
 
               <p>
-                Once your website is live,
-                we can keep it hosted and
-                provide ongoing reasonable
-                amendments when you need them.
+                Once your website is live, we can keep it hosted and
+                provide ongoing reasonable amendments when you need them.
               </p>
 
             </div>
@@ -627,6 +660,11 @@
 
         </div>
 
+
+        <!-- =====================================
+             ADDITIONAL SOLUTIONS
+             ===================================== -->
+
         <div class="solutions-panel reveal">
 
           <div class="solutions-intro">
@@ -636,15 +674,23 @@
             </span>
 
             <h3>
-              Build more into the website
-              when the business needs it.
+              Build more into the website when the business needs it.
             </h3>
 
           </div>
 
+
           <div class="solutions-grid">
 
-            <article class="solution-card">
+            <!-- ===============================
+                 01 BOOKING SYSTEMS
+                 =============================== -->
+
+            <a
+              href="booking-demo.html"
+              class="solution-card solution-card-link"
+              aria-label="View Elero booking system demo"
+            >
 
               <span>
                 01
@@ -657,15 +703,24 @@
                 </h4>
 
                 <p>
-                  Appointments, consultations,
-                  table bookings and availability.
+                  Appointments, consultations, table bookings and
+                  availability.
                 </p>
 
               </div>
 
-            </article>
+            </a>
 
-            <article class="solution-card">
+
+            <!-- ===============================
+                 02 PAYMENT INTEGRATION
+                 =============================== -->
+
+            <a
+              href="payment-demo.html"
+              class="solution-card solution-card-link"
+              aria-label="View Elero payment integration demo"
+            >
 
               <span>
                 02
@@ -678,16 +733,24 @@
                 </h4>
 
                 <p>
-                  Connect secure payment providers
-                  for deposits, invoices or
-                  checkout payments.
+                  Connect secure payment providers for deposits,
+                  invoices or checkout payments.
                 </p>
 
               </div>
 
-            </article>
+            </a>
 
-            <article class="solution-card">
+
+            <!-- ===============================
+                 03 INVOICE SOLUTIONS
+                 =============================== -->
+
+            <a
+              href="invoice-demo.html"
+              class="solution-card solution-card-link"
+              aria-label="View Elero invoice solution demo"
+            >
 
               <span>
                 03
@@ -696,17 +759,22 @@
               <div>
 
                 <h4>
-                  Email solutions
+                  Invoice solutions
                 </h4>
 
                 <p>
-                  Branded domain email setup and
-                  automated website confirmations.
+                  Create professional invoices, track payments and
+                  make it easier for customers to pay.
                 </p>
 
               </div>
 
-            </article>
+            </a>
+
+
+            <!-- ===============================
+                 04 AUTOMATION
+                 =============================== -->
 
             <article class="solution-card">
 
@@ -721,14 +789,18 @@
                 </h4>
 
                 <p>
-                  Route enquiries, trigger
-                  follow-ups and reduce repetitive
-                  admin.
+                  Route enquiries, trigger follow-ups and reduce
+                  repetitive admin.
                 </p>
 
               </div>
 
             </article>
+
+
+            <!-- ===============================
+                 05 CLIENT PORTALS
+                 =============================== -->
 
             <article class="solution-card">
 
@@ -743,14 +815,18 @@
                 </h4>
 
                 <p>
-                  Secure client areas or integration
-                  with platforms your business
-                  already uses.
+                  Secure client areas or integration with platforms your
+                  business already uses.
                 </p>
 
               </div>
 
             </article>
+
+
+            <!-- ===============================
+                 06 SEO
+                 =============================== -->
 
             <article class="solution-card">
 
@@ -765,9 +841,8 @@
                 </h4>
 
                 <p>
-                  Technical, on-page and local SEO
-                  foundations to help the right
-                  people find you.
+                  Technical, on-page and local SEO foundations to help
+                  the right people find you.
                 </p>
 
               </div>
@@ -781,6 +856,11 @@
       </div>
 
     </section>
+
+
+    <!-- =====================================
+         PRICING
+         ===================================== -->
 
     <section
       class="section pricing"
@@ -804,19 +884,17 @@
           </div>
 
           <p>
-
-            Your website has a one-off build
-            price agreed before we start.
-            There is
+            Your website has a one-off build price agreed before we
+            start. There is
             <strong>
               no deposit and nothing to pay upfront.
             </strong>
-            After launch, you simply choose the
-            ongoing option that suits you.
-
+            After launch, you simply choose the ongoing option that
+            suits you.
           </p>
 
         </div>
+
 
         <div class="build-price-card reveal">
 
@@ -831,10 +909,9 @@
             </h3>
 
             <p>
-              The exact build price depends on
-              the size and functionality of your
-              website. You receive a clear quote
-              before any work begins.
+              The exact build price depends on the size and functionality
+              of your website. You receive a clear quote before any work
+              begins.
             </p>
 
           </div>
@@ -873,6 +950,7 @@
 
         </div>
 
+
         <div class="pricing-choice reveal">
 
           <div class="pricing-choice-copy">
@@ -890,14 +968,16 @@
               <strong>
                 not
               </strong>
-              pay both. Your first 30 days of
-              reasonable post-launch edits are
-              included whichever option you choose.
+              pay both. Your first 30 days of reasonable post-launch
+              edits are included whichever option you choose.
             </p>
 
           </div>
 
+
           <div class="pricing-plans">
+
+            <!-- HOSTING -->
 
             <article class="price-plan">
 
@@ -930,9 +1010,8 @@
               </h4>
 
               <p>
-                For clients who simply want us to
-                keep their website hosted, online
-                and accessible.
+                For clients who simply want us to keep their website
+                hosted, online and accessible.
               </p>
 
               <ul>
@@ -950,13 +1029,15 @@
                 </li>
 
                 <li>
-                  Ongoing edits are not included
-                  after the 30-day window
+                  Ongoing edits are not included after the 30-day window
                 </li>
 
               </ul>
 
             </article>
+
+
+            <!-- MANAGED -->
 
             <article class="price-plan managed-plan">
 
@@ -989,9 +1070,8 @@
               </h4>
 
               <p>
-                For clients who want hosting plus
-                ongoing help making reasonable
-                changes to their live website.
+                For clients who want hosting plus ongoing help making
+                reasonable changes to their live website.
               </p>
 
               <ul>
@@ -1009,8 +1089,8 @@
                 </li>
 
                 <li>
-                  No need to pay £3.99 as well —
-                  this replaces the hosting-only option
+                  No need to pay £3.99 as well — this replaces the
+                  hosting-only option
                 </li>
 
               </ul>
@@ -1021,6 +1101,7 @@
 
         </div>
 
+
         <div class="pricing-note reveal">
 
           <span>
@@ -1028,11 +1109,9 @@
           </span>
 
           <p>
-            Larger redesigns, new pages or
-            substantial new functionality fall
-            outside normal amendments and would
-            always be quoted separately before
-            work is carried out.
+            Larger redesigns, new pages or substantial new functionality
+            fall outside normal amendments and would always be quoted
+            separately before work is carried out.
           </p>
 
         </div>
@@ -1040,6 +1119,11 @@
       </div>
 
     </section>
+
+
+    <!-- =====================================
+         PROCESS
+         ===================================== -->
 
     <section
       class="section process"
@@ -1057,19 +1141,18 @@
             </small>
 
             <h2>
-              A straightforward way to get
-              a better website.
+              A straightforward way to get a better website.
             </h2>
 
           </div>
 
           <p>
-            A clear, straightforward process
-            from the first conversation through
-            to launch.
+            A clear, straightforward process from the first conversation
+            through to launch.
           </p>
 
         </div>
+
 
         <div class="process-grid">
 
@@ -1084,12 +1167,12 @@
             </h3>
 
             <p>
-              We talk through your business,
-              what you need and what you want
-              the website to achieve.
+              We talk through your business, what you need and what you
+              want the website to achieve.
             </p>
 
           </article>
+
 
           <article class="reveal">
 
@@ -1102,11 +1185,12 @@
             </h3>
 
             <p>
-              You receive a clear quote for
-              the website before we start building.
+              You receive a clear quote for the website before we start
+              building.
             </p>
 
           </article>
+
 
           <article class="reveal">
 
@@ -1119,12 +1203,12 @@
             </h3>
 
             <p>
-              We design and build the website.
-              There is no deposit and nothing
-              to pay upfront.
+              We design and build the website. There is no deposit and
+              nothing to pay upfront.
             </p>
 
           </article>
+
 
           <article class="reveal">
 
@@ -1137,12 +1221,12 @@
             </h3>
 
             <p>
-              You review the finished site and
-              tell us if anything needs changing
-              before approval.
+              You review the finished site and tell us if anything needs
+              changing before approval.
             </p>
 
           </article>
+
 
           <article class="reveal">
 
@@ -1155,12 +1239,12 @@
             </h3>
 
             <p>
-              Once you’re happy, we send the
-              invoice for the agreed website
-              build price.
+              Once you’re happy, we send the invoice for the agreed
+              website build price.
             </p>
 
           </article>
+
 
           <article class="reveal">
 
@@ -1173,9 +1257,8 @@
             </h3>
 
             <p>
-              After payment, the site goes live —
-              with 30 days for reasonable
-              post-launch edits.
+              After payment, the site goes live — with 30 days for
+              reasonable post-launch edits.
             </p>
 
           </article>
@@ -1185,6 +1268,11 @@
       </div>
 
     </section>
+
+
+    <!-- =====================================
+         ABOUT
+         ===================================== -->
 
     <section
       class="section about-preview"
@@ -1201,8 +1289,7 @@
 
           <h2>
 
-            Small studio.
-            Straightforward service.
+            Small studio. Straightforward service.
 
             <span>
               Serious websites.
@@ -1211,16 +1298,14 @@
           </h2>
 
           <p>
-            Elero Studio is a South Wales-based
-            web design and development studio
-            helping businesses improve how they
-            look and operate online.
+            Elero Studio is a South Wales-based web design and
+            development studio helping businesses improve how they look
+            and operate online.
           </p>
 
           <p>
-            From the first conversation to launch,
-            clients deal directly with the people
-            working on their website — keeping the
+            From the first conversation to launch, clients deal directly
+            with the people working on their website — keeping the
             process clear, personal and straightforward.
           </p>
 
@@ -1238,6 +1323,7 @@
           </a>
 
         </div>
+
 
         <div class="about-trust-panel reveal delay">
 
@@ -1268,13 +1354,13 @@
                 </h3>
 
                 <p>
-                  Speak directly with the people
-                  working on your website.
+                  Speak directly with the people working on your website.
                 </p>
 
               </div>
 
             </article>
+
 
             <article>
 
@@ -1289,14 +1375,14 @@
                 </h3>
 
                 <p>
-                  We start with what your business
-                  actually needs, not a
+                  We start with what your business actually needs, not a
                   one-size-fits-all template.
                 </p>
 
               </div>
 
             </article>
+
 
             <article>
 
@@ -1311,8 +1397,8 @@
                 </h3>
 
                 <p>
-                  We can continue helping as your
-                  website and digital needs develop.
+                  We can continue helping as your website and digital
+                  needs develop.
                 </p>
 
               </div>
@@ -1326,6 +1412,11 @@
       </div>
 
     </section>
+
+
+    <!-- =====================================
+         FAQ
+         ===================================== -->
 
     <section class="section faq">
 
@@ -1342,6 +1433,7 @@
           </h2>
 
         </div>
+
 
         <div class="faq-list">
 
@@ -1362,16 +1454,15 @@
             <div>
 
               <p>
-                No. There is no deposit and no
-                upfront website-build fee. We build
-                the site first, you review it, and
-                the agreed build price is invoiced
-                once you approve it.
+                No. There is no deposit and no upfront website-build fee.
+                We build the site first, you review it, and the agreed
+                build price is invoiced once you approve it.
               </p>
 
             </div>
 
           </article>
+
 
           <article class="faq-item reveal">
 
@@ -1390,14 +1481,15 @@
             <div>
 
               <p>
-                Yes. The review stage is specifically
-                there for you to check the website and
-                request reasonable changes before approval.
+                Yes. The review stage is specifically there for you to
+                check the website and request reasonable changes before
+                approval.
               </p>
 
             </div>
 
           </article>
+
 
           <article class="faq-item reveal">
 
@@ -1416,14 +1508,14 @@
             <div>
 
               <p>
-                You have 30 days after launch to request
-                reasonable edits if something was missed
-                during the review stage.
+                You have 30 days after launch to request reasonable edits
+                if something was missed during the review stage.
               </p>
 
             </div>
 
           </article>
+
 
           <article class="faq-item reveal">
 
@@ -1442,9 +1534,9 @@
             <div>
 
               <p>
-                Yes. We can redesign an existing website
-                and, where appropriate, retain or integrate
-                systems the business already relies on.
+                Yes. We can redesign an existing website and, where
+                appropriate, retain or integrate systems the business
+                already relies on.
               </p>
 
             </div>
@@ -1456,6 +1548,11 @@
       </div>
 
     </section>
+
+
+    <!-- =====================================
+         CONTACT
+         ===================================== -->
 
     <section
       class="section contact"
@@ -1473,13 +1570,13 @@
           </small>
 
           <h2>
-            Ready for a website that looks
-            like your business means business?
+            Ready for a website that looks like your business means
+            business?
           </h2>
 
           <p>
-            Tell us a little about what you
-            need and we’ll take it from there.
+            Tell us a little about what you need and we’ll take it from
+            there.
           </p>
 
           <div class="contact-direct">
@@ -1511,6 +1608,9 @@
           </div>
 
         </div>
+
+
+        <!-- CONTACT FORM -->
 
         <form
           class="contact-form reveal delay"
@@ -1547,6 +1647,7 @@
 
           </p>
 
+
           <div class="form-row">
 
             <label>
@@ -1580,6 +1681,7 @@
             </label>
 
           </div>
+
 
           <div class="form-row">
 
@@ -1616,6 +1718,7 @@
 
           </div>
 
+
           <label>
 
             <span>
@@ -1641,11 +1744,11 @@
               </option>
 
               <option>
-                Client portal
+                Invoice solution
               </option>
 
               <option>
-                Email solution
+                Client portal
               </option>
 
               <option>
@@ -1664,6 +1767,7 @@
 
           </label>
 
+
           <label>
 
             <span>
@@ -1679,23 +1783,20 @@
 
           </label>
 
+
           <button
             class="button primary submit"
             type="submit"
           >
-
             Send project enquiry
-
           </button>
 
           <p
             class="form-note"
             id="formStatus"
           >
-
-            Your details will be sent securely
-            through our website enquiry form.
-
+            Your details will be sent securely through our website enquiry
+            form.
           </p>
 
         </form>
@@ -1705,6 +1806,11 @@
     </section>
 
   </main>
+
+
+  <!-- =====================================
+       FLOATING CALL BUTTON
+       ===================================== -->
 
   <a
     class="floating-call"
@@ -1732,6 +1838,11 @@
     </span>
 
   </a>
+
+
+  <!-- =====================================
+       FOOTER
+       ===================================== -->
 
   <footer class="site-footer">
 
@@ -1763,8 +1874,7 @@
         </a>
 
         <p>
-          Modern websites and digital solutions
-          for ambitious businesses.
+          Modern websites and digital solutions for ambitious businesses.
         </p>
 
         <span>
@@ -1772,6 +1882,7 @@
         </span>
 
       </div>
+
 
       <div class="footer-column">
 
@@ -1788,6 +1899,7 @@
         </a>
 
       </div>
+
 
       <div class="footer-column">
 
@@ -1821,6 +1933,7 @@
 
       </div>
 
+
       <div class="footer-column footer-legal">
 
         <small>
@@ -1839,6 +1952,7 @@
 
     </div>
 
+
     <div class="container footer-bottom">
 
       <span>
@@ -1853,8 +1967,8 @@
 
   </footer>
 
+
   <script src="script.js"></script>
 
 </body>
-
 </html>
