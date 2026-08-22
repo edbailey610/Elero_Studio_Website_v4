@@ -1,0 +1,3884 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="robots"
+    content="noindex,nofollow"
+  >
+
+  <title>
+    Mortgage Repayment Calculator Demo | Elero Studio
+  </title>
+
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      --bg: #f4f6f8;
+
+      --surface: #ffffff;
+
+      --soft: #f8fafb;
+
+      --ink: #090c11;
+
+      --muted: #68727c;
+
+      --line: #dfe4e8;
+
+      --accent: #0b9ab7;
+
+      --accent-dark: #087d96;
+
+      --accent-soft: #edfafd;
+
+      --green: #16834f;
+
+      --green-soft: #ecfdf3;
+
+      --amber: #9b6515;
+
+      --amber-soft: #fff8e8;
+
+      --shadow:
+        0 24px 70px
+        rgba(12,18,28,.10);
+
+      --ease:
+        cubic-bezier(.22,1,.36,1);
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      background:
+
+        radial-gradient(
+          circle at 10% 8%,
+          rgba(79,230,255,.11),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 90% 12%,
+          rgba(70,105,255,.07),
+          transparent 25%
+        ),
+
+        var(--bg);
+
+      color: var(--ink);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+    }
+
+
+    button,
+    input {
+
+      font: inherit;
+
+    }
+
+
+    button {
+
+      cursor: pointer;
+
+    }
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+
+    /* =====================================
+       ELERO HEADER
+       ===================================== */
+
+
+    .topbar {
+
+      background: #090c11;
+
+      color: white;
+
+    }
+
+
+    .topbar-inner {
+
+      width:
+        min(
+          1180px,
+          calc(100% - 32px)
+        );
+
+      min-height: 76px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+    }
+
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+
+    .brand-mark {
+
+      width: 38px;
+
+      height: 38px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 11px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #4fe6ff,
+          #4b8dff
+        );
+
+      color: #051014;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-weight: 800;
+
+    }
+
+
+    .brand-copy {
+
+      display: flex;
+
+      flex-direction: column;
+
+      line-height: 1;
+
+    }
+
+
+    .brand-copy strong {
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 14px;
+
+      letter-spacing: .16em;
+
+    }
+
+
+    .brand-copy small {
+
+      margin-top: 5px;
+
+      color: #9da7b2;
+
+      font-size: 9px;
+
+      letter-spacing: .23em;
+
+    }
+
+
+    .demo-pill {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 9px 13px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 999px;
+
+      color: #dce4eb;
+
+      font-size: 12px;
+
+    }
+
+
+    .demo-pill i {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #4fe6ff;
+
+    }
+
+
+
+    /* =====================================
+       PAGE
+       ===================================== */
+
+
+    .page {
+
+      width:
+        min(
+          1180px,
+          calc(100% - 32px)
+        );
+
+      margin: 0 auto;
+
+      padding: 58px 0 90px;
+
+    }
+
+
+
+    /* =====================================
+       DEMO INTRO
+       ===================================== */
+
+
+    .demo-intro {
+
+      max-width: 850px;
+
+      margin-bottom: 35px;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      margin-bottom: 15px;
+
+      color: var(--accent);
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: .13em;
+
+    }
+
+
+    .eyebrow i {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+
+    }
+
+
+    .demo-intro h1 {
+
+      max-width: 780px;
+
+      margin: 0;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          42px,
+          6vw,
+          70px
+        );
+
+      line-height: 1;
+
+      letter-spacing: -.055em;
+
+    }
+
+
+    .demo-intro h1 span {
+
+      color: var(--accent);
+
+    }
+
+
+    .demo-intro > p {
+
+      max-width: 710px;
+
+      margin: 22px 0 0;
+
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.65;
+
+    }
+
+
+    .demo-intro > p strong {
+
+      color: var(--ink);
+
+    }
+
+
+
+    /* =====================================
+       EXPLAINER
+       ===================================== */
+
+
+    .demo-explainer {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 10px;
+
+      max-width: 850px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .explainer-card {
+
+      padding: 17px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 15px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          .7
+        );
+
+    }
+
+
+    .explainer-card span {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: var(--accent);
+
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing: .11em;
+
+    }
+
+
+    .explainer-card strong {
+
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 13px;
+
+    }
+
+
+    .explainer-card p {
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.5;
+
+    }
+
+
+
+    /* =====================================
+       CUSTOMER VIEW DIVIDER
+       ===================================== */
+
+
+    .customer-view-header {
+
+      margin: 42px 0 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+
+    }
+
+
+    .customer-view-header::before,
+    .customer-view-header::after {
+
+      content: "";
+
+      height: 1px;
+
+      flex: 1;
+
+      background: var(--line);
+
+    }
+
+
+    .customer-view-copy {
+
+      flex-shrink: 0;
+
+      text-align: center;
+
+    }
+
+
+    .customer-view-copy strong {
+
+      display: block;
+
+      color: var(--ink);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: .12em;
+
+    }
+
+
+    .customer-view-copy span {
+
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+    }
+
+
+
+    /* =====================================
+       DEMO NOTE
+       ===================================== */
+
+
+    .demo-note {
+
+      margin-bottom: 20px;
+
+      padding: 14px 18px;
+
+      border:
+        1px solid
+        #bce7ef;
+
+      border-radius: 14px;
+
+      background: #f0fbfd;
+
+      color: #08768b;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+    }
+
+
+
+    /* =====================================
+       MORTGAGE APP
+       ===================================== */
+
+
+    .mortgage-app {
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(9,12,17,.08);
+
+      border-radius: 28px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+
+    }
+
+
+
+    /* =====================================
+       EXAMPLE STRIP
+       ===================================== */
+
+
+    .example-strip {
+
+      padding: 10px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      background: #edfafd;
+
+      color: #08768b;
+
+      border-bottom:
+        1px solid
+        #c7ebf1;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .08em;
+
+    }
+
+
+    .example-strip i {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+
+    }
+
+
+
+    /* =====================================
+       ADVISER HEADER
+       ===================================== */
+
+
+    .adviser-header {
+
+      min-height: 88px;
+
+      padding: 0 28px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      background: #090c11;
+
+      color: white;
+
+    }
+
+
+    .adviser-brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+    }
+
+
+    .adviser-logo {
+
+      width: 46px;
+
+      height: 46px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 14px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          var(--accent),
+          #2563eb
+        );
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 18px;
+
+      font-weight: 800;
+
+    }
+
+
+    .adviser-brand strong {
+
+      display: block;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 16px;
+
+    }
+
+
+    .adviser-brand > div > span {
+
+      display: block;
+
+      margin-top: 4px;
+
+      color: #939da7;
+
+      font-size: 10px;
+
+    }
+
+
+    .fictional-badge {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      margin-left: 7px;
+
+      padding: 3px 6px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.16);
+
+      border-radius: 999px;
+
+      color: #9ba5ae;
+
+      font-size: 7px;
+
+      font-weight: 700;
+
+      letter-spacing: .07em;
+
+      vertical-align: middle;
+
+    }
+
+
+    .adviser-status {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      color: #aeb7c0;
+
+      font-size: 11px;
+
+    }
+
+
+    .adviser-status i {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #35d477;
+
+    }
+
+
+
+    /* =====================================
+       CALCULATOR INTRO
+       ===================================== */
+
+
+    .calculator-heading {
+
+      padding: 32px 34px 0;
+
+    }
+
+
+    .calculator-heading small {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: var(--accent);
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .12em;
+
+    }
+
+
+    .calculator-heading h2 {
+
+      margin: 0 0 7px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          29px,
+          4vw,
+          38px
+        );
+
+      letter-spacing: -.04em;
+
+    }
+
+
+    .calculator-heading p {
+
+      max-width: 680px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.55;
+
+    }
+
+
+
+    /* =====================================
+       CALCULATOR GRID
+       ===================================== */
+
+
+    .calculator-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.08fr)
+        minmax(320px,.92fr);
+
+      gap: 22px;
+
+      padding: 34px;
+
+    }
+
+
+    .controls-card {
+
+      padding: 26px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 18px;
+
+      background: white;
+
+    }
+
+
+    .results-card {
+
+      padding: 27px;
+
+      border-radius: 18px;
+
+      background: #090d13;
+
+      color: white;
+
+    }
+
+
+
+    /* =====================================
+       CONTROLS
+       ===================================== */
+
+
+    .control-group {
+
+      padding-bottom: 27px;
+
+      margin-bottom: 27px;
+
+      border-bottom:
+        1px solid
+        #edf0f2;
+
+    }
+
+
+    .control-group:last-child {
+
+      margin-bottom: 0;
+
+      padding-bottom: 0;
+
+      border-bottom: 0;
+
+    }
+
+
+    .control-heading {
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .control-heading label {
+
+      color: #515b65;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+    }
+
+
+    .control-value {
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 24px;
+
+      font-weight: 800;
+
+      letter-spacing: -.04em;
+
+      white-space: nowrap;
+
+    }
+
+
+
+    /* =====================================
+       SLIDER
+       ===================================== */
+
+
+    input[type="range"] {
+
+      --progress: 0%;
+
+      width: 100%;
+
+      height: 6px;
+
+      margin: 0;
+
+      -webkit-appearance: none;
+
+      appearance: none;
+
+      border-radius: 999px;
+
+      outline: none;
+
+      background:
+
+        linear-gradient(
+          to right,
+
+          var(--accent) 0%,
+
+          var(--accent)
+          var(--progress),
+
+          #e6eaed
+          var(--progress),
+
+          #e6eaed 100%
+        );
+
+    }
+
+
+    input[type="range"]::-webkit-slider-thumb {
+
+      width: 22px;
+
+      height: 22px;
+
+      -webkit-appearance: none;
+
+      border:
+        5px solid
+        var(--accent);
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow:
+        0 4px 12px
+        rgba(0,0,0,.15);
+
+    }
+
+
+    input[type="range"]::-moz-range-thumb {
+
+      width: 12px;
+
+      height: 12px;
+
+      border:
+        5px solid
+        var(--accent);
+
+      border-radius: 50%;
+
+      background: white;
+
+    }
+
+
+    .range-labels {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-top: 9px;
+
+      color: #8a929a;
+
+      font-size: 9px;
+
+    }
+
+
+    .deposit-subline {
+
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+    }
+
+
+
+    /* =====================================
+       FIX BUTTONS
+       ===================================== */
+
+
+    .fix-buttons {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 9px;
+
+    }
+
+
+    .fix-button {
+
+      min-height: 65px;
+
+      padding: 13px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 11px;
+
+      background: white;
+
+      color: var(--ink);
+
+      text-align: left;
+
+      transition:
+        .2s var(--ease);
+
+    }
+
+
+    .fix-button:hover {
+
+      transform:
+        translateY(-1px);
+
+      border-color:
+        #9bdce8;
+
+    }
+
+
+    .fix-button.selected {
+
+      border-color:
+        var(--accent);
+
+      background:
+        var(--accent-soft);
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .fix-button strong {
+
+      display: block;
+
+      margin-bottom: 5px;
+
+      font-size: 12px;
+
+    }
+
+
+    .fix-button small {
+
+      color: var(--muted);
+
+      font-size: 9px;
+
+    }
+
+
+    .fix-button.selected small {
+
+      color: var(--accent-dark);
+
+    }
+
+
+
+    /* =====================================
+       RESULTS
+       ===================================== */
+
+
+    .result-label {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #7ee8f9;
+
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing: .12em;
+
+    }
+
+
+    .monthly-result {
+
+      padding:
+        7px 0 25px;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    }
+
+
+    .monthly-result strong {
+
+      display: block;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          45px,
+          6vw,
+          62px
+        );
+
+      line-height: 1;
+
+      letter-spacing: -.055em;
+
+    }
+
+
+    .monthly-result span {
+
+      display: block;
+
+      margin-top: 7px;
+
+      color: #8f9aa5;
+
+      font-size: 11px;
+
+    }
+
+
+    .result-grid {
+
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      margin-top: 24px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+
+      border-radius: 14px;
+
+    }
+
+
+    .result-item {
+
+      padding: 16px;
+
+      background: #10151c;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.07);
+
+    }
+
+
+    .result-item:nth-child(odd) {
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.07);
+
+    }
+
+
+    .result-item:nth-child(3),
+    .result-item:nth-child(4) {
+
+      border-bottom: 0;
+
+    }
+
+
+    .result-item small {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #7e8994;
+
+      font-size: 8px;
+
+      font-weight: 800;
+
+      letter-spacing: .09em;
+
+    }
+
+
+    .result-item strong {
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 17px;
+
+    }
+
+
+
+    /* =====================================
+       LTV
+       ===================================== */
+
+
+    .ltv-meter {
+
+      margin-top: 25px;
+
+    }
+
+
+    .ltv-head {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      margin-bottom: 9px;
+
+      font-size: 11px;
+
+    }
+
+
+    .ltv-head span {
+
+      color: #8f9aa5;
+
+    }
+
+
+    .meter {
+
+      height: 7px;
+
+      overflow: hidden;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.09);
+
+    }
+
+
+    .meter-fill {
+
+      width: 85%;
+
+      height: 100%;
+
+      border-radius: inherit;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #4fe6ff,
+          #4b8dff
+        );
+
+      transition:
+        width .25s ease;
+
+    }
+
+
+
+    /* =====================================
+       RATE EXPLANATION
+       ===================================== */
+
+
+    .rate-explanation {
+
+      margin-top: 24px;
+
+      padding: 15px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.09);
+
+      border-radius: 13px;
+
+      background:
+        rgba(255,255,255,.04);
+
+    }
+
+
+    .rate-explanation strong {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      font-size: 11px;
+
+    }
+
+
+    .rate-explanation p {
+
+      margin: 0;
+
+      color: #8f9aa5;
+
+      font-size: 10px;
+
+      line-height: 1.55;
+
+    }
+
+
+
+    /* =====================================
+       MARKET DATA
+       ===================================== */
+
+
+    .market-section {
+
+      padding:
+        0 34px 34px;
+
+    }
+
+
+    .market-box {
+
+      padding: 25px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 17px;
+
+      background: var(--soft);
+
+    }
+
+
+    .market-heading {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .market-heading small {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: var(--accent);
+
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing: .12em;
+
+    }
+
+
+    .market-heading h3 {
+
+      margin: 0;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 20px;
+
+      letter-spacing: -.03em;
+
+    }
+
+
+    .market-heading > span {
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+    }
+
+
+    .market-stats {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 9px;
+
+    }
+
+
+    .market-stat {
+
+      padding: 16px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 12px;
+
+      background: white;
+
+    }
+
+
+    .market-stat small {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--muted);
+
+      font-size: 8px;
+
+      font-weight: 800;
+
+      line-height: 1.4;
+
+      letter-spacing: .04em;
+
+    }
+
+
+    .market-stat strong {
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 20px;
+
+    }
+
+
+    .market-source {
+
+      margin:
+        17px 0 0;
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+      line-height: 1.6;
+
+    }
+
+
+
+    /* =====================================
+       WARNING
+       ===================================== */
+
+
+    .warning {
+
+      margin:
+        0 34px 34px;
+
+      padding: 18px;
+
+      display: flex;
+
+      gap: 14px;
+
+      border:
+        1px solid
+        #ecdca9;
+
+      border-radius: 15px;
+
+      background:
+        var(--amber-soft);
+
+    }
+
+
+    .warning-icon {
+
+      width: 30px;
+
+      height: 30px;
+
+      flex-shrink: 0;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: white;
+
+      color: var(--amber);
+
+      font-weight: 800;
+
+    }
+
+
+    .warning strong {
+
+      display: block;
+
+      margin-bottom: 5px;
+
+      font-size: 12px;
+
+    }
+
+
+    .warning p {
+
+      margin: 0;
+
+      color: #765c2d;
+
+      font-size: 10px;
+
+      line-height: 1.55;
+
+    }
+
+
+
+    /* =====================================
+       CUSTOMER CTA
+       ===================================== */
+
+
+    .adviser-cta {
+
+      margin:
+        0 34px 34px;
+
+      padding: 25px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 17px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+    }
+
+
+    .adviser-cta small {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--accent);
+
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing: .12em;
+
+    }
+
+
+    .adviser-cta h3 {
+
+      margin:
+        0 0 5px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 20px;
+
+      letter-spacing: -.03em;
+
+    }
+
+
+    .adviser-cta p {
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+    }
+
+
+    .fake-button {
+
+      min-height: 48px;
+
+      padding:
+        0 19px;
+
+      flex-shrink: 0;
+
+      border: 0;
+
+      border-radius: 12px;
+
+      background: #090c11;
+
+      color: white;
+
+      font-weight: 700;
+
+      transition:
+        .2s var(--ease);
+
+    }
+
+
+    .fake-button:hover {
+
+      transform:
+        translateY(-1px);
+
+      background: #171d25;
+
+    }
+
+
+    .demo-message {
+
+      display: none;
+
+      margin-top:
+        10px !important;
+
+      color:
+        var(--green) !important;
+
+      font-size:
+        10px !important;
+
+    }
+
+
+
+    /* =====================================
+       ELERO CTA
+       ===================================== */
+
+
+    .site-cta {
+
+      margin-top: 38px;
+
+      padding: 32px;
+
+      border-radius: 22px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #090d13,
+          #151f2b
+        );
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+    }
+
+
+    .site-cta small {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #7ee8f9;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .13em;
+
+    }
+
+
+    .site-cta h2 {
+
+      margin:
+        0 0 7px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size: 28px;
+
+      letter-spacing: -.035em;
+
+    }
+
+
+    .site-cta p {
+
+      max-width: 680px;
+
+      margin: 0;
+
+      color: #aab4be;
+
+      line-height: 1.55;
+
+    }
+
+
+    .site-cta .button {
+
+      min-height: 48px;
+
+      padding:
+        0 19px;
+
+      flex-shrink: 0;
+
+      border-radius: 12px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      background: white;
+
+      color: #090c11;
+
+      font-weight: 700;
+
+    }
+
+
+
+    /* =====================================
+       MOBILE
+       ===================================== */
+
+
+    @media(max-width:900px) {
+
+      .calculator-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .demo-explainer {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .market-stats {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+    }
+
+
+    @media(max-width:650px) {
+
+
+      .page {
+
+        width:
+          min(
+            100% - 20px,
+            1180px
+          );
+
+        padding-top: 38px;
+
+      }
+
+
+      .demo-intro h1 {
+
+        font-size: 42px;
+
+      }
+
+
+      .demo-intro > p {
+
+        font-size: 15px;
+
+      }
+
+
+      .customer-view-header {
+
+        margin-top: 32px;
+
+      }
+
+
+      .customer-view-header::before,
+      .customer-view-header::after {
+
+        display: none;
+
+      }
+
+
+      .customer-view-copy {
+
+        width: 100%;
+
+        padding: 12px;
+
+        border:
+          1px solid
+          var(--line);
+
+        border-radius: 12px;
+
+        background:
+          rgba(
+            255,
+            255,
+            255,
+            .6
+          );
+
+      }
+
+
+      .adviser-header {
+
+        padding:
+          0 18px;
+
+      }
+
+
+      .adviser-status {
+
+        display: none;
+
+      }
+
+
+      .calculator-heading {
+
+        padding:
+          24px 21px 0;
+
+      }
+
+
+      .calculator-grid {
+
+        padding: 21px;
+
+      }
+
+
+      .controls-card,
+      .results-card {
+
+        padding: 21px;
+
+      }
+
+
+      .control-heading {
+
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
+        gap: 7px;
+
+      }
+
+
+      .fix-buttons {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .result-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .result-item,
+      .result-item:nth-child(odd),
+      .result-item:nth-child(3),
+      .result-item:nth-child(4) {
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.07);
+
+      }
+
+
+      .result-item:last-child {
+
+        border-bottom: 0;
+
+      }
+
+
+      .market-section {
+
+        padding:
+          0 21px 21px;
+
+      }
+
+
+      .market-stats {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .market-heading {
+
+        flex-direction:
+          column;
+
+      }
+
+
+      .warning,
+      .adviser-cta {
+
+        margin-left: 21px;
+
+        margin-right: 21px;
+
+      }
+
+
+      .adviser-cta {
+
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
+
+      }
+
+
+      .fake-button {
+
+        width: 100%;
+
+      }
+
+
+      .site-cta {
+
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
+
+      }
+
+
+      .site-cta .button {
+
+        width: 100%;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================
+       ELERO HEADER
+       ===================================== -->
+
+  <header class="topbar">
+
+    <div class="topbar-inner">
+
+      <a
+        class="brand"
+        href="index.html"
+      >
+
+        <span class="brand-mark">
+          E
+        </span>
+
+        <span class="brand-copy">
+
+          <strong>
+            ELERO
+          </strong>
+
+          <small>
+            STUDIO
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <div class="demo-pill">
+
+        <i></i>
+
+        INTERACTIVE EXAMPLE
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="page">
+
+
+    <!-- =====================================
+         WHAT THIS DEMO IS
+         ===================================== -->
+
+    <section class="demo-intro">
+
+      <div class="eyebrow">
+
+        <i></i>
+
+        MORTGAGE CALCULATOR DEMO
+
+      </div>
+
+
+      <h1>
+
+        See what your mortgage
+
+        <span>
+          could look like.
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        This is an example of a mortgage repayment calculator
+
+        <strong>
+          Elero could build into a mortgage adviser's website.
+        </strong>
+
+        Below, you can adjust a fictional property purchase to see
+        how an interactive mortgage journey could work for customers.
+
+      </p>
+
+
+      <div class="demo-explainer">
+
+
+        <div class="explainer-card">
+
+          <span>
+            ELERO STUDIO
+          </span>
+
+          <strong>
+            We build the system.
+          </strong>
+
+          <p>
+            The calculator can be designed around the adviser's
+            branding, services and customer journey.
+          </p>
+
+        </div>
+
+
+        <div class="explainer-card">
+
+          <span>
+            EXAMPLE BUSINESS
+          </span>
+
+          <strong>
+            Harbour Mortgage Co.
+          </strong>
+
+          <p>
+            A fictional mortgage adviser used purely to demonstrate
+            what an interactive mortgage tool could look like.
+          </p>
+
+        </div>
+
+
+        <div class="explainer-card">
+
+          <span>
+            YOUR ROLE IN THE DEMO
+          </span>
+
+          <strong>
+            Pretend you're the customer.
+          </strong>
+
+          <p>
+            Adjust the property price, deposit and term to see
+            illustrative repayment figures update instantly.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CUSTOMER EXPERIENCE DIVIDER
+         ===================================== -->
+
+    <div class="customer-view-header">
+
+      <div class="customer-view-copy">
+
+        <strong>
+          ↓ EXAMPLE CUSTOMER EXPERIENCE ↓
+        </strong>
+
+        <span>
+          Imagine the section below built into a mortgage adviser's website
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="demo-note">
+
+      <strong>
+        Demo only:
+      </strong>
+
+      Harbour Mortgage Co. is a fictional example business.
+      This calculator does not provide mortgage advice, assess
+      eligibility or produce a mortgage offer.
+
+    </div>
+
+
+
+    <!-- =====================================
+         MORTGAGE APP
+         ===================================== -->
+
+    <section class="mortgage-app">
+
+
+      <div class="example-strip">
+
+        <i></i>
+
+        FICTIONAL BUSINESS · CUSTOMER MORTGAGE CALCULATOR EXAMPLE
+
+      </div>
+
+
+
+      <!-- ADVISER HEADER -->
+
+      <div class="adviser-header">
+
+        <div class="adviser-brand">
+
+          <div class="adviser-logo">
+            H
+          </div>
+
+          <div>
+
+            <strong>
+
+              Harbour Mortgage Co.
+
+              <span class="fictional-badge">
+                EXAMPLE
+              </span>
+
+            </strong>
+
+            <span>
+              Fictional mortgage adviser · UK
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="adviser-status">
+
+          <i></i>
+
+          Mortgage enquiries open
+
+        </div>
+
+      </div>
+
+
+
+      <div class="calculator-heading">
+
+        <small>
+          CUSTOMER VIEW
+        </small>
+
+        <h2>
+          Mortgage repayment calculator.
+        </h2>
+
+        <p>
+          Adjust the figures below as if you were a customer
+          exploring a potential property purchase.
+        </p>
+
+      </div>
+
+
+
+      <div class="calculator-grid">
+
+
+        <!-- =====================================
+             CONTROLS
+             ===================================== -->
+
+        <div class="controls-card">
+
+
+          <!-- PROPERTY PRICE -->
+
+          <div class="control-group">
+
+            <div class="control-heading">
+
+              <label for="propertyPrice">
+                Property price
+              </label>
+
+              <div
+                class="control-value"
+                id="propertyPriceValue"
+              >
+                £275,000
+              </div>
+
+            </div>
+
+
+            <input
+              id="propertyPrice"
+              type="range"
+              min="75000"
+              max="1000000"
+              step="5000"
+              value="275000"
+            >
+
+
+            <div class="range-labels">
+
+              <span>
+                £75k
+              </span>
+
+              <span>
+                £1m
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- DEPOSIT -->
+
+          <div class="control-group">
+
+            <div class="control-heading">
+
+              <label for="deposit">
+                Your deposit
+              </label>
+
+              <div
+                class="control-value"
+                id="depositValue"
+              >
+                £41,250
+              </div>
+
+            </div>
+
+
+            <input
+              id="deposit"
+              type="range"
+              min="13750"
+              max="137500"
+              step="500"
+              value="41250"
+            >
+
+
+            <div class="range-labels">
+
+              <span id="depositMin">
+                £13,750
+              </span>
+
+              <span id="depositMax">
+                £137,500
+              </span>
+
+            </div>
+
+
+            <div class="deposit-subline">
+
+              <span id="depositPercent">
+                15%
+              </span>
+
+              deposit
+
+            </div>
+
+          </div>
+
+
+
+          <!-- TERM -->
+
+          <div class="control-group">
+
+            <div class="control-heading">
+
+              <label for="term">
+                Mortgage term
+              </label>
+
+              <div class="control-value">
+
+                <span id="termValue">
+                  30
+                </span>
+
+                years
+
+              </div>
+
+            </div>
+
+
+            <input
+              id="term"
+              type="range"
+              min="10"
+              max="40"
+              step="1"
+              value="30"
+            >
+
+
+            <div class="range-labels">
+
+              <span>
+                10 years
+              </span>
+
+              <span>
+                40 years
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- FIXED RATE -->
+
+          <div class="control-group">
+
+            <div class="control-heading">
+
+              <label>
+                Example fixed-rate period
+              </label>
+
+            </div>
+
+
+            <div class="fix-buttons">
+
+              <button
+                class="fix-button selected"
+                data-fix="2"
+                type="button"
+              >
+
+                <strong>
+                  2-year fixed
+                </strong>
+
+                <small>
+                  Uses example LTV averages
+                </small>
+
+              </button>
+
+
+              <button
+                class="fix-button"
+                data-fix="5"
+                type="button"
+              >
+
+                <strong>
+                  5-year fixed
+                </strong>
+
+                <small>
+                  Uses example LTV averages
+                </small>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             RESULTS
+             ===================================== -->
+
+        <aside class="results-card">
+
+          <span class="result-label">
+            ILLUSTRATIVE MONTHLY REPAYMENT
+          </span>
+
+
+          <div class="monthly-result">
+
+            <strong id="monthlyPayment">
+              £1,334
+            </strong>
+
+            <span>
+              per month
+            </span>
+
+          </div>
+
+
+          <div class="result-grid">
+
+
+            <div class="result-item">
+
+              <small>
+                MORTGAGE REQUIRED
+              </small>
+
+              <strong id="mortgageAmount">
+                £233,750
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <small>
+                LOAN TO VALUE
+              </small>
+
+              <strong id="ltvValue">
+                85%
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <small>
+                DEMO RATE USED
+              </small>
+
+              <strong id="interestRate">
+                5.68%
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <small>
+                MORTGAGE TERM
+              </small>
+
+              <strong id="termResult">
+                30 years
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="ltv-meter">
+
+            <div class="ltv-head">
+
+              <span>
+                Loan-to-value
+              </span>
+
+              <strong id="ltvMeterText">
+                85%
+              </strong>
+
+            </div>
+
+
+            <div class="meter">
+
+              <div
+                class="meter-fill"
+                id="ltvMeter"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="rate-explanation">
+
+            <strong id="rateHeading">
+              Example rate based on an 85% LTV mortgage
+            </strong>
+
+            <p id="rateCopy">
+              For this demonstration we're using an example
+              two-year fixed market rate for this LTV band.
+              A real customer could receive a different rate.
+            </p>
+
+          </div>
+
+        </aside>
+
+
+      </div>
+
+
+
+      <!-- =====================================
+           MARKET DATA
+           ===================================== -->
+
+      <div class="market-section">
+
+        <div class="market-box">
+
+          <div class="market-heading">
+
+            <div>
+
+              <small>
+                DEMO MARKET CONTEXT
+              </small>
+
+              <h3>
+                Example UK mortgage market figures.
+              </h3>
+
+            </div>
+
+            <span>
+              Demonstration data
+            </span>
+
+          </div>
+
+
+          <div class="market-stats">
+
+
+            <div class="market-stat">
+
+              <small>
+                EXAMPLE UK 2-YEAR FIXED
+              </small>
+
+              <strong>
+                5.60%
+              </strong>
+
+            </div>
+
+
+            <div class="market-stat">
+
+              <small>
+                EXAMPLE UK 5-YEAR FIXED
+              </small>
+
+              <strong>
+                5.63%
+              </strong>
+
+            </div>
+
+
+            <div class="market-stat">
+
+              <small>
+                EXAMPLE UK HOUSE PRICE
+              </small>
+
+              <strong>
+                £271k
+              </strong>
+
+            </div>
+
+
+            <div class="market-stat">
+
+              <small>
+                EXAMPLE WALES HOUSE PRICE
+              </small>
+
+              <strong>
+                £215k
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <p class="market-source">
+            Figures are included for demonstration purposes only.
+            A live client calculator could use regularly reviewed
+            information approved by the mortgage adviser's compliance
+            process.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================
+           DISCLAIMER
+           ===================================== -->
+
+      <div class="warning">
+
+        <div class="warning-icon">
+          !
+        </div>
+
+        <div>
+
+          <strong>
+            Important: demonstration only
+          </strong>
+
+          <p>
+            This calculator is an Elero Studio demonstration and does
+            not provide mortgage advice, an affordability assessment,
+            a mortgage illustration, a recommendation or an offer of
+            lending. Results are illustrative only. Actual mortgage
+            rates and eligibility depend on individual circumstances,
+            lender criteria, credit history, income, expenditure and
+            product availability. Calculations do not include lender
+            fees, valuation fees, insurance, taxes or other costs.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================
+           EXAMPLE CUSTOMER CTA
+           ===================================== -->
+
+      <div class="adviser-cta">
+
+        <div>
+
+          <small>
+            EXAMPLE CUSTOMER NEXT STEP
+          </small>
+
+          <h3>
+            Want to understand your real options?
+          </h3>
+
+          <p>
+            A real mortgage adviser could place their consultation
+            or enquiry journey here.
+          </p>
+
+
+          <p
+            id="demoMessage"
+            class="demo-message"
+          >
+            Demo only — no enquiry has been submitted.
+          </p>
+
+        </div>
+
+
+        <button
+          class="fake-button"
+          id="fakeEnquiry"
+          type="button"
+        >
+
+          Speak to an adviser →
+
+        </button>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         ELERO CTA
+         ===================================== -->
+
+    <section class="site-cta">
+
+      <div>
+
+        <small>
+          THIS IS WHAT ELERO BUILDS
+        </small>
+
+        <h2>
+          Now imagine it built around your mortgage business.
+        </h2>
+
+        <p>
+          Different rates, customer journeys, consultation booking,
+          enquiry forms and branding — all tailored around how your
+          own business works.
+        </p>
+
+      </div>
+
+
+      <a
+        class="button"
+        href="index.html#contact"
+      >
+
+        Talk to Elero
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <script>
+
+
+    const propertySlider =
+      document.getElementById(
+        "propertyPrice"
+      );
+
+
+    const depositSlider =
+      document.getElementById(
+        "deposit"
+      );
+
+
+    const termSlider =
+      document.getElementById(
+        "term"
+      );
+
+
+    const propertyPriceValue =
+      document.getElementById(
+        "propertyPriceValue"
+      );
+
+
+    const depositValue =
+      document.getElementById(
+        "depositValue"
+      );
+
+
+    const depositPercent =
+      document.getElementById(
+        "depositPercent"
+      );
+
+
+    const depositMin =
+      document.getElementById(
+        "depositMin"
+      );
+
+
+    const depositMax =
+      document.getElementById(
+        "depositMax"
+      );
+
+
+    const termValue =
+      document.getElementById(
+        "termValue"
+      );
+
+
+    const monthlyPayment =
+      document.getElementById(
+        "monthlyPayment"
+      );
+
+
+    const mortgageAmount =
+      document.getElementById(
+        "mortgageAmount"
+      );
+
+
+    const ltvValue =
+      document.getElementById(
+        "ltvValue"
+      );
+
+
+    const ltvMeterText =
+      document.getElementById(
+        "ltvMeterText"
+      );
+
+
+    const interestRate =
+      document.getElementById(
+        "interestRate"
+      );
+
+
+    const termResult =
+      document.getElementById(
+        "termResult"
+      );
+
+
+    const ltvMeter =
+      document.getElementById(
+        "ltvMeter"
+      );
+
+
+    const rateHeading =
+      document.getElementById(
+        "rateHeading"
+      );
+
+
+    const rateCopy =
+      document.getElementById(
+        "rateCopy"
+      );
+
+
+    const fixButtons =
+      document.querySelectorAll(
+        ".fix-button"
+      );
+
+
+    let selectedFix = 2;
+
+
+
+    /*
+      DEMONSTRATION RATE TABLE
+
+      These values are intentionally static for
+      this Elero Studio demonstration.
+
+      A real mortgage adviser implementation
+      should use rates / data reviewed and approved
+      through the client's compliance process.
+    */
+
+
+    const rates = {
+
+      2: {
+
+        60: 5.17,
+
+        75: 5.51,
+
+        85: 5.68,
+
+        95: 6.20
+
+      },
+
+
+      5: {
+
+        60: 5.46,
+
+        75: 5.63,
+
+        85: 5.64,
+
+        95: 6.08
+
+      }
+
+    };
+
+
+
+    function currency(value) {
+
+      return new Intl.NumberFormat(
+
+        "en-GB",
+
+        {
+
+          style:
+            "currency",
+
+          currency:
+            "GBP",
+
+          maximumFractionDigits:
+            0
+
+        }
+
+      ).format(value);
+
+    }
+
+
+
+    function monthlyCurrency(value) {
+
+      return new Intl.NumberFormat(
+
+        "en-GB",
+
+        {
+
+          style:
+            "currency",
+
+          currency:
+            "GBP",
+
+          maximumFractionDigits:
+            0
+
+        }
+
+      ).format(value);
+
+    }
+
+
+
+    function updateRangeProgress(input) {
+
+      const min =
+        Number(
+          input.min
+        );
+
+
+      const max =
+        Number(
+          input.max
+        );
+
+
+      const value =
+        Number(
+          input.value
+        );
+
+
+      const percentage =
+
+        (
+          (
+            value - min
+          )
+
+          /
+
+          (
+            max - min
+          )
+        )
+
+        *
+
+        100;
+
+
+      input.style.setProperty(
+
+        "--progress",
+
+        percentage + "%"
+
+      );
+
+    }
+
+
+
+    function getLtvBand(ltv) {
+
+
+      if (
+        ltv <= 60
+      ) {
+
+        return 60;
+
+      }
+
+
+      if (
+        ltv <= 75
+      ) {
+
+        return 75;
+
+      }
+
+
+      if (
+        ltv <= 85
+      ) {
+
+        return 85;
+
+      }
+
+
+      return 95;
+
+    }
+
+
+
+    function updateDepositLimits() {
+
+
+      const property =
+        Number(
+          propertySlider.value
+        );
+
+
+      const minimumDeposit =
+
+        Math.round(
+
+          (
+            property * 0.05
+          )
+
+          /
+
+          500
+
+        )
+
+        *
+
+        500;
+
+
+      const maximumDeposit =
+
+        Math.round(
+
+          (
+            property * 0.50
+          )
+
+          /
+
+          500
+
+        )
+
+        *
+
+        500;
+
+
+      depositSlider.min =
+        minimumDeposit;
+
+
+      depositSlider.max =
+        maximumDeposit;
+
+
+      if (
+
+        Number(
+          depositSlider.value
+        )
+
+        <
+
+        minimumDeposit
+
+      ) {
+
+        depositSlider.value =
+          minimumDeposit;
+
+      }
+
+
+      if (
+
+        Number(
+          depositSlider.value
+        )
+
+        >
+
+        maximumDeposit
+
+      ) {
+
+        depositSlider.value =
+          maximumDeposit;
+
+      }
+
+
+      depositMin.textContent =
+        currency(
+          minimumDeposit
+        );
+
+
+      depositMax.textContent =
+        currency(
+          maximumDeposit
+        );
+
+    }
+
+
+
+    function calculateMortgage() {
+
+
+      updateDepositLimits();
+
+
+      const property =
+        Number(
+          propertySlider.value
+        );
+
+
+      const deposit =
+        Number(
+          depositSlider.value
+        );
+
+
+      const years =
+        Number(
+          termSlider.value
+        );
+
+
+      const loan =
+        Math.max(
+          property - deposit,
+          0
+        );
+
+
+      const depositPercentage =
+
+        property > 0
+
+          ?
+
+          (
+            deposit
+            /
+            property
+          )
+
+          *
+
+          100
+
+          :
+
+          0;
+
+
+      const ltv =
+
+        property > 0
+
+          ?
+
+          (
+            loan
+            /
+            property
+          )
+
+          *
+
+          100
+
+          :
+
+          0;
+
+
+      const band =
+        getLtvBand(
+          ltv
+        );
+
+
+      const annualRate =
+        rates[
+          selectedFix
+        ][
+          band
+        ];
+
+
+      const monthlyRate =
+        annualRate
+        /
+        100
+        /
+        12;
+
+
+      const numberOfPayments =
+        years * 12;
+
+
+      let payment = 0;
+
+
+      if (
+
+        loan > 0
+
+        &&
+
+        monthlyRate > 0
+
+      ) {
+
+
+        payment =
+
+          loan
+
+          *
+
+          (
+
+            monthlyRate
+
+            *
+
+            Math.pow(
+
+              1 + monthlyRate,
+
+              numberOfPayments
+
+            )
+
+          )
+
+          /
+
+          (
+
+            Math.pow(
+
+              1 + monthlyRate,
+
+              numberOfPayments
+
+            )
+
+            -
+
+            1
+
+          );
+
+      }
+
+
+
+      propertyPriceValue.textContent =
+        currency(
+          property
+        );
+
+
+      depositValue.textContent =
+        currency(
+          deposit
+        );
+
+
+      depositPercent.textContent =
+
+        depositPercentage
+          .toFixed(1)
+          .replace(
+            ".0",
+            ""
+          )
+
+        +
+
+        "%";
+
+
+      termValue.textContent =
+        years;
+
+
+      monthlyPayment.textContent =
+        monthlyCurrency(
+          payment
+        );
+
+
+      mortgageAmount.textContent =
+        currency(
+          loan
+        );
+
+
+      ltvValue.textContent =
+
+        ltv
+          .toFixed(1)
+          .replace(
+            ".0",
+            ""
+          )
+
+        +
+
+        "%";
+
+
+      ltvMeterText.textContent =
+
+        ltv
+          .toFixed(1)
+          .replace(
+            ".0",
+            ""
+          )
+
+        +
+
+        "%";
+
+
+      interestRate.textContent =
+
+        annualRate
+          .toFixed(2)
+
+        +
+
+        "%";
+
+
+      termResult.textContent =
+        years
+        +
+        " years";
+
+
+      ltvMeter.style.width =
+
+        Math.min(
+          ltv,
+          100
+        )
+
+        +
+
+        "%";
+
+
+      rateHeading.textContent =
+
+        "Example rate based on a "
+
+        +
+
+        band
+
+        +
+
+        "% LTV mortgage";
+
+
+      rateCopy.textContent =
+
+        "For this demonstration we're using an example "
+
+        +
+
+        selectedFix
+
+        +
+
+        "-year fixed market rate for this LTV band. A real customer could receive a different rate.";
+
+
+
+      updateRangeProgress(
+        propertySlider
+      );
+
+
+      updateRangeProgress(
+        depositSlider
+      );
+
+
+      updateRangeProgress(
+        termSlider
+      );
+
+    }
+
+
+
+    propertySlider.addEventListener(
+
+      "input",
+
+      calculateMortgage
+
+    );
+
+
+
+    depositSlider.addEventListener(
+
+      "input",
+
+      calculateMortgage
+
+    );
+
+
+
+    termSlider.addEventListener(
+
+      "input",
+
+      calculateMortgage
+
+    );
+
+
+
+    fixButtons.forEach(
+
+      button => {
+
+
+        button.addEventListener(
+
+          "click",
+
+          () => {
+
+
+            fixButtons.forEach(
+
+              item =>
+
+                item.classList.remove(
+                  "selected"
+                )
+
+            );
+
+
+            button.classList.add(
+              "selected"
+            );
+
+
+            selectedFix =
+
+              Number(
+                button.dataset.fix
+              );
+
+
+            calculateMortgage();
+
+          }
+
+        );
+
+      }
+
+    );
+
+
+
+    document
+      .getElementById(
+        "fakeEnquiry"
+      )
+      .addEventListener(
+
+        "click",
+
+        () => {
+
+
+          const message =
+
+            document.getElementById(
+              "demoMessage"
+            );
+
+
+          message.style.display =
+            "block";
+
+        }
+
+      );
+
+
+
+    calculateMortgage();
+
+
+  </script>
+
+
+</body>
+
+</html>

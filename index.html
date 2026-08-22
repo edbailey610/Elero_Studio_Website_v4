@@ -111,6 +111,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+
     .solution-card-link {
       text-decoration: none;
       color: inherit;
@@ -140,6 +141,25 @@
 
       outline-offset: 3px;
     }
+
+
+    /* ABOUT HEADING GRADIENT */
+
+    .about-heading-gradient {
+      background:
+        linear-gradient(
+          115deg,
+          #0b0d12 8%,
+          #3e8ba4 55%,
+          #727cf8
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
   </style>
 
 </head>
@@ -267,6 +287,7 @@
 
 
   <main>
+
 
     <!-- =====================================
          HERO
@@ -682,9 +703,8 @@
 
           <div class="solutions-grid">
 
-            <!-- ===============================
-                 01 BOOKING SYSTEMS
-                 =============================== -->
+
+            <!-- BOOKING SYSTEMS -->
 
             <a
               href="booking-demo.html"
@@ -712,9 +732,7 @@
             </a>
 
 
-            <!-- ===============================
-                 02 PAYMENT INTEGRATION
-                 =============================== -->
+            <!-- PAYMENT INTEGRATION -->
 
             <a
               href="payment-demo.html"
@@ -742,9 +760,7 @@
             </a>
 
 
-            <!-- ===============================
-                 03 INVOICE SOLUTIONS
-                 =============================== -->
+            <!-- INVOICE SOLUTIONS -->
 
             <a
               href="invoice-demo.html"
@@ -772,11 +788,13 @@
             </a>
 
 
-            <!-- ===============================
-                 04 AUTOMATION
-                 =============================== -->
+            <!-- MORTGAGE REPAYMENT CALCULATOR -->
 
-            <article class="solution-card">
+            <a
+              href="mortgage-calculator-demo.html"
+              class="solution-card solution-card-link"
+              aria-label="View Elero mortgage repayment calculator demo"
+            >
 
               <span>
                 04
@@ -785,24 +803,26 @@
               <div>
 
                 <h4>
-                  Automation
+                  Mortgage repayment calculator
                 </h4>
 
                 <p>
-                  Route enquiries, trigger follow-ups and reduce
-                  repetitive admin.
+                  Interactive mortgage estimates using property price,
+                  deposit, term and example mortgage rates.
                 </p>
 
               </div>
 
-            </article>
+            </a>
 
 
-            <!-- ===============================
-                 05 CLIENT PORTALS
-                 =============================== -->
+            <!-- RECRUITMENT AGENCY SYSTEMS -->
 
-            <article class="solution-card">
+            <a
+              href="temporary-staffing-demo.html"
+              class="solution-card solution-card-link"
+              aria-label="View Elero recruitment agency systems demo"
+            >
 
               <span>
                 05
@@ -811,24 +831,26 @@
               <div>
 
                 <h4>
-                  Client portals
+                  Recruitment agency systems
                 </h4>
 
                 <p>
-                  Secure client areas or integration with platforms your
-                  business already uses.
+                  Candidate shift portals, availability calendars and staffing
+                  dashboards built around temporary recruitment.
                 </p>
 
               </div>
 
-            </article>
+            </a>
 
 
-            <!-- ===============================
-                 06 SEO
-                 =============================== -->
+            <!-- ESTATE AGENT SYSTEMS -->
 
-            <article class="solution-card">
+            <a
+              href="estate-agency-demo.html"
+              class="solution-card solution-card-link"
+              aria-label="View Elero estate agent systems demo"
+            >
 
               <span>
                 06
@@ -837,17 +859,17 @@
               <div>
 
                 <h4>
-                  Search engine optimisation
+                  Estate agent systems
                 </h4>
 
                 <p>
-                  Technical, on-page and local SEO foundations to help
-                  the right people find you.
+                  Capture seller leads, book valuations and manage prospective
+                  instructions through a digital sales pipeline.
                 </p>
 
               </div>
 
-            </article>
+            </a>
 
           </div>
 
@@ -976,6 +998,7 @@
 
 
           <div class="pricing-plans">
+
 
             <!-- HOSTING -->
 
@@ -1287,14 +1310,8 @@
             05 / ABOUT ELERO
           </small>
 
-          <h2>
-
-            Small studio. Straightforward service.
-
-            <span>
-              Serious websites.
-            </span>
-
+          <h2 class="about-heading-gradient">
+            Small studio. Straightforward service. Serious websites.
           </h2>
 
           <p>
