@@ -160,6 +160,35 @@
       color: transparent;
     }
 
+
+    /* THREE PRICING CARDS */
+
+    .pricing-plans {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pricing-detail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      color: inherit;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pricing-detail-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+
+      .pricing-plans {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
   </style>
 
 </head>
@@ -246,6 +275,7 @@
       </div>
 
     </div>
+
 
     <!-- MOBILE MENU -->
 
@@ -986,12 +1016,9 @@
             </h3>
 
             <p>
-              You do
-              <strong>
-                not
-              </strong>
-              pay both. Your first 30 days of reasonable post-launch
-              edits are included whichever option you choose.
+              Choose the level of ongoing support that suits your business.
+              Your first 30 days of reasonable post-launch edits are included
+              whichever option you choose.
             </p>
 
           </div>
@@ -1002,12 +1029,12 @@
 
             <!-- HOSTING -->
 
-            <article class="price-plan">
+            <article class="price-plan managed-plan">
 
               <div class="plan-topline">
 
                 <span>
-                  ESSENTIAL
+                  HOSTING
                 </span>
 
                 <b>
@@ -1019,7 +1046,7 @@
               <div class="plan-price">
 
                 <strong>
-                  £3.99
+                  £9.99
                 </strong>
 
                 <span>
@@ -1033,8 +1060,8 @@
               </h4>
 
               <p>
-                For clients who simply want us to keep their website
-                hosted, online and accessible.
+                For businesses that simply want us to keep their finished
+                website hosted, secure and online.
               </p>
 
               <ul>
@@ -1044,15 +1071,19 @@
                 </li>
 
                 <li>
-                  Your website stays live
+                  Secure HTTPS connection
                 </li>
 
                 <li>
-                  30 days of post-launch edits included
+                  Website monitoring
                 </li>
 
                 <li>
-                  Ongoing edits are not included after the 30-day window
+                  Initial SEO setup
+                </li>
+
+                <li>
+                  Ongoing website amendments are not included
                 </li>
 
               </ul>
@@ -1079,7 +1110,7 @@
               <div class="plan-price">
 
                 <strong>
-                  £39.99
+                  £49.99
                 </strong>
 
                 <span>
@@ -1093,27 +1124,94 @@
               </h4>
 
               <p>
-                For clients who want hosting plus ongoing help making
-                reasonable changes to their live website.
+                For businesses that want us to host the website and keep its
+                existing content up to date for them.
               </p>
 
               <ul>
 
                 <li>
-                  Website hosting included
+                  Everything in Website Hosting
                 </li>
 
                 <li>
-                  Ongoing reasonable amendments
+                  Routine website amendments
                 </li>
 
                 <li>
-                  30 days of post-launch edits included
+                  Text, image and service updates
                 </li>
 
                 <li>
-                  No need to pay £3.99 as well — this replaces the
-                  hosting-only option
+                  Existing form amendments
+                </li>
+
+                <li>
+                  Ongoing technical SEO upkeep
+                </li>
+
+              </ul>
+
+            </article>
+
+
+            <!-- BUSINESS SYSTEMS -->
+
+            <article class="price-plan managed-plan">
+
+              <div class="plan-topline">
+
+                <span>
+                  BUSINESS SYSTEMS
+                </span>
+
+                <b>
+                  OPTION 03
+                </b>
+
+              </div>
+
+              <div class="plan-price">
+
+                <strong>
+                  £349
+                </strong>
+
+                <span>
+                  / month
+                </span>
+
+              </div>
+
+              <h4>
+                Website & Business Systems
+              </h4>
+
+              <p>
+                For businesses that rely on custom software, portals, booking
+                systems, dashboards or other Elero-built functionality.
+              </p>
+
+              <ul>
+
+                <li>
+                  Everything in Managed Website
+                </li>
+
+                <li>
+                  Custom software hosting and management
+                </li>
+
+                <li>
+                  Database and system monitoring
+                </li>
+
+                <li>
+                  Bug fixes and integration maintenance
+                </li>
+
+                <li>
+                  Priority technical support
                 </li>
 
               </ul>
@@ -1121,6 +1219,14 @@
             </article>
 
           </div>
+
+          <a
+            class="pricing-detail-link"
+            href="pricing.html"
+          >
+            Compare the packages in detail
+            <span>→</span>
+          </a>
 
         </div>
 
