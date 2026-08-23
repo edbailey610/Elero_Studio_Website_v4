@@ -1,2097 +1,2282 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <meta
-    name="description"
-    content="Elero Studio builds modern websites for businesses, with booking systems, payments, invoicing, automation, SEO and digital solutions tailored to your needs."
-  >
+<meta charset="utf-8">
 
-  <title>Elero Studio | Web Design, Development & Digital Solutions</title>
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta
+name="description"
+content="Elero Studio builds modern websites and custom business systems, including booking systems, payments, invoicing, automation, portals and digital tools tailored to your needs."
+>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+<title>Elero Studio | Websites & Business Systems</title>
 
-  <meta
-    name="robots"
-    content="index,follow,max-image-preview:large,max-snippet:160"
-  >
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link
-    rel="canonical"
-    href="https://elerostudio.com/"
-  >
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Elero Studio">
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
 
-  <meta
-    property="og:title"
-    content="Elero Studio | Web Design, Development & Digital Solutions"
-  >
+<meta
+name="robots"
+content="index,follow,max-image-preview:large,max-snippet:160"
+>
 
-  <meta
-    property="og:description"
-    content="Modern websites and digital solutions built around ambitious businesses."
-  >
+<link
+rel="canonical"
+href="https://elerostudio.com/"
+>
 
-  <meta
-    property="og:url"
-    content="https://elerostudio.com/"
-  >
+<meta property="og:type" content="website">
 
-  <meta
-    property="og:image"
-    content="https://elerostudio.com/social-preview.png"
-  >
+<meta property="og:site_name" content="Elero Studio">
 
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
+<meta
+property="og:title"
+content="Elero Studio | Websites & Business Systems"
+>
 
-  <meta
-    name="twitter:title"
-    content="Elero Studio | Web Design, Development & Digital Solutions"
-  >
+<meta
+property="og:description"
+content="Modern websites and custom business systems built around ambitious businesses."
+>
 
-  <meta
-    name="twitter:description"
-    content="Modern websites and digital solutions built around ambitious businesses."
-  >
+<meta
+property="og:url"
+content="https://elerostudio.com/"
+>
 
-  <meta
-    name="twitter:image"
-    content="https://elerostudio.com/social-preview.png"
-  >
+<meta
+property="og:image"
+content="https://elerostudio.com/social-preview.png"
+>
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="512x512"
-    href="/favicon.png"
-  >
+<meta
+name="twitter:card"
+content="summary_large_image"
+>
 
-  <link
-    rel="apple-touch-icon"
-    href="/favicon.png"
-  >
+<meta
+name="twitter:title"
+content="Elero Studio | Websites & Business Systems"
+>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://elerostudio.com/#website",
-        "url": "https://elerostudio.com/",
-        "name": "Elero Studio",
-        "alternateName": "Elero"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://elerostudio.com/#organization",
-        "name": "Elero Studio",
-        "url": "https://elerostudio.com/",
-        "email": "sales@elerostudio.com",
-        "telephone": "+447424248552",
-        "description": "Web design, development and digital solutions for ambitious businesses."
-      }
-    ]
+<meta
+name="twitter:description"
+content="Modern websites and custom business systems built around ambitious businesses."
+>
+
+<meta
+name="twitter:image"
+content="https://elerostudio.com/social-preview.png"
+>
+
+<link
+rel="icon"
+type="image/png"
+sizes="512x512"
+href="/favicon.png"
+>
+
+<link
+rel="apple-touch-icon"
+href="/favicon.png"
+>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://elerostudio.com/#website",
+      "url": "https://elerostudio.com/",
+      "name": "Elero Studio",
+      "alternateName": "Elero"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://elerostudio.com/#organization",
+      "name": "Elero Studio",
+      "url": "https://elerostudio.com/",
+      "email": "sales@elerostudio.com",
+      "telephone": "+447424248552",
+      "description": "Websites and custom business systems for ambitious businesses."
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.solution-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.solution-card-link:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(79,230,255,.55);
+
+  box-shadow:
+    0 14px 32px
+    rgba(8,20,32,.08);
+}
+
+.solution-card-link:focus-visible {
+  outline:
+    3px solid
+    rgba(79,230,255,.55);
+
+  outline-offset: 3px;
+}
+
+
+/* CORE SERVICE ARROW LINKS */
+
+.service-row b a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border-radius: inherit;
+}
+
+.service-row b a:focus-visible {
+  outline:
+    3px solid
+    rgba(79,230,255,.55);
+
+  outline-offset: 3px;
+}
+
+
+/* ABOUT HEADING GRADIENT */
+
+.about-heading-gradient {
+  background:
+    linear-gradient(
+      115deg,
+      #0b0d12 8%,
+      #3e8ba4 55%,
+      #727cf8
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* THREE PRICING CARDS */
+
+.pricing-plans {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+.pricing-detail-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 22px;
+
+  color: inherit;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.pricing-detail-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+
+  .pricing-plans {
+    grid-template-columns: 1fr;
   }
-  </script>
 
-  <link rel="stylesheet" href="style.css">
+}
 
-  <style>
-
-    .solution-card-link {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-
-      transition:
-        transform .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
-    }
-
-    .solution-card-link:hover {
-      transform: translateY(-3px);
-
-      border-color:
-        rgba(79,230,255,.55);
-
-      box-shadow:
-        0 14px 32px
-        rgba(8,20,32,.08);
-    }
-
-    .solution-card-link:focus-visible {
-      outline:
-        3px solid
-        rgba(79,230,255,.55);
-
-      outline-offset: 3px;
-    }
-
-
-    /* ABOUT HEADING GRADIENT */
-
-    .about-heading-gradient {
-      background:
-        linear-gradient(
-          115deg,
-          #0b0d12 8%,
-          #3e8ba4 55%,
-          #727cf8
-        );
-
-      -webkit-background-clip: text;
-      background-clip: text;
-
-      color: transparent;
-    }
-
-
-    /* THREE PRICING CARDS */
-
-    .pricing-plans {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .pricing-detail-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 22px;
-      color: inherit;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .pricing-detail-link:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 900px) {
-
-      .pricing-plans {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
 
-  <header
-    class="site-header"
-    id="top"
-    data-nosnippet
-  >
+<!-- =====================================
+     HEADER
+     ===================================== -->
 
-    <div class="container nav-wrap">
+<header
+class="site-header"
+id="top"
+data-nosnippet
+>
 
-      <a
-        class="brand"
-        href="#top"
-      >
+<div class="container nav-wrap">
 
-        <span class="brand-mark">
-          E
-        </span>
+<a
+class="brand"
+href="#top"
+>
 
-        <span>
+<span class="brand-mark">
+E
+</span>
 
-          <strong>
-            ELERO
-          </strong>
+<span>
 
-          <small>
-            STUDIO
-          </small>
+<strong>
+ELERO
+</strong>
 
-        </span>
+<small>
+STUDIO
+</small>
 
-      </a>
+</span>
 
-      <nav class="desktop-nav">
+</a>
 
-        <a href="#services">
-          Services
-        </a>
 
-        <a href="#pricing">
-          Pricing
-        </a>
+<nav class="desktop-nav">
 
-        <a href="#process">
-          Process
-        </a>
+<a href="#services">
+Services
+</a>
 
-        <a href="about.html">
-          About
-        </a>
+<a href="#pricing">
+Pricing
+</a>
 
-        <a href="https://portal.elerostudio.com/portal/login">
-          Client Login
-        </a>
+<a href="#process">
+Process
+</a>
 
-      </nav>
+<a href="about.html">
+About
+</a>
 
-      <div class="nav-actions">
+<a href="https://portal.elerostudio.com/portal/login">
+Client Login
+</a>
 
-        <a
-          class="nav-cta"
-          href="#contact"
-        >
-          Start a project
-        </a>
+</nav>
 
-        <button
-          class="menu-button"
-          id="menuButton"
-          aria-label="Open menu"
-        >
 
-          <span></span>
-          <span></span>
+<div class="nav-actions">
 
-        </button>
+<a
+class="nav-cta"
+href="#contact"
+>
+Start a project
+</a>
 
-      </div>
+<button
+class="menu-button"
+id="menuButton"
+aria-label="Open menu"
+>
 
-    </div>
+<span></span>
 
+<span></span>
 
-    <!-- MOBILE MENU -->
+</button>
 
-    <div
-      class="mobile-menu"
-      id="mobileMenu"
-    >
+</div>
 
-      <a href="#services">
-        Services
-      </a>
+</div>
 
-      <a href="#pricing">
-        Pricing
-      </a>
 
-      <a href="#process">
-        Process
-      </a>
+<!-- MOBILE MENU -->
 
-      <a href="about.html">
-        About
-      </a>
+<div
+class="mobile-menu"
+id="mobileMenu"
+>
 
-      <a href="https://portal.elerostudio.com/portal/login">
-        Client Login
-      </a>
+<a href="#services">
+Services
+</a>
 
-      <a
-        class="mobile-cta"
-        href="#contact"
-      >
-        Start a project
-      </a>
+<a href="#pricing">
+Pricing
+</a>
 
-    </div>
+<a href="#process">
+Process
+</a>
 
-  </header>
+<a href="about.html">
+About
+</a>
 
+<a href="https://portal.elerostudio.com/portal/login">
+Client Login
+</a>
 
-  <main>
+<a
+class="mobile-cta"
+href="#contact"
+>
+Start a project
+</a>
 
+</div>
 
-    <!-- =====================================
-         HERO
-         ===================================== -->
+</header>
 
-    <section class="hero">
 
-      <div class="glow glow-a"></div>
-      <div class="glow glow-b"></div>
+<main>
 
-      <div class="container hero-grid">
 
-        <div class="hero-copy reveal">
+<!-- =====================================
+     HERO
+     ===================================== -->
 
-          <div class="eyebrow">
+<section class="hero">
 
-            <i></i>
+<div class="glow glow-a"></div>
 
-            Websites built for real businesses
+<div class="glow glow-b"></div>
 
-          </div>
 
-          <h1>
+<div class="container hero-grid">
 
-            <span class="hero-gradient">
 
-              <span class="hero-word">
-                Modern websites.
-              </span>
+<div class="hero-copy reveal">
 
-              Smarter business.
 
-            </span>
+<div class="eyebrow">
 
-          </h1>
+<i></i>
 
-          <p>
-            We design and build modern websites for businesses that want
-            to look sharper, win more trust and turn more visitors into
-            enquiries.
-          </p>
+Websites & business systems
 
-          <div class="hero-actions">
+</div>
 
-            <a
-              href="#contact"
-              class="button primary"
-            >
-              Start your website
-            </a>
 
-            <a
-              href="#services"
-              class="button secondary"
-            >
-              Explore our services
-            </a>
+<h1>
 
-          </div>
+<span class="hero-gradient">
 
-          <div class="proof">
+<span class="hero-word">
+Modern websites.
+</span>
 
-            <div>
+Smarter business.
 
-              <strong>
-                Founder-led
-              </strong>
+</span>
 
-              <small>
-                Direct communication
-              </small>
+</h1>
 
-            </div>
 
-            <div>
+<p>
+We design modern websites and build custom business systems that help
+businesses look sharper, work smarter and turn more opportunities
+into results.
+</p>
 
-              <strong>
-                Built around you
-              </strong>
 
-              <small>
-                No generic templates
-              </small>
+<div class="hero-actions">
 
-            </div>
+<a
+href="#contact"
+class="button primary"
+>
+Start a project
+</a>
 
-            <div>
+<a
+href="#services"
+class="button secondary"
+>
+Explore our services
+</a>
 
-              <strong>
-                30 days
-              </strong>
+</div>
 
-              <small>
-                Post-launch support
-              </small>
 
-            </div>
+<div class="proof">
 
-          </div>
+<div>
 
-        </div>
+<strong>
+Founder-led
+</strong>
 
+<small>
+Direct communication
+</small>
 
-        <!-- HERO VISUAL -->
+</div>
 
-        <div
-          class="hero-visual reveal delay"
-          id="hero3d"
-        >
 
-          <div
-            class="hero-3d-scene"
-            id="hero3dScene"
-          >
+<div>
 
-            <div class="glass-plane plane-one"></div>
-            <div class="glass-plane plane-two"></div>
+<strong>
+Built around you
+</strong>
 
-            <div class="browser">
+<small>
+No generic templates
+</small>
 
-              <div class="browser-top">
+</div>
 
-                <div class="dots">
 
-                  <i></i>
-                  <i></i>
-                  <i></i>
+<div>
 
-                </div>
+<strong>
+30 days
+</strong>
 
-                <div class="address">
-                  elerostudio.com
-                </div>
+<small>
+Post-launch support
+</small>
 
-              </div>
+</div>
 
-              <div class="browser-body">
+</div>
 
-                <div class="mock-nav">
+</div>
 
-                  <b>
-                    ELERO
-                  </b>
 
-                  <div>
+<!-- HERO VISUAL -->
 
-                    <span></span>
-                    <span></span>
-                    <span></span>
+<div
+class="hero-visual reveal delay"
+id="hero3d"
+>
 
-                  </div>
+<div
+class="hero-3d-scene"
+id="hero3dScene"
+>
 
-                </div>
+<div class="glass-plane plane-one"></div>
 
-                <div class="mock-hero">
+<div class="glass-plane plane-two"></div>
 
-                  <em></em>
 
-                  <div class="mock-title">
+<div class="browser">
 
-                    <i></i>
-                    <i></i>
+<div class="browser-top">
 
-                  </div>
+<div class="dots">
 
-                  <div class="mock-copy">
+<i></i>
 
-                    <i></i>
-                    <i></i>
-                    <i></i>
+<i></i>
 
-                  </div>
+<i></i>
 
-                  <div class="mock-buttons">
+</div>
 
-                    <i></i>
-                    <i></i>
+<div class="address">
+elerostudio.com
+</div>
 
-                  </div>
+</div>
 
-                </div>
 
-                <div class="mock-grid">
+<div class="browser-body">
 
-                  <div class="mock-card cyan"></div>
-                  <div class="mock-card lines"></div>
-                  <div class="mock-card ring"></div>
 
-                </div>
+<div class="mock-nav">
 
-              </div>
+<b>
+ELERO
+</b>
 
-            </div>
+<div>
 
-            <div class="float-card one">
+<span></span>
 
-              <small>
-                BUILT AROUND YOUR BUSINESS
-              </small>
+<span></span>
 
-              <strong>
-                Not a template.
-              </strong>
+<span></span>
 
-            </div>
+</div>
 
-            <div class="float-card two">
+</div>
 
-              <small>
-                MOBILE FIRST
-              </small>
 
-              <strong>
-                Fast. Clear. Modern.
-              </strong>
+<div class="mock-hero">
 
-            </div>
+<em></em>
 
-            <div class="depth-chip depth-chip-one">
-              01
-            </div>
+<div class="mock-title">
 
-            <div class="depth-chip depth-chip-two">
-              ↗
-            </div>
+<i></i>
 
-          </div>
+<i></i>
 
-        </div>
+</div>
 
-      </div>
 
-    </section>
+<div class="mock-copy">
 
+<i></i>
 
-    <!-- =====================================
-         TRUST
-         ===================================== -->
+<i></i>
 
-    <section class="trust">
+<i></i>
 
-      <div class="container trust-inner">
+</div>
 
-        <p>
-          Built for businesses that have outgrown their current website.
-        </p>
 
-        <div>
+<div class="mock-buttons">
 
-          <span>
-            Trades
-          </span>
+<i></i>
 
-          <span>
-            Hospitality
-          </span>
+<i></i>
 
-          <span>
-            Professional Services
-          </span>
+</div>
 
-          <span>
-            Local Businesses
-          </span>
+</div>
 
-          <span>
-            Start-ups
-          </span>
 
-        </div>
+<div class="mock-grid">
 
-      </div>
+<div class="mock-card cyan"></div>
 
-    </section>
+<div class="mock-card lines"></div>
 
+<div class="mock-card ring"></div>
 
-    <!-- =====================================
-         SERVICES
-         ===================================== -->
+</div>
 
-    <section
-      class="section services"
-      id="services"
-    >
 
-      <div class="container">
+</div>
 
-        <div class="heading split reveal">
+</div>
 
-          <div>
 
-            <small>
-              02 / SERVICES
-            </small>
+<div class="float-card one">
 
-            <h2>
-              More than just a good-looking website.
-            </h2>
+<small>
+BUILT AROUND YOUR BUSINESS
+</small>
 
-          </div>
+<strong>
+Not a template.
+</strong>
 
-          <p>
-            We can build the website itself, then add the systems that
-            make it more useful to your customers and easier for your
-            business to run.
-          </p>
+</div>
 
-        </div>
 
+<div class="float-card two">
 
-        <!-- CORE SERVICES -->
+<small>
+MOBILE FIRST
+</small>
 
-        <div class="service-list core-services">
+<strong>
+Fast. Clear. Modern.
+</strong>
 
-          <article class="service-row reveal">
+</div>
 
-            <span>
-              01
-            </span>
 
-            <div>
+<div class="depth-chip depth-chip-one">
+01
+</div>
 
-              <h3>
-                Website design & build
-              </h3>
 
-              <p>
-                Modern, responsive websites designed around your
-                business, your customers and your goals.
-              </p>
+<div class="depth-chip depth-chip-two">
+↗
+</div>
 
-            </div>
 
-            <b>
-              ↗
-            </b>
+</div>
 
-          </article>
+</div>
 
+</div>
 
-          <article class="service-row reveal">
+</section>
 
-            <span>
-              02
-            </span>
 
-            <div>
+<!-- =====================================
+     TRUST
+     ===================================== -->
 
-              <h3>
-                Website redesign
-              </h3>
+<section class="trust">
 
-              <p>
-                Already online? We can modernise the experience while
-                retaining the systems and content that still work for you.
-              </p>
+<div class="container trust-inner">
 
-            </div>
+<p>
+Built for businesses ready to improve how they look and operate online.
+</p>
 
-            <b>
-              ↗
-            </b>
+<div>
 
-          </article>
+<span>
+Trades
+</span>
 
+<span>
+Hospitality
+</span>
 
-          <article class="service-row reveal">
+<span>
+Professional Services
+</span>
 
-            <span>
-              03
-            </span>
+<span>
+Local Businesses
+</span>
 
-            <div>
+<span>
+Start-ups
+</span>
 
-              <h3>
-                Hosting & ongoing support
-              </h3>
+</div>
 
-              <p>
-                Once your website is live, we can keep it hosted and
-                provide ongoing reasonable amendments when you need them.
-              </p>
+</div>
 
-            </div>
+</section>
 
-            <b>
-              ↗
-            </b>
 
-          </article>
+<!-- =====================================
+     SERVICES
+     ===================================== -->
 
-        </div>
+<section
+class="section services"
+id="services"
+>
 
+<div class="container">
 
-        <!-- =====================================
-             ADDITIONAL SOLUTIONS
-             ===================================== -->
 
-        <div class="solutions-panel reveal">
+<div class="heading split reveal">
 
-          <div class="solutions-intro">
+<div>
 
-            <span>
-              ADDITIONAL SOLUTIONS
-            </span>
+<small>
+02 / SERVICES
+</small>
 
-            <h3>
-              Build more into the website when the business needs it.
-            </h3>
+<h2>
+More than websites. Better ways to run your business.
+</h2>
 
-          </div>
+</div>
 
 
-          <div class="solutions-grid">
+<p>
+We build modern websites, then add the systems and digital tools that
+make them more useful to your customers and easier for your
+business to run.
+</p>
 
+</div>
 
-            <!-- BOOKING SYSTEMS -->
 
-            <a
-              href="booking-demo.html"
-              class="solution-card solution-card-link"
-              aria-label="View Elero booking system demo"
-            >
+<!-- CORE SERVICES -->
 
-              <span>
-                01
-              </span>
+<div class="service-list core-services">
 
-              <div>
 
-                <h4>
-                  Booking systems
-                </h4>
+<article class="service-row reveal">
 
-                <p>
-                  Appointments, consultations, table bookings and
-                  availability.
-                </p>
+<span>
+01
+</span>
 
-              </div>
+<div>
 
-            </a>
+<h3>
+Website design & development
+</h3>
 
+<p>
+Modern, responsive websites designed around your
+business, your customers and your goals.
+</p>
 
-            <!-- PAYMENT INTEGRATION -->
+</div>
 
-            <a
-              href="payment-demo.html"
-              class="solution-card solution-card-link"
-              aria-label="View Elero payment integration demo"
-            >
+<b>
 
-              <span>
-                02
-              </span>
+<a
+href="website-design-development.html"
+aria-label="Website design and development"
+>
+↗
+</a>
 
-              <div>
+</b>
 
-                <h4>
-                  Payment integration
-                </h4>
+</article>
 
-                <p>
-                  Connect secure payment providers for deposits,
-                  invoices or checkout payments.
-                </p>
 
-              </div>
+<article class="service-row reveal">
 
-            </a>
+<span>
+02
+</span>
 
+<div>
 
-            <!-- INVOICE SOLUTIONS -->
+<h3>
+Custom business systems
+</h3>
 
-            <a
-              href="invoice-demo.html"
-              class="solution-card solution-card-link"
-              aria-label="View Elero invoice solution demo"
-            >
+<p>
+Bespoke software for recruitment agencies, estate and letting agents,
+mortgage and financial services, hospitality, professional services
+and other growing businesses.
+</p>
 
-              <span>
-                03
-              </span>
+</div>
 
-              <div>
+<b>
 
-                <h4>
-                  Invoice solutions
-                </h4>
+<a
+href="custom-business-systems.html"
+aria-label="Custom business systems"
+>
+↗
+</a>
 
-                <p>
-                  Create professional invoices, track payments and
-                  make it easier for customers to pay.
-                </p>
+</b>
 
-              </div>
+</article>
 
-            </a>
 
+<article class="service-row reveal">
 
-            <!-- MORTGAGE REPAYMENT CALCULATOR -->
+<span>
+03
+</span>
 
-            <a
-              href="mortgage-calculator-demo.html"
-              class="solution-card solution-card-link"
-              aria-label="View Elero mortgage repayment calculator demo"
-            >
+<div>
 
-              <span>
-                04
-              </span>
+<h3>
+Hosting & ongoing support
+</h3>
 
-              <div>
+<p>
+We keep your websites and Elero-built systems hosted,
+maintained and supported after launch.
+</p>
 
-                <h4>
-                  Mortgage repayment calculator
-                </h4>
+</div>
 
-                <p>
-                  Interactive mortgage estimates using property price,
-                  deposit, term and example mortgage rates.
-                </p>
+<b>
 
-              </div>
+<a
+href="hosting-ongoing-support.html"
+aria-label="Hosting and ongoing support"
+>
+↗
+</a>
 
-            </a>
+</b>
 
+</article>
 
-            <!-- RECRUITMENT AGENCY SYSTEMS -->
 
-            <a
-              href="temporary-staffing-demo.html"
-              class="solution-card solution-card-link"
-              aria-label="View Elero recruitment agency systems demo"
-            >
+</div>
 
-              <span>
-                05
-              </span>
 
-              <div>
+<!-- =====================================
+     ADDITIONAL SOLUTIONS
+     ===================================== -->
 
-                <h4>
-                  Recruitment agency systems
-                </h4>
+<div class="solutions-panel reveal">
 
-                <p>
-                  Candidate shift portals, availability calendars and staffing
-                  dashboards built around temporary recruitment.
-                </p>
 
-              </div>
+<div class="solutions-intro">
 
-            </a>
+<span>
+ADDITIONAL SOLUTIONS
+</span>
 
+<h3>
+Add more capability when your business needs it.
+</h3>
 
-            <!-- ESTATE AGENT SYSTEMS -->
+</div>
 
-            <a
-              href="estate-agency-demo.html"
-              class="solution-card solution-card-link"
-              aria-label="View Elero estate agent systems demo"
-            >
 
-              <span>
-                06
-              </span>
+<div class="solutions-grid">
 
-              <div>
 
-                <h4>
-                  Estate agent systems
-                </h4>
+<!-- BOOKING SYSTEMS -->
 
-                <p>
-                  Capture seller leads, book valuations and manage prospective
-                  instructions through a digital sales pipeline.
-                </p>
+<a
+href="booking-demo.html"
+class="solution-card solution-card-link"
+aria-label="View Elero booking system demo"
+>
 
-              </div>
+<span>
+01
+</span>
 
-            </a>
+<div>
 
-          </div>
+<h4>
+Booking systems
+</h4>
 
-        </div>
+<p>
+Appointments, consultations, table bookings and
+availability.
+</p>
 
-      </div>
+</div>
 
-    </section>
+</a>
 
 
-    <!-- =====================================
-         PRICING
-         ===================================== -->
+<!-- PAYMENT INTEGRATION -->
 
-    <section
-      class="section pricing"
-      id="pricing"
-    >
+<a
+href="payment-demo.html"
+class="solution-card solution-card-link"
+aria-label="View Elero payment integration demo"
+>
 
-      <div class="container">
+<span>
+02
+</span>
 
-        <div class="pricing-head reveal">
+<div>
 
-          <div>
+<h4>
+Payment integration
+</h4>
 
-            <small>
-              03 / PRICING
-            </small>
+<p>
+Connect secure payment providers for deposits,
+invoices or checkout payments.
+</p>
 
-            <h2>
-              Clear pricing. No surprise charges.
-            </h2>
+</div>
 
-          </div>
+</a>
 
-          <p>
-            Your website has a one-off build price agreed before we
-            start. There is
-            <strong>
-              no deposit and nothing to pay upfront.
-            </strong>
-            After launch, you simply choose the ongoing option that
-            suits you.
-          </p>
 
-        </div>
+<!-- INVOICE SOLUTIONS -->
 
+<a
+href="invoice-demo.html"
+class="solution-card solution-card-link"
+aria-label="View Elero invoice solution demo"
+>
 
-        <div class="build-price-card reveal">
+<span>
+03
+</span>
 
-          <div>
+<div>
 
-            <span class="price-label">
-              STEP 1 · WEBSITE BUILD
-            </span>
+<h4>
+Invoice solutions
+</h4>
 
-            <h3>
-              Your agreed website quote
-            </h3>
+<p>
+Create professional invoices, track payments and
+make it easier for customers to pay.
+</p>
 
-            <p>
-              The exact build price depends on the size and functionality
-              of your website. You receive a clear quote before any work
-              begins.
-            </p>
+</div>
 
-          </div>
+</a>
 
-          <div class="build-payment-flow">
 
-            <span>
-              £0 deposit
-            </span>
+<!-- MORTGAGE REPAYMENT CALCULATOR -->
 
-            <i>
-              →
-            </i>
+<a
+href="mortgage-calculator-demo.html"
+class="solution-card solution-card-link"
+aria-label="View Elero mortgage repayment calculator demo"
+>
 
-            <span>
-              We build it
-            </span>
+<span>
+04
+</span>
 
-            <i>
-              →
-            </i>
+<div>
 
-            <span>
-              You approve it
-            </span>
+<h4>
+Mortgage repayment calculator
+</h4>
 
-            <i>
-              →
-            </i>
+<p>
+Interactive mortgage estimates using property price,
+deposit, term and example mortgage rates.
+</p>
 
-            <span>
-              You pay the quote
-            </span>
+</div>
 
-          </div>
+</a>
 
-        </div>
 
+<!-- RECRUITMENT AGENCY SYSTEMS -->
 
-        <div class="pricing-choice reveal">
+<a
+href="temporary-staffing-demo.html"
+class="solution-card solution-card-link"
+aria-label="View Elero recruitment agency systems demo"
+>
 
-          <div class="pricing-choice-copy">
+<span>
+05
+</span>
 
-            <span class="price-label">
-              STEP 2 · AFTER LAUNCH
-            </span>
+<div>
 
-            <h3>
-              Choose one monthly option.
-            </h3>
+<h4>
+Recruitment agency systems
+</h4>
 
-            <p>
-              Choose the level of ongoing support that suits your business.
-              Your first 30 days of reasonable post-launch edits are included
-              whichever option you choose.
-            </p>
+<p>
+Candidate shift portals, availability calendars and staffing
+dashboards built around temporary recruitment.
+</p>
 
-          </div>
+</div>
 
+</a>
 
-          <div class="pricing-plans">
 
+<!-- ESTATE AGENT SYSTEMS -->
 
-            <!-- HOSTING -->
+<a
+href="estate-agency-demo.html"
+class="solution-card solution-card-link"
+aria-label="View Elero estate agent systems demo"
+>
 
-            <article class="price-plan managed-plan">
+<span>
+06
+</span>
 
-              <div class="plan-topline">
+<div>
 
-                <span>
-                  HOSTING
-                </span>
+<h4>
+Estate agent systems
+</h4>
 
-                <b>
-                  OPTION 01
-                </b>
+<p>
+Capture seller leads, book valuations and manage prospective
+instructions through a digital sales pipeline.
+</p>
 
-              </div>
+</div>
 
-              <div class="plan-price">
+</a>
 
-                <strong>
-                  £9.99
-                </strong>
 
-                <span>
-                  / month
-                </span>
+</div>
 
-              </div>
+</div>
 
-              <h4>
-                Website Hosting
-              </h4>
+</div>
 
-              <p>
-                For businesses that simply want us to keep their finished
-                website hosted, secure and online.
-              </p>
+</section>
 
-              <ul>
 
-                <li>
-                  Website hosting
-                </li>
+<!-- =====================================
+     PRICING
+     ===================================== -->
 
-                <li>
-                  Secure HTTPS connection
-                </li>
+<section
+class="section pricing"
+id="pricing"
+>
 
-                <li>
-                  Website monitoring
-                </li>
+<div class="container">
 
-                <li>
-                  Initial SEO setup
-                </li>
 
-                <li>
-                  Ongoing website amendments are not included
-                </li>
+<div class="pricing-head reveal">
 
-              </ul>
+<div>
 
-            </article>
+<small>
+03 / PRICING
+</small>
 
+<h2>
+Clear pricing. No surprise charges.
+</h2>
 
-            <!-- MANAGED -->
+</div>
 
-            <article class="price-plan managed-plan">
 
-              <div class="plan-topline">
+<p>
+Your project has a one-off build price agreed before we
+start. There is
+<strong>
+no deposit and nothing to pay upfront.
+</strong>
+After launch, you simply choose the ongoing option that
+suits you.
+</p>
 
-                <span>
-                  MANAGED
-                </span>
+</div>
 
-                <b>
-                  OPTION 02
-                </b>
 
-              </div>
+<div class="build-price-card reveal">
 
-              <div class="plan-price">
+<div>
 
-                <strong>
-                  £49.99
-                </strong>
+<span class="price-label">
+STEP 1 · PROJECT BUILD
+</span>
 
-                <span>
-                  / month
-                </span>
+<h3>
+Your agreed project quote
+</h3>
 
-              </div>
+<p>
+The exact build price depends on the size and functionality
+of your website or business system. You receive a clear quote
+before any work begins.
+</p>
 
-              <h4>
-                Managed Website
-              </h4>
+</div>
 
-              <p>
-                For businesses that want us to host the website and keep its
-                existing content up to date for them.
-              </p>
 
-              <ul>
+<div class="build-payment-flow">
 
-                <li>
-                  Everything in Website Hosting
-                </li>
+<span>
+£0 deposit
+</span>
 
-                <li>
-                  Routine website amendments
-                </li>
+<i>
+→
+</i>
 
-                <li>
-                  Text, image and service updates
-                </li>
+<span>
+We build it
+</span>
 
-                <li>
-                  Existing form amendments
-                </li>
+<i>
+→
+</i>
 
-                <li>
-                  Ongoing technical SEO upkeep
-                </li>
+<span>
+You approve it
+</span>
 
-              </ul>
+<i>
+→
+</i>
 
-            </article>
+<span>
+You pay the quote
+</span>
 
+</div>
 
-            <!-- BUSINESS SYSTEMS -->
+</div>
 
-            <article class="price-plan managed-plan">
 
-              <div class="plan-topline">
+<div class="pricing-choice reveal">
 
-                <span>
-                  BUSINESS SYSTEMS
-                </span>
 
-                <b>
-                  OPTION 03
-                </b>
+<div class="pricing-choice-copy">
 
-              </div>
+<span class="price-label">
+STEP 2 · AFTER LAUNCH
+</span>
 
-              <div class="plan-price">
+<h3>
+Choose one monthly option.
+</h3>
 
-                <strong>
-                  £349
-                </strong>
+<p>
+Choose the level of ongoing support that suits your business.
+Your first 30 days of reasonable post-launch support are included
+whichever option you choose.
+</p>
 
-                <span>
-                  / month
-                </span>
+</div>
 
-              </div>
 
-              <h4>
-                Website & Business Systems
-              </h4>
+<div class="pricing-plans">
 
-              <p>
-                For businesses that rely on custom software, portals, booking
-                systems, dashboards or other Elero-built functionality.
-              </p>
 
-              <ul>
+<!-- HOSTING -->
 
-                <li>
-                  Everything in Managed Website
-                </li>
+<article class="price-plan managed-plan">
 
-                <li>
-                  Custom software hosting and management
-                </li>
+<div class="plan-topline">
 
-                <li>
-                  Database and system monitoring
-                </li>
+<span>
+HOSTING
+</span>
 
-                <li>
-                  Bug fixes and integration maintenance
-                </li>
+<b>
+OPTION 01
+</b>
 
-                <li>
-                  Priority technical support
-                </li>
+</div>
 
-              </ul>
 
-            </article>
+<div class="plan-price">
 
-          </div>
+<strong>
+£9.99
+</strong>
 
-          <a
-            class="pricing-detail-link"
-            href="pricing.html"
-          >
-            Compare the packages in detail
-            <span>→</span>
-          </a>
+<span>
+/ month
+</span>
 
-        </div>
+</div>
 
 
-        <div class="pricing-note reveal">
+<h4>
+Website Hosting
+</h4>
 
-          <span>
-            GOOD TO KNOW
-          </span>
 
-          <p>
-            Larger redesigns, new pages or substantial new functionality
-            fall outside normal amendments and would always be quoted
-            separately before work is carried out.
-          </p>
+<p>
+For businesses that simply want us to keep their finished
+website hosted, secure and online.
+</p>
 
-        </div>
 
-      </div>
+<ul>
 
-    </section>
+<li>
+Website hosting
+</li>
 
+<li>
+Secure HTTPS connection
+</li>
 
-    <!-- =====================================
-         PROCESS
-         ===================================== -->
+<li>
+Website monitoring
+</li>
 
-    <section
-      class="section process"
-      id="process"
-    >
+<li>
+Initial SEO setup
+</li>
 
-      <div class="container">
+<li>
+Ongoing website amendments are not included
+</li>
 
-        <div class="process-head reveal">
+</ul>
 
-          <div>
+</article>
 
-            <small>
-              04 / PROCESS
-            </small>
 
-            <h2>
-              A straightforward way to get a better website.
-            </h2>
+<!-- MANAGED -->
 
-          </div>
+<article class="price-plan managed-plan">
 
-          <p>
-            A clear, straightforward process from the first conversation
-            through to launch.
-          </p>
+<div class="plan-topline">
 
-        </div>
+<span>
+MANAGED
+</span>
 
+<b>
+OPTION 02
+</b>
 
-        <div class="process-grid">
+</div>
 
-          <article class="reveal">
 
-            <span>
-              01
-            </span>
+<div class="plan-price">
 
-            <h3>
-              Consult
-            </h3>
+<strong>
+£49.99
+</strong>
 
-            <p>
-              We talk through your business, what you need and what you
-              want the website to achieve.
-            </p>
+<span>
+/ month
+</span>
 
-          </article>
+</div>
 
 
-          <article class="reveal">
+<h4>
+Managed Website
+</h4>
 
-            <span>
-              02
-            </span>
 
-            <h3>
-              Quote
-            </h3>
+<p>
+For businesses that want us to host the website and keep its
+existing content up to date for them.
+</p>
 
-            <p>
-              You receive a clear quote for the website before we start
-              building.
-            </p>
 
-          </article>
+<ul>
 
+<li>
+Everything in Website Hosting
+</li>
 
-          <article class="reveal">
+<li>
+Routine website amendments
+</li>
 
-            <span>
-              03
-            </span>
+<li>
+Text, image and service updates
+</li>
 
-            <h3>
-              Build
-            </h3>
+<li>
+Existing form amendments
+</li>
 
-            <p>
-              We design and build the website. There is no deposit and
-              nothing to pay upfront.
-            </p>
+<li>
+Ongoing technical SEO upkeep
+</li>
 
-          </article>
+</ul>
 
+</article>
 
-          <article class="reveal">
 
-            <span>
-              04
-            </span>
+<!-- BUSINESS SYSTEMS -->
 
-            <h3>
-              Review
-            </h3>
+<article class="price-plan managed-plan">
 
-            <p>
-              You review the finished site and tell us if anything needs
-              changing before approval.
-            </p>
+<div class="plan-topline">
 
-          </article>
+<span>
+BUSINESS SYSTEMS
+</span>
 
+<b>
+OPTION 03
+</b>
 
-          <article class="reveal">
+</div>
 
-            <span>
-              05
-            </span>
 
-            <h3>
-              Pay
-            </h3>
+<div class="plan-price">
 
-            <p>
-              Once you’re happy, we send the invoice for the agreed
-              website build price.
-            </p>
+<strong>
+£349
+</strong>
 
-          </article>
+<span>
+/ month
+</span>
 
+</div>
 
-          <article class="reveal">
 
-            <span>
-              06
-            </span>
+<h4>
+Website & Business Systems
+</h4>
 
-            <h3>
-              Launch
-            </h3>
 
-            <p>
-              After payment, the site goes live — with 30 days for
-              reasonable post-launch edits.
-            </p>
+<p>
+For businesses that rely on custom software, portals, booking
+systems, dashboards or other Elero-built functionality.
+</p>
 
-          </article>
 
-        </div>
+<ul>
 
-      </div>
+<li>
+Everything in Managed Website
+</li>
 
-    </section>
+<li>
+Custom software hosting and management
+</li>
 
+<li>
+Database and system monitoring
+</li>
 
-    <!-- =====================================
-         ABOUT
-         ===================================== -->
+<li>
+Bug fixes and integration maintenance
+</li>
 
-    <section
-      class="section about-preview"
-      id="about"
-    >
+<li>
+Priority technical support
+</li>
 
-      <div class="container about-preview-grid">
+</ul>
 
-        <div class="about-preview-copy reveal">
+</article>
 
-          <small>
-            05 / ABOUT ELERO
-          </small>
 
-          <h2 class="about-heading-gradient">
-            Small studio. Straightforward service. Serious websites.
-          </h2>
+</div>
 
-          <p>
-            Elero Studio is a South Wales-based web design and
-            development studio helping businesses improve how they look
-            and operate online.
-          </p>
 
-          <p>
-            From the first conversation to launch, clients deal directly
-            with the people working on their website — keeping the
-            process clear, personal and straightforward.
-          </p>
+<a
+class="pricing-detail-link"
+href="pricing.html"
+>
 
-          <a
-            class="button secondary about-preview-button"
-            href="about.html"
-          >
+Compare the packages in detail
 
-            Meet Elero
+<span>
+→
+</span>
 
-            <span>
-              ↗
-            </span>
+</a>
 
-          </a>
 
-        </div>
+</div>
 
 
-        <div class="about-trust-panel reveal delay">
+<div class="pricing-note reveal">
 
-          <div class="about-trust-top">
+<span>
+GOOD TO KNOW
+</span>
 
-            <span>
-              ELERO STUDIO
-            </span>
+<p>
+Larger redesigns, new pages or substantial new functionality
+fall outside normal amendments and would always be quoted
+separately before work is carried out.
+</p>
 
-            <strong>
-              Web design with a more personal approach.
-            </strong>
+</div>
 
-          </div>
 
-          <div class="about-trust-list">
+</div>
 
-            <article>
+</section>
 
-              <span>
-                01
-              </span>
 
-              <div>
+<!-- =====================================
+     PROCESS
+     ===================================== -->
 
-                <h3>
-                  Direct communication
-                </h3>
+<section
+class="section process"
+id="process"
+>
 
-                <p>
-                  Speak directly with the people working on your website.
-                </p>
+<div class="container">
 
-              </div>
 
-            </article>
+<div class="process-head reveal">
 
+<div>
 
-            <article>
+<small>
+04 / PROCESS
+</small>
 
-              <span>
-                02
-              </span>
+<h2>
+A straightforward way to build something better.
+</h2>
 
-              <div>
+</div>
 
-                <h3>
-                  Built around your business
-                </h3>
 
-                <p>
-                  We start with what your business actually needs, not a
-                  one-size-fits-all template.
-                </p>
+<p>
+A clear, straightforward process from the first conversation
+through to launch.
+</p>
 
-              </div>
+</div>
 
-            </article>
 
+<div class="process-grid">
 
-            <article>
 
-              <span>
-                03
-              </span>
+<article class="reveal">
 
-              <div>
+<span>
+01
+</span>
 
-                <h3>
-                  Support beyond launch
-                </h3>
+<h3>
+Consult
+</h3>
 
-                <p>
-                  We can continue helping as your website and digital
-                  needs develop.
-                </p>
+<p>
+We talk through your business, what you need and what you
+want the project to achieve.
+</p>
 
-              </div>
+</article>
 
-            </article>
 
-          </div>
+<article class="reveal">
 
-        </div>
+<span>
+02
+</span>
 
-      </div>
+<h3>
+Quote
+</h3>
 
-    </section>
+<p>
+You receive a clear quote for the project before we start
+building.
+</p>
 
+</article>
 
-    <!-- =====================================
-         FAQ
-         ===================================== -->
 
-    <section class="section faq">
+<article class="reveal">
 
-      <div class="container">
+<span>
+03
+</span>
 
-        <div class="heading reveal">
+<h3>
+Build
+</h3>
 
-          <small>
-            06 / FAQ
-          </small>
+<p>
+We design and build your website or business system. There is no deposit
+and nothing to pay upfront.
+</p>
 
-          <h2>
-            Questions clients usually ask.
-          </h2>
+</article>
 
-        </div>
 
+<article class="reveal">
 
-        <div class="faq-list">
+<span>
+04
+</span>
 
-          <article class="faq-item reveal">
+<h3>
+Review
+</h3>
 
-            <button>
+<p>
+You review the finished project and tell us if anything needs
+changing before approval.
+</p>
 
-              <span>
-                Do I need to pay a deposit?
-              </span>
+</article>
 
-              <i>
-                +
-              </i>
 
-            </button>
+<article class="reveal">
 
-            <div>
+<span>
+05
+</span>
 
-              <p>
-                No. There is no deposit and no upfront website-build fee.
-                We build the site first, you review it, and the agreed
-                build price is invoiced once you approve it.
-              </p>
+<h3>
+Pay
+</h3>
 
-            </div>
+<p>
+Once you’re happy, we send the invoice for the agreed
+project build price.
+</p>
 
-          </article>
+</article>
 
 
-          <article class="faq-item reveal">
+<article class="reveal">
 
-            <button>
+<span>
+06
+</span>
 
-              <span>
-                Can I request changes before it goes live?
-              </span>
+<h3>
+Launch
+</h3>
 
-              <i>
-                +
-              </i>
+<p>
+After payment, the project goes live — with 30 days for
+reasonable post-launch support.
+</p>
 
-            </button>
+</article>
 
-            <div>
 
-              <p>
-                Yes. The review stage is specifically there for you to
-                check the website and request reasonable changes before
-                approval.
-              </p>
+</div>
 
-            </div>
+</div>
 
-          </article>
+</section>
 
 
-          <article class="faq-item reveal">
+<!-- =====================================
+     ABOUT
+     ===================================== -->
 
-            <button>
+<section
+class="section about-preview"
+id="about"
+>
 
-              <span>
-                What if I notice something after launch?
-              </span>
+<div class="container about-preview-grid">
 
-              <i>
-                +
-              </i>
 
-            </button>
+<div class="about-preview-copy reveal">
 
-            <div>
+<small>
+05 / ABOUT ELERO
+</small>
 
-              <p>
-                You have 30 days after launch to request reasonable edits
-                if something was missed during the review stage.
-              </p>
+<h2 class="about-heading-gradient">
+Small studio. Straightforward service. Serious websites and systems.
+</h2>
 
-            </div>
+<p>
+Elero Studio is a South Wales-based digital studio building modern
+websites and custom business systems that help businesses
+improve how they look and operate online.
+</p>
 
-          </article>
+<p>
+From the first conversation to launch, clients deal directly
+with the people working on their project — keeping the
+process clear, personal and straightforward.
+</p>
 
 
-          <article class="faq-item reveal">
+<a
+class="button secondary about-preview-button"
+href="about.html"
+>
 
-            <button>
+Meet Elero
 
-              <span>
-                Can you modernise my existing website?
-              </span>
+<span>
+↗
+</span>
 
-              <i>
-                +
-              </i>
+</a>
 
-            </button>
+</div>
 
-            <div>
 
-              <p>
-                Yes. We can redesign an existing website and, where
-                appropriate, retain or integrate systems the business
-                already relies on.
-              </p>
+<div class="about-trust-panel reveal delay">
 
-            </div>
 
-          </article>
+<div class="about-trust-top">
 
-        </div>
+<span>
+ELERO STUDIO
+</span>
 
-      </div>
+<strong>
+Websites and business systems with a more personal approach.
+</strong>
 
-    </section>
+</div>
 
 
-    <!-- =====================================
-         CONTACT
-         ===================================== -->
+<div class="about-trust-list">
 
-    <section
-      class="section contact"
-      id="contact"
-    >
 
-      <div class="contact-glow"></div>
+<article>
 
-      <div class="container contact-grid">
+<span>
+01
+</span>
 
-        <div class="contact-copy reveal">
+<div>
 
-          <small>
-            07 / START A PROJECT
-          </small>
+<h3>
+Direct communication
+</h3>
 
-          <h2>
-            Ready for a website that looks like your business means
-            business?
-          </h2>
+<p>
+Speak directly with the people working on your project.
+</p>
 
-          <p>
-            Tell us a little about what you need and we’ll take it from
-            there.
-          </p>
+</div>
 
-          <div class="contact-direct">
+</article>
 
-            <span class="contact-direct-label">
-              PREFER TO TALK?
-            </span>
 
-            <a href="tel:+447424248552">
-              07424 248552
-            </a>
+<article>
 
-            <a href="mailto:sales@elerostudio.com">
-              sales@elerostudio.com
-            </a>
+<span>
+02
+</span>
 
-            <small>
-              Usually replies within one working day.
-            </small>
+<div>
 
-          </div>
+<h3>
+Built around your business
+</h3>
 
-          <div class="mini-proof">
+<p>
+We start with what your business actually needs, not a
+one-size-fits-all template.
+</p>
 
-            <span>
-              30-DAY POST-LAUNCH SUPPORT
-            </span>
+</div>
 
-          </div>
+</article>
 
-        </div>
 
+<article>
 
-        <!-- CONTACT FORM -->
+<span>
+03
+</span>
 
-        <form
-          class="contact-form reveal delay"
-          id="contactForm"
-          name="project-enquiry"
-          method="POST"
-          action="/thanks.html"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
+<div>
 
-          <input
-            type="hidden"
-            name="form-name"
-            value="project-enquiry"
-          >
+<h3>
+Support beyond launch
+</h3>
 
-          <input
-            type="hidden"
-            name="subject"
-            data-remove-prefix
-            value="New Elero Studio website enquiry"
-          >
+<p>
+We can continue helping as your website and digital
+needs develop.
+</p>
 
-          <p class="hidden-field">
+</div>
 
-            <label>
+</article>
 
-              Do not fill this in if you are human:
 
-              <input name="bot-field">
+</div>
 
-            </label>
+</div>
 
-          </p>
 
+</div>
 
-          <div class="form-row">
+</section>
 
-            <label>
 
-              <span>
-                Your name
-              </span>
+<!-- =====================================
+     FAQ
+     ===================================== -->
 
-              <input
-                name="name"
-                required
-                autocomplete="name"
-                placeholder="Your name"
-              >
+<section class="section faq">
 
-            </label>
+<div class="container">
 
-            <label>
 
-              <span>
-                Business name
-              </span>
+<div class="heading reveal">
 
-              <input
-                name="business"
-                required
-                autocomplete="organization"
-                placeholder="Your business"
-              >
+<small>
+06 / FAQ
+</small>
 
-            </label>
+<h2>
+Questions clients usually ask.
+</h2>
 
-          </div>
+</div>
 
 
-          <div class="form-row">
+<div class="faq-list">
 
-            <label>
 
-              <span>
-                Email
-              </span>
+<article class="faq-item reveal">
 
-              <input
-                name="email"
-                type="email"
-                required
-                autocomplete="email"
-                placeholder="you@business.co.uk"
-              >
+<button>
 
-            </label>
+<span>
+Do I need to pay a deposit?
+</span>
 
-            <label>
+<i>
++
+</i>
 
-              <span>
-                Phone
-              </span>
+</button>
 
-              <input
-                name="phone"
-                type="tel"
-                autocomplete="tel"
-                placeholder="07..."
-              >
 
-            </label>
+<div>
 
-          </div>
+<p>
+No. There is no deposit and no upfront website-build fee.
+We build the site first, you review it, and the agreed
+build price is invoiced once you approve it.
+</p>
 
+</div>
 
-          <label>
+</article>
 
-            <span>
-              What do you need?
-            </span>
 
-            <select name="project">
+<article class="faq-item reveal">
 
-              <option>
-                New website
-              </option>
+<button>
 
-              <option>
-                Website redesign
-              </option>
+<span>
+Can I request changes before it goes live?
+</span>
 
-              <option>
-                Booking / enquiry system
-              </option>
+<i>
++
+</i>
 
-              <option>
-                Payment integration
-              </option>
+</button>
 
-              <option>
-                Invoice solution
-              </option>
 
-              <option>
-                Client portal
-              </option>
+<div>
 
-              <option>
-                Automation solution
-              </option>
+<p>
+Yes. The review stage is specifically there for you to
+check the website and request reasonable changes before
+approval.
+</p>
 
-              <option>
-                Search engine optimisation
-              </option>
+</div>
 
-              <option>
-                Not sure yet
-              </option>
+</article>
 
-            </select>
 
-          </label>
+<article class="faq-item reveal">
 
+<button>
 
-          <label>
+<span>
+What if I notice something after launch?
+</span>
 
-            <span>
-              Tell us about the project
-            </span>
+<i>
++
+</i>
 
-            <textarea
-              name="message"
-              rows="5"
-              required
-              placeholder="A little about your business and what you'd like the website to do..."
-            ></textarea>
+</button>
 
-          </label>
 
+<div>
 
-          <button
-            class="button primary submit"
-            type="submit"
-          >
-            Send project enquiry
-          </button>
+<p>
+You have 30 days after launch to request reasonable edits
+if something was missed during the review stage.
+</p>
 
-          <p
-            class="form-note"
-            id="formStatus"
-          >
-            Your details will be sent securely through our website enquiry
-            form.
-          </p>
+</div>
 
-        </form>
+</article>
 
-      </div>
 
-    </section>
+<article class="faq-item reveal">
 
-  </main>
+<button>
 
+<span>
+Can you modernise my existing website?
+</span>
 
-  <!-- =====================================
-       FLOATING CALL BUTTON
-       ===================================== -->
+<i>
++
+</i>
 
-  <a
-    class="floating-call"
-    data-nosnippet
-    href="tel:+447424248552"
-    aria-label="Call Elero Studio on 07424 248552"
-  >
+</button>
 
-    <span class="call-status"></span>
 
-    <span class="call-icon">
-      ☎
-    </span>
+<div>
 
-    <span class="call-copy">
+<p>
+Yes. We can redesign an existing website and, where
+appropriate, retain or integrate systems the business
+already relies on.
+</p>
 
-      <small>
-        CALL ELERO
-      </small>
+</div>
 
-      <strong>
-        07424 248552
-      </strong>
+</article>
 
-    </span>
 
-  </a>
+</div>
 
+</div>
 
-  <!-- =====================================
-       FOOTER
-       ===================================== -->
+</section>
 
-  <footer class="site-footer">
 
-    <div class="container footer-main">
+<!-- =====================================
+     CONTACT
+     ===================================== -->
 
-      <div class="footer-brand-block">
+<section
+class="section contact"
+id="contact"
+>
 
-        <a
-          class="brand footer-brand"
-          href="#top"
-        >
+<div class="contact-glow"></div>
 
-          <span class="brand-mark">
-            E
-          </span>
 
-          <span>
+<div class="container contact-grid">
 
-            <strong>
-              ELERO
-            </strong>
 
-            <small>
-              STUDIO
-            </small>
+<div class="contact-copy reveal">
 
-          </span>
+<small>
+07 / START A PROJECT
+</small>
 
-        </a>
+<h2>
+Ready for websites and systems that work harder for your
+business?
+</h2>
 
-        <p>
-          Modern websites and digital solutions for ambitious businesses.
-        </p>
+<p>
+Tell us a little about what you need and we’ll take it from
+there.
+</p>
 
-        <span>
-          South Wales · Working with businesses across the UK
-        </span>
 
-      </div>
+<div class="contact-direct">
 
+<span class="contact-direct-label">
+PREFER TO TALK?
+</span>
 
-      <div class="footer-column">
+<a href="tel:+447424248552">
+07424 248552
+</a>
 
-        <small>
-          GET IN TOUCH
-        </small>
+<a href="mailto:sales@elerostudio.com">
+sales@elerostudio.com
+</a>
 
-        <a href="mailto:sales@elerostudio.com">
-          sales@elerostudio.com
-        </a>
+<small>
+Usually replies within one working day.
+</small>
 
-        <a href="tel:+447424248552">
-          07424 248552
-        </a>
+</div>
 
-      </div>
 
+<div class="mini-proof">
 
-      <div class="footer-column">
+<span>
+30-DAY POST-LAUNCH SUPPORT
+</span>
 
-        <small>
-          EXPLORE
-        </small>
+</div>
 
-        <a href="#services">
-          Services
-        </a>
 
-        <a href="#pricing">
-          Pricing
-        </a>
+</div>
 
-        <a href="#process">
-          Process
-        </a>
 
-        <a href="about.html">
-          About
-        </a>
+<!-- CONTACT FORM -->
 
-        <a href="#contact">
-          Contact
-        </a>
+<form
+class="contact-form reveal delay"
+id="contactForm"
+name="project-enquiry"
+method="POST"
+action="/thanks.html"
+data-netlify="true"
+netlify-honeypot="bot-field"
+>
 
-        <a href="https://portal.elerostudio.com/portal/login">
-          Client Login
-        </a>
+<input
+type="hidden"
+name="form-name"
+value="project-enquiry"
+>
 
-      </div>
+<input
+type="hidden"
+name="subject"
+data-remove-prefix
+value="New Elero Studio project enquiry"
+>
 
 
-      <div class="footer-column footer-legal">
+<p class="hidden-field">
 
-        <small>
-          LEGAL
-        </small>
+<label>
 
-        <a href="privacy.html">
-          Privacy Policy
-        </a>
+Do not fill this in if you are human:
 
-        <a href="terms.html">
-          Terms of Use
-        </a>
+<input name="bot-field">
 
-      </div>
+</label>
 
-    </div>
+</p>
 
 
-    <div class="container footer-bottom">
+<div class="form-row">
 
-      <span>
-        © 2026 Elero Studio
-      </span>
 
-      <span>
-        Built with clarity, care and straightforward support.
-      </span>
+<label>
 
-    </div>
+<span>
+Your name
+</span>
 
-  </footer>
+<input
+name="name"
+required
+autocomplete="name"
+placeholder="Your name"
+>
 
+</label>
 
-  <script src="script.js"></script>
+
+<label>
+
+<span>
+Business name
+</span>
+
+<input
+name="business"
+required
+autocomplete="organization"
+placeholder="Your business"
+>
+
+</label>
+
+
+</div>
+
+
+<div class="form-row">
+
+
+<label>
+
+<span>
+Email
+</span>
+
+<input
+name="email"
+type="email"
+required
+autocomplete="email"
+placeholder="you@business.co.uk"
+>
+
+</label>
+
+
+<label>
+
+<span>
+Phone
+</span>
+
+<input
+name="phone"
+type="tel"
+autocomplete="tel"
+placeholder="07..."
+>
+
+</label>
+
+
+</div>
+
+
+<label>
+
+<span>
+What do you need?
+</span>
+
+
+<select name="project">
+
+<option>
+New website
+</option>
+
+<option>
+Website redesign
+</option>
+
+<option>
+Booking / enquiry system
+</option>
+
+<option>
+Payment integration
+</option>
+
+<option>
+Invoice solution
+</option>
+
+<option>
+Client portal
+</option>
+
+<option>
+Automation solution
+</option>
+
+<option>
+Search engine optimisation
+</option>
+
+<option>
+Not sure yet
+</option>
+
+</select>
+
+
+</label>
+
+
+<label>
+
+<span>
+Tell us about the project
+</span>
+
+
+<textarea
+name="message"
+rows="5"
+required
+placeholder="A little about your business and what you'd like us to build or improve..."
+></textarea>
+
+
+</label>
+
+
+<button
+class="button primary submit"
+type="submit"
+>
+Send project enquiry
+</button>
+
+
+<p
+class="form-note"
+id="formStatus"
+>
+Your details will be sent securely through our website enquiry
+form.
+</p>
+
+
+</form>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================
+     FLOATING CALL BUTTON
+     ===================================== -->
+
+<a
+class="floating-call"
+data-nosnippet
+href="tel:+447424248552"
+aria-label="Call Elero Studio on 07424 248552"
+>
+
+<span class="call-status"></span>
+
+<span class="call-icon">
+☎
+</span>
+
+<span class="call-copy">
+
+<small>
+CALL ELERO
+</small>
+
+<strong>
+07424 248552
+</strong>
+
+</span>
+
+</a>
+
+
+<!-- =====================================
+     FOOTER
+     ===================================== -->
+
+<footer class="site-footer">
+
+
+<div class="container footer-main">
+
+
+<div class="footer-brand-block">
+
+
+<a
+class="brand footer-brand"
+href="#top"
+>
+
+<span class="brand-mark">
+E
+</span>
+
+<span>
+
+<strong>
+ELERO
+</strong>
+
+<small>
+STUDIO
+</small>
+
+</span>
+
+</a>
+
+
+<p>
+Modern websites and custom business systems for ambitious businesses.
+</p>
+
+<span>
+South Wales · Working with businesses across the UK
+</span>
+
+
+</div>
+
+
+<div class="footer-column">
+
+<small>
+GET IN TOUCH
+</small>
+
+<a href="mailto:sales@elerostudio.com">
+sales@elerostudio.com
+</a>
+
+<a href="tel:+447424248552">
+07424 248552
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<small>
+EXPLORE
+</small>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#pricing">
+Pricing
+</a>
+
+<a href="#process">
+Process
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+<a href="https://portal.elerostudio.com/portal/login">
+Client Login
+</a>
+
+</div>
+
+
+<div class="footer-column footer-legal">
+
+<small>
+LEGAL
+</small>
+
+<a href="privacy.html">
+Privacy Policy
+</a>
+
+<a href="terms.html">
+Terms of Use
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="container footer-bottom">
+
+<span>
+© 2026 Elero Studio
+</span>
+
+<span>
+Built with clarity, care and straightforward support.
+</span>
+
+</div>
+
+
+</footer>
+
+
+<script src="script.js"></script>
+
 
 </body>
+
 </html>

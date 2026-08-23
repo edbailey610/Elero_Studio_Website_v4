@@ -1,0 +1,2256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Professional website design and development by Elero Studio. Modern, responsive websites built around your business, customers and goals."
+  >
+
+  <title>
+    Website Design & Development | Elero Studio
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large,max-snippet:160"
+  >
+
+  <link
+    rel="canonical"
+    href="https://elerostudio.com/website-design-development.html"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Elero Studio"
+  >
+
+  <meta
+    property="og:title"
+    content="Website Design & Development | Elero Studio"
+  >
+
+  <meta
+    property="og:description"
+    content="Modern websites designed and developed around your business, your customers and your goals."
+  >
+
+  <meta
+    property="og:url"
+    content="https://elerostudio.com/website-design-development.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://elerostudio.com/social-preview.png"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="512x512"
+    href="/favicon.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="/favicon.png"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Website Design & Development",
+    "provider": {
+      "@type": "Organization",
+      "name": "Elero Studio",
+      "url": "https://elerostudio.com/"
+    },
+    "areaServed": "United Kingdom",
+    "description": "Modern website design and development for businesses, including responsive design, development, SEO foundations, integrations and ongoing support."
+  }
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <style>
+
+    /* ========================================
+       PAGE
+       ======================================== */
+
+    .service-page {
+      background: #ffffff;
+      color: #0b0d12;
+    }
+
+    .service-label {
+      display: block;
+
+      margin-bottom: 22px;
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+
+      color: #83909e;
+    }
+
+
+    /* ========================================
+       HERO
+       ======================================== */
+
+    .service-hero {
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        150px 0
+        115px;
+
+      background:
+        radial-gradient(
+          circle at 82% 28%,
+          rgba(79,230,255,.17),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 66% 75%,
+          rgba(114,124,248,.15),
+          transparent 30%
+        ),
+        #080b10;
+
+      color: white;
+    }
+
+    .service-hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      top: -260px;
+      left: -180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(114,124,248,.10);
+
+      filter: blur(25px);
+
+      pointer-events: none;
+    }
+
+    .service-hero-grid {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.1fr)
+        minmax(350px,.9fr);
+
+      align-items: center;
+
+      gap: 75px;
+    }
+
+    .service-kicker {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 28px;
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+
+      color: #9aa8ba;
+    }
+
+    .service-kicker i {
+      width: 8px;
+      height: 8px;
+
+      flex: none;
+
+      border-radius: 50%;
+
+      background: #4fe6ff;
+
+      box-shadow:
+        0 0 20px
+        rgba(79,230,255,.9);
+    }
+
+    .service-hero h1 {
+      max-width: 800px;
+
+      margin: 0;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size:
+        clamp(54px,7vw,98px);
+
+      line-height: .97;
+
+      letter-spacing: -.058em;
+    }
+
+    .service-hero h1 span {
+      display: block;
+
+      background:
+        linear-gradient(
+          110deg,
+          #ffffff 5%,
+          #70dced 54%,
+          #8990ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .service-hero-copy > p {
+      max-width: 690px;
+
+      margin:
+        30px 0
+        0;
+
+      font-size: 19px;
+
+      line-height: 1.7;
+
+      color: #aeb8c7;
+    }
+
+    .service-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 36px;
+    }
+
+    .service-hero .button.primary {
+      background: #4fe6ff;
+
+      color: #071015;
+
+      border:
+        1px solid
+        #4fe6ff;
+
+      box-shadow:
+        0 14px 40px
+        rgba(79,230,255,.20);
+    }
+
+    .service-hero .button.primary:hover {
+      background: #ffffff;
+
+      border-color: #ffffff;
+    }
+
+    .service-hero .button.secondary {
+      background:
+        rgba(255,255,255,.07);
+
+      color: #ffffff;
+
+      border:
+        1px solid
+        rgba(255,255,255,.25);
+    }
+
+    .service-hero .button.secondary:hover {
+      background: #ffffff;
+
+      color: #0b0d12;
+
+      border-color: #ffffff;
+    }
+
+
+    /* ========================================
+       WEBSITE MOCKUP
+       ======================================== */
+
+    .website-preview-panel {
+      position: relative;
+
+      padding: 23px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,255,255,.065);
+
+      box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.42);
+
+      backdrop-filter: blur(18px);
+    }
+
+    .website-preview-panel::before {
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+      height: 260px;
+
+      top: -80px;
+      right: -60px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(79,230,255,.17);
+
+      filter: blur(45px);
+
+      pointer-events: none;
+    }
+
+    .preview-browser {
+      position: relative;
+
+      z-index: 2;
+
+      overflow: hidden;
+
+      border-radius: 20px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.23);
+    }
+
+    .preview-browser-top {
+      display: flex;
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 14px 16px;
+
+      background: #f0f3f5;
+
+      border-bottom:
+        1px solid
+        #e3e7ea;
+    }
+
+    .preview-browser-top i {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #c5cad0;
+    }
+
+    .preview-address {
+      flex: 1;
+
+      margin-left: 10px;
+
+      padding: 7px 12px;
+
+      border-radius: 7px;
+
+      background: white;
+
+      font-size: 10px;
+
+      color: #8c959e;
+    }
+
+    .preview-body {
+      min-height: 410px;
+
+      padding: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #f6f9fa
+        );
+    }
+
+    .preview-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .preview-logo {
+      width: 75px;
+      height: 12px;
+
+      border-radius: 20px;
+
+      background: #10141a;
+    }
+
+    .preview-nav-links {
+      display: flex;
+
+      gap: 9px;
+    }
+
+    .preview-nav-links i {
+      width: 35px;
+      height: 5px;
+
+      border-radius: 20px;
+
+      background: #d9dee3;
+    }
+
+    .preview-heading {
+      width: 83%;
+      height: 28px;
+
+      margin-top: 70px;
+
+      border-radius: 9px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #11151b,
+          #4c91aa
+        );
+    }
+
+    .preview-heading.small {
+      width: 58%;
+
+      margin-top: 10px;
+    }
+
+    .preview-copy {
+      width: 72%;
+      height: 8px;
+
+      margin-top: 26px;
+
+      border-radius: 20px;
+
+      background: #d1d7dc;
+    }
+
+    .preview-copy.short {
+      width: 53%;
+
+      margin-top: 9px;
+    }
+
+    .preview-button {
+      width: 118px;
+      height: 38px;
+
+      margin-top: 28px;
+
+      border-radius: 100px;
+
+      background: #10151b;
+    }
+
+    .preview-cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 10px;
+
+      margin-top: 48px;
+    }
+
+    .preview-cards span {
+      height: 76px;
+
+      border-radius: 13px;
+
+      background: #edf1f3;
+    }
+
+    .preview-cards span:first-child {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(79,230,255,.42),
+          rgba(114,124,248,.17)
+        );
+    }
+
+
+    /* ========================================
+       THREE BIG BENEFITS
+       ======================================== */
+
+    .benefits-section {
+      padding: 105px 0;
+    }
+
+    .benefits-heading {
+      max-width: 890px;
+
+      margin-bottom: 55px;
+    }
+
+    .benefits-heading h2 {
+      margin: 0;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size:
+        clamp(42px,5.5vw,72px);
+
+      line-height: 1.02;
+
+      letter-spacing: -.05em;
+    }
+
+    .benefit-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap: 18px;
+    }
+
+    .benefit-card {
+      position: relative;
+
+      min-height: 360px;
+
+      padding: 34px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        #e1e5e8;
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #f6f8f9
+        );
+    }
+
+    .benefit-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 48px;
+      height: 48px;
+
+      border-radius: 14px;
+
+      background: #0b0f14;
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .benefit-card h3 {
+      max-width: 310px;
+
+      margin:
+        110px 0
+        12px;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size:
+        clamp(26px,3vw,38px);
+
+      line-height: 1.08;
+
+      letter-spacing: -.04em;
+    }
+
+    .benefit-card p {
+      max-width: 350px;
+
+      margin: 0;
+
+      font-size: 16px;
+
+      line-height: 1.65;
+
+      color: #707a86;
+    }
+
+    .benefit-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      right: -100px;
+      top: -100px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(79,230,255,.14);
+
+      filter: blur(8px);
+    }
+
+    .benefit-card:nth-child(2)::after {
+      background:
+        rgba(114,124,248,.15);
+    }
+
+
+    /* ========================================
+       INCLUDED - DARK VISUAL SECTION
+       ======================================== */
+
+    .included-section {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 110px 0;
+
+      background: #090d12;
+
+      color: white;
+    }
+
+    .included-section::before {
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      top: -350px;
+      right: -180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(79,230,255,.14);
+
+      filter: blur(30px);
+    }
+
+    .included-heading {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        minmax(300px,.7fr);
+
+      gap: 60px;
+
+      align-items: end;
+
+      margin-bottom: 55px;
+    }
+
+    .included-heading h2 {
+      margin: 0;
+
+      max-width: 760px;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size:
+        clamp(42px,5.5vw,72px);
+
+      line-height: 1;
+
+      letter-spacing: -.05em;
+    }
+
+    .included-heading p {
+      margin: 0;
+
+      font-size: 18px;
+
+      line-height: 1.7;
+
+      color: #9ca8b8;
+    }
+
+    .included-grid {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap: 14px;
+    }
+
+    .included-card {
+      position: relative;
+
+      min-height: 210px;
+
+      padding: 27px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,.055);
+
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+    }
+
+    .included-card:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(79,230,255,.42);
+
+      background:
+        rgba(255,255,255,.075);
+    }
+
+    .included-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      top: -85px;
+      right: -60px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(79,230,255,.14);
+
+      filter: blur(12px);
+    }
+
+    .included-card > span {
+      display: block;
+
+      margin-bottom: 62px;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+
+      color: #78889a;
+    }
+
+    .included-card h3 {
+      margin:
+        0 0
+        9px;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size: 21px;
+
+      letter-spacing: -.025em;
+    }
+
+    .included-card p {
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      color: #9da9b8;
+    }
+
+
+    /* ========================================
+       SIX STEP PROCESS
+       ======================================== */
+
+    .service-process {
+      padding: 110px 0;
+    }
+
+    .service-process-heading {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: end;
+
+      gap: 50px;
+
+      margin-bottom: 55px;
+    }
+
+    .service-process-heading h2 {
+      max-width: 700px;
+
+      margin: 0;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size:
+        clamp(42px,5.5vw,70px);
+
+      line-height: 1;
+
+      letter-spacing: -.05em;
+    }
+
+    .process-note {
+      max-width: 390px;
+
+      margin: 0;
+
+      font-size: 17px;
+
+      line-height: 1.65;
+
+      color: #737d89;
+    }
+
+    .service-process-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap: 14px;
+    }
+
+    .service-process-step {
+      position: relative;
+
+      min-height: 260px;
+
+      padding: 28px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        #e0e5e8;
+
+      border-radius: 20px;
+
+      background: #ffffff;
+    }
+
+    .service-process-step > span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 44px;
+      height: 44px;
+
+      margin-bottom: 76px;
+
+      border-radius: 50%;
+
+      background: #0c1015;
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .service-process-step h3 {
+      margin:
+        0 0
+        10px;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size: 27px;
+
+      letter-spacing: -.035em;
+    }
+
+    .service-process-step p {
+      max-width: 330px;
+
+      margin: 0;
+
+      font-size: 15px;
+
+      line-height: 1.6;
+
+      color: #747e8a;
+    }
+
+    .service-process-step::after {
+      content: "→";
+
+      position: absolute;
+
+      top: 30px;
+      right: 28px;
+
+      font-size: 23px;
+
+      color: #ccd2d7;
+    }
+
+    .service-process-step:last-child::after {
+      content: "✓";
+
+      color: #44d6ad;
+    }
+
+
+    /* ========================================
+       BUSINESS SYSTEMS DARK PANEL
+       ======================================== */
+
+    .systems-section {
+      padding:
+        0 0
+        110px;
+    }
+
+    .systems-cta {
+      position: relative;
+
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.1fr)
+        minmax(320px,.9fr);
+
+      gap: 70px;
+
+      align-items: center;
+
+      padding:
+        70px
+        60px;
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          120deg,
+          #090d12 48%,
+          #0b1118 100%
+        );
+
+      color: white;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.12);
+    }
+
+    .systems-cta::before {
+      content: "";
+
+      position: absolute;
+
+      width: 570px;
+      height: 570px;
+
+      right: -160px;
+      top: -250px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(79,230,255,.19);
+
+      filter: blur(30px);
+    }
+
+    .systems-copy {
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .systems-copy h2 {
+      max-width: 720px;
+
+      margin: 0;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size:
+        clamp(50px,6vw,82px);
+
+      line-height: 1;
+
+      letter-spacing: -.055em;
+    }
+
+    .systems-copy p {
+      max-width: 690px;
+
+      margin:
+        28px 0
+        0;
+
+      font-size: 18px;
+
+      line-height: 1.75;
+
+      color: #aeb8c7;
+    }
+
+    .systems-list {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      gap: 13px;
+    }
+
+    .systems-list span {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      min-height: 70px;
+
+      padding:
+        0
+        28px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(255,255,255,.14);
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,.055);
+
+      font-size: 17px;
+      font-weight: 700;
+
+      color: #edf4fb;
+    }
+
+    .systems-list span::after {
+      content: "";
+
+      position: absolute;
+
+      width: 170px;
+      height: 110px;
+
+      right: -60px;
+      top: -45px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(79,230,255,.13);
+
+      filter: blur(10px);
+    }
+
+    .systems-list span:hover {
+      border-color:
+        rgba(79,230,255,.38);
+    }
+
+    .systems-copy .button {
+      margin-top: 35px;
+    }
+
+
+    /* ========================================
+       FINAL CTA
+       ======================================== */
+
+    .website-final-cta {
+      padding:
+        115px 0;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f6f8f9,
+          #ffffff
+        );
+
+      border-top:
+        1px solid
+        #e3e7ea;
+    }
+
+    .website-final-cta h2 {
+      max-width: 950px;
+
+      margin:
+        0 auto;
+
+      font-family: "Manrope",sans-serif;
+
+      font-size:
+        clamp(46px,6vw,78px);
+
+      line-height: 1;
+
+      letter-spacing: -.055em;
+    }
+
+    .website-final-cta p {
+      max-width: 620px;
+
+      margin:
+        24px auto
+        0;
+
+      font-size: 18px;
+
+      line-height: 1.7;
+
+      color: #6f7984;
+    }
+
+    .website-final-cta .service-hero-actions {
+      justify-content: center;
+    }
+
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+
+    @media (max-width: 1000px) {
+
+      .service-hero-grid,
+      .included-heading,
+      .systems-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .website-preview-panel {
+        max-width: 680px;
+      }
+
+      .benefit-grid,
+      .included-grid {
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
+      .service-process-grid {
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
+      .service-process-heading {
+        align-items: start;
+
+        flex-direction: column;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .service-hero {
+        padding:
+          120px 0
+          75px;
+      }
+
+      .service-hero-grid {
+        gap: 50px;
+      }
+
+      .service-hero-copy > p {
+        font-size: 17px;
+      }
+
+      .benefits-section,
+      .included-section,
+      .service-process,
+      .website-final-cta {
+        padding:
+          80px 0;
+      }
+
+      .benefit-grid,
+      .included-grid,
+      .service-process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-card {
+        min-height: 300px;
+      }
+
+      .benefit-card h3 {
+        margin-top: 75px;
+      }
+
+      .included-heading {
+        gap: 30px;
+      }
+
+      .systems-section {
+        padding-bottom: 80px;
+      }
+
+      .systems-cta {
+        gap: 45px;
+
+        padding:
+          42px
+          24px;
+
+        border-radius: 20px;
+      }
+
+      .systems-copy h2 {
+        font-size:
+          clamp(43px,13vw,65px);
+      }
+
+      .systems-list span {
+        min-height: 62px;
+
+        padding:
+          0
+          20px;
+
+        font-size: 15px;
+      }
+
+      .preview-body {
+        min-height: 340px;
+
+        padding: 22px;
+      }
+
+      .preview-cards {
+        margin-top: 38px;
+      }
+
+      .preview-cards span {
+        height: 55px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="service-page">
+
+
+  <!-- ========================================
+       HEADER
+       ======================================== -->
+
+  <header
+    class="site-header"
+    id="top"
+    data-nosnippet
+  >
+
+    <div class="container nav-wrap">
+
+      <a
+        class="brand"
+        href="index.html"
+      >
+
+        <span class="brand-mark">
+          E
+        </span>
+
+        <span>
+
+          <strong>
+            ELERO
+          </strong>
+
+          <small>
+            STUDIO
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav class="desktop-nav">
+
+        <a href="index.html#services">
+          Services
+        </a>
+
+        <a href="index.html#pricing">
+          Pricing
+        </a>
+
+        <a href="index.html#process">
+          Process
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="https://portal.elerostudio.com/portal/login">
+          Client Login
+        </a>
+
+      </nav>
+
+
+      <div class="nav-actions">
+
+        <a
+          class="nav-cta"
+          href="index.html#contact"
+        >
+          Start a project
+        </a>
+
+        <button
+          class="menu-button"
+          id="menuButton"
+          aria-label="Open menu"
+        >
+
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+    >
+
+      <a href="index.html#services">
+        Services
+      </a>
+
+      <a href="index.html#pricing">
+        Pricing
+      </a>
+
+      <a href="index.html#process">
+        Process
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="https://portal.elerostudio.com/portal/login">
+        Client Login
+      </a>
+
+      <a
+        class="mobile-cta"
+        href="index.html#contact"
+      >
+        Start a project
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- ========================================
+         HERO
+         ======================================== -->
+
+    <section class="service-hero">
+
+      <div class="container service-hero-grid">
+
+        <div class="service-hero-copy reveal">
+
+          <div class="service-kicker">
+
+            <i></i>
+
+            WEBSITE DESIGN & DEVELOPMENT
+
+          </div>
+
+
+          <h1>
+
+            Websites built around
+
+            <span>
+              your business.
+            </span>
+
+          </h1>
+
+
+          <p>
+            Modern, responsive websites designed to look professional,
+            explain your business clearly and turn visitors into customers.
+          </p>
+
+
+          <div class="service-hero-actions">
+
+            <a
+              href="index.html#contact"
+              class="button primary"
+            >
+              Start a website project
+            </a>
+
+            <a
+              href="#included"
+              class="button secondary"
+            >
+              See what's included
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="website-preview-panel reveal delay">
+
+          <div class="preview-browser">
+
+            <div class="preview-browser-top">
+
+              <i></i>
+              <i></i>
+              <i></i>
+
+              <div class="preview-address">
+                yourbusiness.co.uk
+              </div>
+
+            </div>
+
+
+            <div class="preview-body">
+
+              <div class="preview-nav">
+
+                <div class="preview-logo"></div>
+
+                <div class="preview-nav-links">
+
+                  <i></i>
+                  <i></i>
+                  <i></i>
+
+                </div>
+
+              </div>
+
+              <div class="preview-heading"></div>
+
+              <div class="preview-heading small"></div>
+
+              <div class="preview-copy"></div>
+
+              <div class="preview-copy short"></div>
+
+              <div class="preview-button"></div>
+
+              <div class="preview-cards">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         THREE CORE BENEFITS
+         ======================================== -->
+
+    <section class="benefits-section">
+
+      <div class="container">
+
+        <div class="benefits-heading reveal">
+
+          <span class="service-label">
+            WHAT YOUR WEBSITE NEEDS TO DO
+          </span>
+
+          <h2>
+            Look right. Work everywhere. Make the next step obvious.
+          </h2>
+
+        </div>
+
+
+        <div class="benefit-grid">
+
+
+          <article class="benefit-card reveal">
+
+            <span class="benefit-number">
+              01
+            </span>
+
+            <h3>
+              Look professional.
+            </h3>
+
+            <p>
+              A modern design that gives customers confidence in your
+              business from the moment they arrive.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card reveal">
+
+            <span class="benefit-number">
+              02
+            </span>
+
+            <h3>
+              Work on every screen.
+            </h3>
+
+            <p>
+              Desktop, tablet or phone — the experience stays clean,
+              fast and easy to use.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card reveal">
+
+            <span class="benefit-number">
+              03
+            </span>
+
+            <h3>
+              Turn visits into action.
+            </h3>
+
+            <p>
+              Clear journeys that make it easy to enquire, call,
+              book, buy or take the next step.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         INCLUDED
+         ======================================== -->
+
+    <section
+      class="included-section"
+      id="included"
+    >
+
+      <div class="container">
+
+        <div class="included-heading reveal">
+
+          <div>
+
+            <span class="service-label">
+              WHAT'S INCLUDED
+            </span>
+
+            <h2>
+              The essentials are built in.
+            </h2>
+
+          </div>
+
+          <p>
+            Every website starts with the foundations needed to look
+            professional, work properly and be ready to grow.
+          </p>
+
+        </div>
+
+
+        <div class="included-grid">
+
+
+          <article class="included-card reveal">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Custom design
+            </h3>
+
+            <p>
+              Built around your brand and business.
+            </p>
+
+          </article>
+
+
+          <article class="included-card reveal">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Mobile responsive
+            </h3>
+
+            <p>
+              Designed properly for every screen size.
+            </p>
+
+          </article>
+
+
+          <article class="included-card reveal">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Customer journeys
+            </h3>
+
+            <p>
+              Clear paths towards calls, enquiries and action.
+            </p>
+
+          </article>
+
+
+          <article class="included-card reveal">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Initial SEO setup
+            </h3>
+
+            <p>
+              Search-friendly foundations from launch.
+            </p>
+
+          </article>
+
+
+          <article class="included-card reveal">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Forms & integrations
+            </h3>
+
+            <p>
+              Connect enquiries, calls and useful functionality.
+            </p>
+
+          </article>
+
+
+          <article class="included-card reveal">
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Launch support
+            </h3>
+
+            <p>
+              30 days of reasonable post-launch edits included.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         SIX STEP PROCESS
+         ======================================== -->
+
+    <section class="service-process">
+
+      <div class="container">
+
+        <div class="service-process-heading reveal">
+
+          <div>
+
+            <span class="service-label">
+              HOW IT WORKS
+            </span>
+
+            <h2>
+              Six simple steps.
+            </h2>
+
+          </div>
+
+          <p class="process-note">
+            No deposit. No upfront website-build fee.
+            You pay once you're happy with the finished website.
+          </p>
+
+        </div>
+
+
+        <div class="service-process-grid">
+
+
+          <article class="service-process-step reveal">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Consult
+            </h3>
+
+            <p>
+              We understand your business and what you need.
+            </p>
+
+          </article>
+
+
+          <article class="service-process-step reveal">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Quote
+            </h3>
+
+            <p>
+              You receive a clear price before we start.
+            </p>
+
+          </article>
+
+
+          <article class="service-process-step reveal">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Build
+            </h3>
+
+            <p>
+              We design and develop the website.
+            </p>
+
+          </article>
+
+
+          <article class="service-process-step reveal">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Review
+            </h3>
+
+            <p>
+              You check it and request reasonable changes.
+            </p>
+
+          </article>
+
+
+          <article class="service-process-step reveal">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Pay
+            </h3>
+
+            <p>
+              Once approved, we invoice the agreed build price.
+            </p>
+
+          </article>
+
+
+          <article class="service-process-step reveal">
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Launch
+            </h3>
+
+            <p>
+              Your website goes live with 30 days of support.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BUSINESS SYSTEMS
+         ======================================== -->
+
+    <section class="systems-section">
+
+      <div class="container">
+
+        <div class="systems-cta reveal">
+
+          <div class="systems-copy">
+
+            <span class="service-label">
+              NEED MORE THAN A WEBSITE?
+            </span>
+
+            <h2>
+              We can build the systems behind it too.
+            </h2>
+
+            <p>
+              Your website can connect to custom systems built around
+              how your business actually operates.
+            </p>
+
+            <a
+              href="index.html#services"
+              class="button primary"
+            >
+              Explore business systems
+            </a>
+
+          </div>
+
+
+          <div class="systems-list">
+
+            <span>
+              Booking systems
+            </span>
+
+            <span>
+              Customer & client portals
+            </span>
+
+            <span>
+              Recruitment systems
+            </span>
+
+            <span>
+              Estate & letting agency systems
+            </span>
+
+            <span>
+              Payments & invoicing
+            </span>
+
+            <span>
+              Dashboards & automation
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FINAL CTA
+         ======================================== -->
+
+    <section class="website-final-cta">
+
+      <div class="container reveal">
+
+        <span class="service-label">
+          START A PROJECT
+        </span>
+
+        <h2>
+          Your business deserves more than an outdated website.
+        </h2>
+
+        <p>
+          Tell us what you need and we'll take it from there.
+        </p>
+
+        <div class="service-hero-actions">
+
+          <a
+            href="index.html#contact"
+            class="button primary"
+          >
+            Start your project
+          </a>
+
+          <a
+            href="tel:+447424248552"
+            class="button secondary"
+          >
+            Call Elero
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ========================================
+       FLOATING CALL
+       ======================================== -->
+
+  <a
+    class="floating-call"
+    data-nosnippet
+    href="tel:+447424248552"
+    aria-label="Call Elero Studio on 07424 248552"
+  >
+
+    <span class="call-status"></span>
+
+    <span class="call-icon">
+      ☎
+    </span>
+
+    <span class="call-copy">
+
+      <small>
+        CALL ELERO
+      </small>
+
+      <strong>
+        07424 248552
+      </strong>
+
+    </span>
+
+  </a>
+
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-main">
+
+      <div class="footer-brand-block">
+
+        <a
+          class="brand footer-brand"
+          href="index.html"
+        >
+
+          <span class="brand-mark">
+            E
+          </span>
+
+          <span>
+
+            <strong>
+              ELERO
+            </strong>
+
+            <small>
+              STUDIO
+            </small>
+
+          </span>
+
+        </a>
+
+        <p>
+          Modern websites and custom business systems for ambitious businesses.
+        </p>
+
+        <span>
+          South Wales · Working with businesses across the UK
+        </span>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <small>
+          GET IN TOUCH
+        </small>
+
+        <a href="mailto:sales@elerostudio.com">
+          sales@elerostudio.com
+        </a>
+
+        <a href="tel:+447424248552">
+          07424 248552
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <small>
+          EXPLORE
+        </small>
+
+        <a href="index.html#services">
+          Services
+        </a>
+
+        <a href="index.html#pricing">
+          Pricing
+        </a>
+
+        <a href="index.html#process">
+          Process
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="index.html#contact">
+          Contact
+        </a>
+
+        <a href="https://portal.elerostudio.com/portal/login">
+          Client Login
+        </a>
+
+      </div>
+
+
+      <div class="footer-column footer-legal">
+
+        <small>
+          LEGAL
+        </small>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms of Use
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <span>
+        © 2026 Elero Studio
+      </span>
+
+      <span>
+        Built with clarity, care and straightforward support.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
