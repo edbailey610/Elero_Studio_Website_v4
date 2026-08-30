@@ -155,32 +155,6 @@ href="/favicon.png"
 }
 
 
-/* CORE SERVICE ARROW LINKS */
-
-.service-row b a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 100%;
-
-  color: inherit;
-
-  text-decoration: none;
-
-  border-radius: inherit;
-}
-
-.service-row b a:focus-visible {
-  outline:
-    3px solid
-    rgba(79,230,255,.55);
-
-  outline-offset: 3px;
-}
-
-
 /* ABOUT HEADING GRADIENT */
 
 .about-heading-gradient {
@@ -291,7 +265,7 @@ Pricing
 Process
 </a>
 
-<a href="about.html">
+<a href='/about'>
 About
 </a>
 
@@ -347,7 +321,7 @@ Pricing
 Process
 </a>
 
-<a href="about.html">
+<a href='/about'>
 About
 </a>
 
@@ -717,16 +691,16 @@ business to run.
 
 <!-- CORE SERVICES -->
 
-<div class="service-list core-services">
+<div class="core-services" aria-label="Core services">
 
 
-<article class="service-row reveal">
+<a class="core-service-card reveal" href="/website-design-development">
 
-<span>
+<span class="core-service-number">
 01
 </span>
 
-<div>
+<div class="core-service-copy">
 
 <h3>
 Website design & development
@@ -739,27 +713,18 @@ business, your customers and your goals.
 
 </div>
 
-<b>
+<span class="core-service-accent" aria-hidden="true"></span>
 
-<a
-href="website-design-development.html"
-aria-label="Website design and development"
->
-↗
 </a>
 
-</b>
 
-</article>
+<a class="core-service-card reveal" href="/custom-business-systems">
 
-
-<article class="service-row reveal">
-
-<span>
+<span class="core-service-number">
 02
 </span>
 
-<div>
+<div class="core-service-copy">
 
 <h3>
 Custom business systems
@@ -773,27 +738,18 @@ and other growing businesses.
 
 </div>
 
-<b>
+<span class="core-service-accent" aria-hidden="true"></span>
 
-<a
-href="custom-business-systems.html"
-aria-label="Custom business systems"
->
-↗
 </a>
 
-</b>
 
-</article>
+<a class="core-service-card reveal" href="/hosting-ongoing-support">
 
-
-<article class="service-row reveal">
-
-<span>
+<span class="core-service-number">
 03
 </span>
 
-<div>
+<div class="core-service-copy">
 
 <h3>
 Hosting & ongoing support
@@ -806,18 +762,9 @@ maintained and supported after launch.
 
 </div>
 
-<b>
+<span class="core-service-accent" aria-hidden="true"></span>
 
-<a
-href="hosting-ongoing-support.html"
-aria-label="Hosting and ongoing support"
->
-↗
 </a>
-
-</b>
-
-</article>
 
 
 </div>
@@ -848,11 +795,7 @@ Add more capability when your business needs it.
 
 <!-- BOOKING SYSTEMS -->
 
-<a
-href="booking-demo.html"
-class="solution-card solution-card-link"
-aria-label="View Elero booking system demo"
->
+<a aria-label='View Elero booking system demo' class='solution-card solution-card-link' href='/booking-demo'>
 
 <span>
 01
@@ -876,11 +819,7 @@ availability.
 
 <!-- PAYMENT INTEGRATION -->
 
-<a
-href="payment-demo.html"
-class="solution-card solution-card-link"
-aria-label="View Elero payment integration demo"
->
+<a aria-label='View Elero payment integration demo' class='solution-card solution-card-link' href='/payment-demo'>
 
 <span>
 02
@@ -904,11 +843,7 @@ invoices or checkout payments.
 
 <!-- INVOICE SOLUTIONS -->
 
-<a
-href="invoice-demo.html"
-class="solution-card solution-card-link"
-aria-label="View Elero invoice solution demo"
->
+<a aria-label='View Elero invoice solution demo' class='solution-card solution-card-link' href='/invoice-demo'>
 
 <span>
 03
@@ -932,11 +867,7 @@ make it easier for customers to pay.
 
 <!-- MORTGAGE REPAYMENT CALCULATOR -->
 
-<a
-href="mortgage-calculator-demo.html"
-class="solution-card solution-card-link"
-aria-label="View Elero mortgage repayment calculator demo"
->
+<a aria-label='View Elero mortgage repayment calculator demo' class='solution-card solution-card-link' href='/mortgage-calculator-demo'>
 
 <span>
 04
@@ -960,11 +891,7 @@ deposit, term and example mortgage rates.
 
 <!-- RECRUITMENT AGENCY SYSTEMS -->
 
-<a
-href="temporary-staffing-demo.html"
-class="solution-card solution-card-link"
-aria-label="View Elero recruitment agency systems demo"
->
+<a aria-label='View Elero recruitment agency systems demo' class='solution-card solution-card-link' href='/temporary-staffing-demo'>
 
 <span>
 05
@@ -988,11 +915,7 @@ dashboards built around temporary recruitment.
 
 <!-- ESTATE AGENT SYSTEMS -->
 
-<a
-href="estate-agency-demo.html"
-class="solution-card solution-card-link"
-aria-label="View Elero estate agent systems demo"
->
+<a aria-label='View Elero estate agent systems demo' class='solution-card solution-card-link' href='/estate-agency-demo'>
 
 <span>
 06
@@ -1351,10 +1274,7 @@ Priority technical support
 </div>
 
 
-<a
-class="pricing-detail-link"
-href="pricing.html"
->
+<a class='pricing-detail-link' href='/pricing'>
 
 Compare the packages in detail
 
@@ -1576,10 +1496,7 @@ process clear, personal and straightforward.
 </p>
 
 
-<a
-class="button secondary about-preview-button"
-href="about.html"
->
+<a class='button secondary about-preview-button' href='/about'>
 
 Meet Elero
 
@@ -1896,15 +1813,7 @@ Usually replies within one working day.
 
 <!-- CONTACT FORM -->
 
-<form
-class="contact-form reveal delay"
-id="contactForm"
-name="project-enquiry"
-method="POST"
-action="/thanks.html"
-data-netlify="true"
-netlify-honeypot="bot-field"
->
+<form action='/thanks' class='contact-form reveal delay' id='contactForm' method='POST' name='project-enquiry'>
 
 <input
 type="hidden"
@@ -2223,7 +2132,7 @@ Pricing
 Process
 </a>
 
-<a href="about.html">
+<a href='/about'>
 About
 </a>
 
@@ -2244,11 +2153,11 @@ Client Login
 LEGAL
 </small>
 
-<a href="privacy.html">
+<a href='/privacy'>
 Privacy Policy
 </a>
 
-<a href="terms.html">
+<a href='/terms'>
 Terms of Use
 </a>
 
