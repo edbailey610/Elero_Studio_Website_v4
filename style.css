@@ -1320,3 +1320,22 @@
     font-size:clamp(36px,9.7vw,44px);
   }
 }
+
+
+/* ===========================
+   ELERO BRAND MARK — APPROVED 2026
+   =========================== */
+.brand-mark{
+  width:46px;
+  height:46px;
+  border-radius:0;
+  overflow:hidden;
+  color:transparent;
+  font-size:0;
+  background:transparent url("/elero-mark.png") center/contain no-repeat;
+  box-shadow:none;
+  flex:0 0 auto;
+}
+.footer-brand .brand-mark{
+  background-image:url("/elero-mark-light.png");
+}
